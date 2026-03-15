@@ -65,5 +65,5 @@ SLIM_APP = {"pk", "name", "slug", "provider", "provider_obj.name", "meta_launch_
 SLIM_FLOW = {"pk", "name", "slug", "title", "designation"}
 SLIM_EVENT = {"pk", "action", "app", "user", "created"}
 SLIM_TOKEN = {"pk", "identifier", "intent", "user", "description", "expiring", "expires"}
-SLIM_SESSION = {"pk", "user.pk", "user.username", "last_ip", "last_used", "expires"}
-SLIM_BRAND = {"pk", "domain", "default", "branding_title"}
+SLIM_SESSION = {"uuid", "user", "last_ip", "last_used", "expires", "geo_ip.country", "geo_ip.city"}
+SLIM_BRAND = {"brand_uuid", "domain", "default", "branding_title"}
