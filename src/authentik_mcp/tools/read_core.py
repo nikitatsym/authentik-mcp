@@ -1,6 +1,15 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import SLIM_APP, SLIM_GROUP, SLIM_USER, _get_client, _paginated
+from .helpers import (
+    SLIM_APP,
+    SLIM_BRAND,
+    SLIM_GROUP,
+    SLIM_SESSION,
+    SLIM_TOKEN,
+    SLIM_USER,
+    _get_client,
+    _paginated,
+)
 
 # ── Core — Users ─────────────────────────────────────────────────────
 
@@ -114,8 +123,8 @@ def show_app_entitlement(id: str):
 
 @_op(authentik_read)
 def list_tokens(limit: int = 20):
-    """List tokens."""
-    return _paginated("/core/tokens/", limit=limit)
+    """List tokens (slim)."""
+    return _paginated("/core/tokens/", limit=limit, slim_fields=SLIM_TOKEN)
 
 
 @_op(authentik_read)
@@ -135,8 +144,8 @@ def view_token_key(identifier: str):
 
 @_op(authentik_read)
 def list_brands(limit: int = 20):
-    """List brands."""
-    return _paginated("/core/brands/", limit=limit)
+    """List brands (slim)."""
+    return _paginated("/core/brands/", limit=limit, slim_fields=SLIM_BRAND)
 
 
 @_op(authentik_read)
@@ -156,8 +165,8 @@ def get_current_brand():
 
 @_op(authentik_read)
 def list_sessions(limit: int = 20):
-    """List authenticated sessions."""
-    return _paginated("/core/authenticated_sessions/", limit=limit)
+    """List authenticated sessions (slim)."""
+    return _paginated("/core/authenticated_sessions/", limit=limit, slim_fields=SLIM_SESSION)
 
 
 @_op(authentik_read)

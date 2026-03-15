@@ -64,3 +64,6 @@ SLIM_GROUP = {"pk", "name", "parent_name", "num_pk", "is_superuser"}
 SLIM_APP = {"pk", "name", "slug", "provider", "provider_obj.name", "meta_launch_url"}
 SLIM_FLOW = {"pk", "name", "slug", "title", "designation"}
 SLIM_EVENT = {"pk", "action", "app", "user", "created"}
+SLIM_TOKEN = {"pk", "identifier", "intent", "user", "description", "expiring", "expires"}
+SLIM_SESSION = {"pk", "user.pk", "user.username", "last_ip", "last_used", "expires"}
+SLIM_BRAND = {"pk", "domain", "default", "branding_title"}
