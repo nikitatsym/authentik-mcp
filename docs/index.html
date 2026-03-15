@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Authentik MCP — Setup</title>
+<style>
+  :root { --bg: #0f172a; --surface: #1e293b; --border: #334155; --text: #e2e8f0; --muted: #94a3b8; --accent: #38bdf8; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; justify-content: center; padding: 2rem 1rem; }
+  .container { max-width: 640px; width: 100%; }
+  h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  .subtitle { color: var(--muted); margin-bottom: 2rem; font-size: 0.9rem; }
+  label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.25rem; }
+  input { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); font-size: 0.95rem; margin-bottom: 1rem; outline: none; }
+  input:focus { border-color: var(--accent); }
+  .config-box { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; margin-top: 1.5rem; }
+  pre { white-space: pre-wrap; word-break: break-all; font-size: 0.82rem; line-height: 1.5; color: var(--text); }
+  .copy-btn { position: absolute; top: 0.5rem; right: 0.5rem; background: var(--border); color: var(--text); border: none; padding: 0.3rem 0.7rem; border-radius: 4px; cursor: pointer; font-size: 0.78rem; }
+  .copy-btn:hover { background: var(--accent); color: var(--bg); }
+  .links { margin-top: 2rem; font-size: 0.85rem; color: var(--muted); }
+  .links a { color: var(--accent); text-decoration: none; }
+  .links a:hover { text-decoration: underline; }
+  .section { margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted); }
+  .section h3 { font-size: 0.9rem; color: var(--text); margin-bottom: 0.25rem; }
+  code { background: var(--surface); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.82rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Authentik MCP</h1>
+  <p class="subtitle">Manage users, groups, applications, flows, and policies on Authentik from Claude, Cursor, or any MCP client.</p>
+
+  <label for="url">Authentik URL</label>
+  <input type="text" id="url" placeholder="https://auth.example.com" oninput="update()">
+
+  <label for="token">API Token</label>
+  <input type="password" id="token" placeholder="paste your Authentik API token" oninput="update()">
+
+  <div class="config-box">
+    <button class="copy-btn" onclick="copy()">Copy</button>
+    <pre id="config"></pre>
+  </div>
+
+  <div class="section">
+    <h3>Where to paste</h3>
+    <p><strong>Claude Desktop</strong> — <code>~/Library/Application Support/Claude/claude_desktop_config.json</code></p>
+    <p><strong>Cursor</strong> — <code>.cursor/mcp.json</code> in your project</p>
+    <p><strong>Claude Code</strong> — <code>~/.claude.json</code> top-level <code>mcpServers</code></p>
+  </div>
+
+  <div class="section">
+    <h3>Getting an API token</h3>
+    <p>Go to your Authentik admin panel → Directory → Tokens and App passwords → Create a token with the API scope.</p>
+  </div>
+
+  <div class="links">
+    <a href="https://github.com/nikitatsym/authentik-mcp">GitHub</a>
+  </div>
+</div>
+<script>
+const INDEX = "https://nikitatsym.github.io/authentik-mcp/simple";
+function update() {
+  const url = document.getElementById("url").value.trim();
+  const token = document.getElementById("token").value.trim();
+  const cfg = {
+    mcpServers: {
+      authentik: {
+        command: "uvx",
+        args: ["--refresh", "--extra-index-url", INDEX, "authentik-mcp"],
+        env: {
+          AUTHENTIK_URL: url || "https://auth.example.com",
+          AUTHENTIK_TOKEN: token || "your-token-here"
+        }
+      }
+    }
+  };
+  document.getElementById("config").textContent = JSON.stringify(cfg, null, 2);
+}
+function copy() {
+  const text = document.getElementById("config").textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector(".copy-btn");
+    btn.textContent = "Copied!";
+    setTimeout(() => btn.textContent = "Copy", 1500);
+  });
+}
+update();
+</script>
+</body>
+</html>

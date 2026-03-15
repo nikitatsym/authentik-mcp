@@ -1,0 +1,77 @@
+name: Build & Release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [src/**, pyproject.toml, .github/workflows/build.yml, docs/**]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: astral-sh/setup-uv@v5
+
+      - name: Compute next version
+        id: version
+        run: |
+          LATEST=$(git tag -l 'v*' --sort=-v:refname | head -1 | sed 's/^v//')
+          if [ -z "$LATEST" ]; then
+            NEXT="1.0.0"
+          else
+            IFS='.' read -r MAJOR MINOR PATCH <<< "$LATEST"
+            NEXT="${MAJOR}.${MINOR}.$((PATCH + 1))"
+          fi
+          echo "version=${NEXT}" >> "$GITHUB_OUTPUT"
+
+      - name: Set version and build wheel
+        run: |
+          sed -i "s/^version = .*/version = \"${{ steps.version.outputs.version }}\"/" pyproject.toml
+          uv build --wheel --out-dir dist/
+
+      - name: Create tag and release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          git tag "v${VERSION}"
+          git push origin "v${VERSION}"
+          gh release create "v${VERSION}" dist/*.whl \
+            --title "v${VERSION}" \
+            --notes "Auto-built from \`main\` branch." \
+            --latest
+
+      - name: Prepare Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p _site/simple/authentik-mcp
+          cp docs/index.html _site/
+
+          # Generate PEP 503 index from all releases
+          {
+            echo '<!DOCTYPE html><html><body>'
+            gh release list --json tagName -q '.[].tagName' | while read -r tag; do
+              V="${tag#v}"
+              WHL="authentik_mcp-${V}-py3-none-any.whl"
+              echo "<a href=\"https://github.com/nikitatsym/authentik-mcp/releases/download/${tag}/${WHL}\">${WHL}</a>"
+            done
+            echo '</body></html>'
+          } > _site/simple/authentik-mcp/index.html
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/deploy-pages@v4
+        id: deployment
