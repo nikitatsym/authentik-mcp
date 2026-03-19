@@ -4,12 +4,6 @@ MCP server for [Authentik](https://goauthentik.io/) identity provider.
 
 ## Install
 
-```
-uvx --extra-index-url https://nikitatsym.github.io/authentik-mcp/simple authentik-mcp
-```
-
-## Configure
-
 ```json
 {
   "mcpServers": {
