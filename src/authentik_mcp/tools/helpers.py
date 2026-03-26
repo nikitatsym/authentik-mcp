@@ -135,5 +135,5 @@ SLIM_ENDPOINT = {"pk", "name"}
 # Misc
 SLIM_EXPORT = {"pk", "name", "created"}
 SLIM_SSF_STREAM = {"pk", "provider", "delivery_method", "endpoint_url"}
-SLIM_VERSION_HISTORY = {"pk", "version", "build", "created"}
+SLIM_VERSION_HISTORY = {"id", "version", "build", "timestamp"}
 SLIM_ADMIN_FILE = {"pk", "name", "path"}
