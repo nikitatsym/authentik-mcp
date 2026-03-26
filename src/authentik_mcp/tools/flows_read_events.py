@@ -1,6 +1,13 @@
 from ..registry import _op
 from .groups import authentik_flows_read
-from .helpers import SLIM_EVENT, _get_client, _paginated
+from .helpers import (
+    SLIM_EVENT,
+    SLIM_NOTIFICATION,
+    SLIM_NOTIFICATION_RULE,
+    SLIM_NOTIFICATION_TRANSPORT,
+    _get_client,
+    _paginated,
+)
 
 
 @_op(authentik_flows_read)
@@ -50,7 +57,7 @@ def get_event_volume():
 @_op(authentik_flows_read)
 def list_notifications(limit: int = 20):
     """List notifications."""
-    return _paginated("/events/notifications/", limit=limit)
+    return _paginated("/events/notifications/", limit=limit, slim_fields=SLIM_NOTIFICATION)
 
 
 @_op(authentik_flows_read)
@@ -62,7 +69,7 @@ def show_notification(id: str):
 @_op(authentik_flows_read)
 def list_notification_rules(limit: int = 20):
     """List notification rules."""
-    return _paginated("/events/rules/", limit=limit)
+    return _paginated("/events/rules/", limit=limit, slim_fields=SLIM_NOTIFICATION_RULE)
 
 
 @_op(authentik_flows_read)
@@ -74,7 +81,7 @@ def show_notification_rule(id: str):
 @_op(authentik_flows_read)
 def list_notification_transports(limit: int = 20):
     """List notification transports."""
-    return _paginated("/events/transports/", limit=limit)
+    return _paginated("/events/transports/", limit=limit, slim_fields=SLIM_NOTIFICATION_TRANSPORT)
 
 
 @_op(authentik_flows_read)

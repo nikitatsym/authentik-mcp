@@ -1,12 +1,12 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_TENANT, SLIM_TENANT_DOMAIN, _get_client, _paginated
 
 
 @_op(authentik_read)
 def list_tenants(limit: int = 20):
     """List tenants."""
-    return _paginated("/tenants/tenants/", limit=limit)
+    return _paginated("/tenants/tenants/", limit=limit, slim_fields=SLIM_TENANT)
 
 
 @_op(authentik_read)
@@ -18,7 +18,7 @@ def show_tenant(id: str):
 @_op(authentik_read)
 def list_tenant_domains(limit: int = 20):
     """List tenant domains."""
-    return _paginated("/tenants/domains/", limit=limit)
+    return _paginated("/tenants/domains/", limit=limit, slim_fields=SLIM_TENANT_DOMAIN)
 
 
 @_op(authentik_read)

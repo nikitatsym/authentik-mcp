@@ -926,12 +926,67 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 
 ## Slim fields
 
+All list operations use `slim_fields` to reduce response size. Full objects via `show_*`.
+
 ```python
-_SLIM_USER_FIELDS = {"pk", "username", "name", "email", "is_active", "path", "last_login"}
-_SLIM_GROUP_FIELDS = {"pk", "name", "parent_name", "num_pk", "is_superuser"}
-_SLIM_APP_FIELDS = {"pk", "name", "slug", "provider", "provider_obj.name", "meta_launch_url"}
-_SLIM_FLOW_FIELDS = {"pk", "name", "slug", "title", "designation"}
-_SLIM_EVENT_FIELDS = {"pk", "action", "app", "user", "created"}
+# Core
+SLIM_USER = {"pk", "username", "name", "email", "is_active", "path", "last_login"}
+SLIM_GROUP = {"pk", "name", "parent_name", "num_pk", "is_superuser"}
+SLIM_APP = {"pk", "name", "slug", "provider", "provider_obj.name", "meta_launch_url"}
+SLIM_TOKEN = {"pk", "identifier", "intent", "user", "description", "expiring", "expires"}
+SLIM_SESSION = {"uuid", "user", "last_ip", "last_used", "expires", "geo_ip.country", "geo_ip.city"}
+SLIM_BRAND = {"brand_uuid", "domain", "default", "branding_title"}
+SLIM_USER_CONSENT = {"pk", "user.pk", "user.username", "application.slug", "application.name", "expires", "permissions"}
+SLIM_APP_ENTITLEMENT = {"pbm_uuid", "name", "app"}
+
+# Flows
+SLIM_FLOW = {"pk", "name", "slug", "title", "designation"}
+SLIM_FLOW_BINDING = {"pk", "target", "stage", "order", "evaluate_on_plan", "re_evaluate_policies"}
+
+# Policies
+SLIM_POLICY = {"pk", "name", "component", "execution_logging", "bound_to"}
+SLIM_POLICY_BINDING = {"pk", "policy", "group", "user", "target", "negate", "enabled", "order", "timeout"}
+SLIM_REPUTATION_SCORE = {"pk", "identifier", "ip", "score", "updated"}
+
+# Stages
+SLIM_STAGE = {"pk", "name", "component", "verbose_name"}
+
+# Sources
+SLIM_SOURCE = {"pk", "name", "slug", "enabled", "component", "verbose_name"}
+SLIM_SOURCE_CONNECTION = {"pk", "source", "identifier"}
+
+# Providers
+SLIM_PROVIDER = {"pk", "name", "component", "authorization_flow", "assigned_application_slug", "assigned_application_name"}
+
+# Property mappings
+SLIM_PROPERTY_MAPPING = {"pk", "name", "managed", "component", "verbose_name"}
+
+# Events
+SLIM_EVENT = {"pk", "action", "app", "user", "created"}
+SLIM_NOTIFICATION = {"pk", "severity", "body", "created", "seen"}
+SLIM_NOTIFICATION_RULE = {"pk", "name", "transports", "severity", "destination_group"}
+SLIM_NOTIFICATION_TRANSPORT = {"pk", "name", "mode"}
+
+# Crypto, Outposts, RBAC, Authenticators, OAuth2, Managed, Tasks, etc.
+SLIM_CERTIFICATE = {"pk", "name", "fingerprint_sha256", "cert_expiry", "managed"}
+SLIM_OUTPOST = {"pk", "name", "type", "providers", "service_connection", "managed"}
+SLIM_SERVICE_CONNECTION = {"pk", "name", "component", "local"}
+SLIM_ROLE = {"pk", "name"}
+SLIM_PERMISSION = {"id", "name", "codename", "model", "app_label"}
+SLIM_AUTHENTICATOR_DEVICE = {"pk", "name", "user.pk", "user.username"}
+SLIM_OAUTH2_TOKEN = {"pk", "provider.pk", "provider.name", "user.pk", "user.username", "is_expired", "expires", "scope", "revoked"}
+SLIM_BLUEPRINT = {"pk", "name", "path", "enabled", "status"}
+SLIM_TASK = {"uid", "state", "description", "mtime"}
+SLIM_LICENSE = {"pk", "name", "expiry", "internal_users", "external_users"}
+SLIM_TENANT = {"pk", "name", "schema_name", "ready"}
+SLIM_TENANT_DOMAIN = {"pk", "domain", "is_primary", "tenant"}
+SLIM_RAC_ENDPOINT = {"pk", "name", "protocol", "host", "provider"}
+SLIM_RAC_TOKEN = {"pk", "provider", "endpoint", "user"}
+SLIM_ENDPOINT = {"pk", "name"}
+SLIM_EXPORT = {"pk", "name", "created"}
+SLIM_SSF_STREAM = {"pk", "provider", "delivery_method", "endpoint_url"}
+SLIM_VERSION_HISTORY = {"pk", "version", "build", "created"}
+SLIM_ADMIN_FILE = {"pk", "name", "path"}
 ```
 
 ## Out of scope

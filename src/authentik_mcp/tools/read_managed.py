@@ -1,12 +1,12 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_BLUEPRINT, _get_client, _paginated
 
 
 @_op(authentik_read)
 def list_blueprints(limit: int = 20):
     """List blueprints."""
-    return _paginated("/managed/blueprints/", limit=limit)
+    return _paginated("/managed/blueprints/", limit=limit, slim_fields=SLIM_BLUEPRINT)
 
 
 @_op(authentik_read)

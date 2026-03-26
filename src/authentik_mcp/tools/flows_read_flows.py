@@ -1,6 +1,6 @@
 from ..registry import _op
 from .groups import authentik_flows_read
-from .helpers import SLIM_FLOW, _get_client, _paginated
+from .helpers import SLIM_FLOW, SLIM_FLOW_BINDING, _get_client, _paginated
 
 
 @_op(authentik_flows_read)
@@ -30,7 +30,7 @@ def export_flow(slug: str):
 @_op(authentik_flows_read)
 def list_flow_bindings(limit: int = 20):
     """List flow stage bindings."""
-    return _paginated("/flows/bindings/", limit=limit)
+    return _paginated("/flows/bindings/", limit=limit, slim_fields=SLIM_FLOW_BINDING)
 
 
 @_op(authentik_flows_read)

@@ -1,12 +1,12 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_PERMISSION, SLIM_ROLE, _get_client, _paginated
 
 
 @_op(authentik_read)
 def list_roles(limit: int = 20):
     """List RBAC roles."""
-    return _paginated("/rbac/roles/", limit=limit)
+    return _paginated("/rbac/roles/", limit=limit, slim_fields=SLIM_ROLE)
 
 
 @_op(authentik_read)
@@ -18,7 +18,7 @@ def show_role(id: str):
 @_op(authentik_read)
 def list_permissions(limit: int = 20):
     """List permissions."""
-    return _paginated("/rbac/permissions/", limit=limit)
+    return _paginated("/rbac/permissions/", limit=limit, slim_fields=SLIM_PERMISSION)
 
 
 @_op(authentik_read)
@@ -30,7 +30,7 @@ def show_permission(id: int):
 @_op(authentik_read)
 def list_initial_permissions(limit: int = 20):
     """List initial permissions."""
-    return _paginated("/rbac/initial_permissions/", limit=limit)
+    return _paginated("/rbac/initial_permissions/", limit=limit, slim_fields=SLIM_PERMISSION)
 
 
 @_op(authentik_read)
@@ -42,10 +42,10 @@ def show_initial_permission(id: int):
 @_op(authentik_read)
 def list_permissions_assigned_by_roles(limit: int = 20):
     """List permissions assigned by roles."""
-    return _paginated("/rbac/permissions/assigned_by_roles/", limit=limit)
+    return _paginated("/rbac/permissions/assigned_by_roles/", limit=limit, slim_fields=SLIM_PERMISSION)
 
 
 @_op(authentik_read)
 def list_permissions_roles(limit: int = 20):
     """List permission-role mappings."""
-    return _paginated("/rbac/permissions/roles/", limit=limit)
+    return _paginated("/rbac/permissions/roles/", limit=limit, slim_fields=SLIM_PERMISSION)

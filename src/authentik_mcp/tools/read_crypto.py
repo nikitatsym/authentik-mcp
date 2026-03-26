@@ -1,12 +1,12 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_CERTIFICATE, _get_client, _paginated
 
 
 @_op(authentik_read)
 def list_certificates(limit: int = 20):
     """List certificate-key pairs."""
-    return _paginated("/crypto/certificatekeypairs/", limit=limit)
+    return _paginated("/crypto/certificatekeypairs/", limit=limit, slim_fields=SLIM_CERTIFICATE)
 
 
 @_op(authentik_read)

@@ -1,6 +1,6 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_OUTPOST, SLIM_SERVICE_CONNECTION, _get_client, _paginated
 
 # ── Outposts ─────────────────────────────────────────────────────────
 
@@ -8,7 +8,7 @@ from .helpers import _get_client, _paginated
 @_op(authentik_read)
 def list_outposts(limit: int = 20):
     """List outposts."""
-    return _paginated("/outposts/instances/", limit=limit)
+    return _paginated("/outposts/instances/", limit=limit, slim_fields=SLIM_OUTPOST)
 
 
 @_op(authentik_read)
@@ -35,7 +35,7 @@ def get_outpost_default_settings():
 @_op(authentik_read)
 def list_outpost_service_connections(limit: int = 20):
     """List all outpost service connections."""
-    return _paginated("/outposts/service_connections/all/", limit=limit)
+    return _paginated("/outposts/service_connections/all/", limit=limit, slim_fields=SLIM_SERVICE_CONNECTION)
 
 
 @_op(authentik_read)
@@ -59,7 +59,7 @@ def list_service_connection_types():
 @_op(authentik_read)
 def list_docker_service_connections(limit: int = 20):
     """List Docker service connections."""
-    return _paginated("/outposts/service_connections/docker/", limit=limit)
+    return _paginated("/outposts/service_connections/docker/", limit=limit, slim_fields=SLIM_SERVICE_CONNECTION)
 
 
 @_op(authentik_read)
@@ -71,7 +71,7 @@ def show_docker_service_connection(id: str):
 @_op(authentik_read)
 def list_kubernetes_service_connections(limit: int = 20):
     """List Kubernetes service connections."""
-    return _paginated("/outposts/service_connections/kubernetes/", limit=limit)
+    return _paginated("/outposts/service_connections/kubernetes/", limit=limit, slim_fields=SLIM_SERVICE_CONNECTION)
 
 
 @_op(authentik_read)
@@ -89,7 +89,7 @@ def list_outpost_ldap(id: str | None = None, limit: int = 20):
     p = {}
     if id is not None:
         p["id"] = id
-    return _paginated("/outposts/ldap/", p, limit)
+    return _paginated("/outposts/ldap/", p, limit, slim_fields=SLIM_OUTPOST)
 
 
 @_op(authentik_read)
@@ -98,7 +98,7 @@ def list_outpost_proxy(id: str | None = None, limit: int = 20):
     p = {}
     if id is not None:
         p["id"] = id
-    return _paginated("/outposts/proxy/", p, limit)
+    return _paginated("/outposts/proxy/", p, limit, slim_fields=SLIM_OUTPOST)
 
 
 @_op(authentik_read)
@@ -107,4 +107,4 @@ def list_outpost_radius(id: str | None = None, limit: int = 20):
     p = {}
     if id is not None:
         p["id"] = id
-    return _paginated("/outposts/radius/", p, limit)
+    return _paginated("/outposts/radius/", p, limit, slim_fields=SLIM_OUTPOST)

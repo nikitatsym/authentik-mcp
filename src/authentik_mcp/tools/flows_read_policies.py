@@ -1,6 +1,6 @@
 from ..registry import _op
 from .groups import authentik_flows_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_POLICY, SLIM_POLICY_BINDING, SLIM_REPUTATION_SCORE, _get_client, _paginated
 
 # ── Policies — All ───────────────────────────────────────────────────
 
@@ -8,7 +8,7 @@ from .helpers import _get_client, _paginated
 @_op(authentik_flows_read)
 def list_policies(limit: int = 20):
     """List all policies."""
-    return _paginated("/policies/all/", limit=limit)
+    return _paginated("/policies/all/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)
@@ -26,7 +26,7 @@ def list_policy_types():
 @_op(authentik_flows_read)
 def list_policy_bindings(limit: int = 20):
     """List policy bindings."""
-    return _paginated("/policies/bindings/", limit=limit)
+    return _paginated("/policies/bindings/", limit=limit, slim_fields=SLIM_POLICY_BINDING)
 
 
 @_op(authentik_flows_read)
@@ -41,7 +41,7 @@ def show_policy_binding(id: str):
 @_op(authentik_flows_read)
 def list_expression_policies(limit: int = 20):
     """List expression policies."""
-    return _paginated("/policies/expression/", limit=limit)
+    return _paginated("/policies/expression/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)
@@ -56,7 +56,7 @@ def show_expression_policy(id: str):
 @_op(authentik_flows_read)
 def list_password_policies(limit: int = 20):
     """List password policies."""
-    return _paginated("/policies/password/", limit=limit)
+    return _paginated("/policies/password/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)
@@ -68,7 +68,7 @@ def show_password_policy(id: str):
 @_op(authentik_flows_read)
 def list_password_expiry_policies(limit: int = 20):
     """List password expiry policies."""
-    return _paginated("/policies/password_expiry/", limit=limit)
+    return _paginated("/policies/password_expiry/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)
@@ -80,7 +80,7 @@ def show_password_expiry_policy(id: str):
 @_op(authentik_flows_read)
 def list_unique_password_policies(limit: int = 20):
     """List unique password policies."""
-    return _paginated("/policies/unique_password/", limit=limit)
+    return _paginated("/policies/unique_password/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)
@@ -95,7 +95,7 @@ def show_unique_password_policy(id: str):
 @_op(authentik_flows_read)
 def list_reputation_policies(limit: int = 20):
     """List reputation policies."""
-    return _paginated("/policies/reputation/", limit=limit)
+    return _paginated("/policies/reputation/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)
@@ -107,7 +107,7 @@ def show_reputation_policy(id: str):
 @_op(authentik_flows_read)
 def list_reputation_scores(limit: int = 20):
     """List reputation scores."""
-    return _paginated("/policies/reputation/scores/", limit=limit)
+    return _paginated("/policies/reputation/scores/", limit=limit, slim_fields=SLIM_REPUTATION_SCORE)
 
 
 @_op(authentik_flows_read)
@@ -122,7 +122,7 @@ def show_reputation_score(id: int):
 @_op(authentik_flows_read)
 def list_event_matcher_policies(limit: int = 20):
     """List event matcher policies."""
-    return _paginated("/policies/event_matcher/", limit=limit)
+    return _paginated("/policies/event_matcher/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)
@@ -137,7 +137,7 @@ def show_event_matcher_policy(id: str):
 @_op(authentik_flows_read)
 def list_geoip_policies(limit: int = 20):
     """List GeoIP policies."""
-    return _paginated("/policies/geoip/", limit=limit)
+    return _paginated("/policies/geoip/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)
@@ -152,7 +152,7 @@ def show_geoip_policy(id: str):
 @_op(authentik_flows_read)
 def list_dummy_policies(limit: int = 20):
     """List dummy policies."""
-    return _paginated("/policies/dummy/", limit=limit)
+    return _paginated("/policies/dummy/", limit=limit, slim_fields=SLIM_POLICY)
 
 
 @_op(authentik_flows_read)

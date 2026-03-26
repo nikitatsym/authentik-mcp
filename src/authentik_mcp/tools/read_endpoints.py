@@ -1,6 +1,6 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_ENDPOINT, _get_client, _paginated
 
 # ── Endpoint Devices ─────────────────────────────────────────────────
 
@@ -8,7 +8,7 @@ from .helpers import _get_client, _paginated
 @_op(authentik_read)
 def list_endpoint_devices(limit: int = 20):
     """List endpoint devices."""
-    return _paginated("/endpoints/devices/", limit=limit)
+    return _paginated("/endpoints/devices/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
@@ -29,7 +29,7 @@ def get_endpoint_device_summary():
 @_op(authentik_read)
 def list_endpoint_connectors(limit: int = 20):
     """List endpoint connectors."""
-    return _paginated("/endpoints/connectors/", limit=limit)
+    return _paginated("/endpoints/connectors/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
@@ -50,7 +50,7 @@ def list_endpoint_connector_types():
 @_op(authentik_read)
 def list_agent_connectors(limit: int = 20):
     """List agent connectors."""
-    return _paginated("/endpoints/agents/connectors/", limit=limit)
+    return _paginated("/endpoints/agents/connectors/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
@@ -65,7 +65,7 @@ def show_agent_connector(id: str):
 @_op(authentik_read)
 def list_agent_enrollment_tokens(limit: int = 20):
     """List agent enrollment tokens."""
-    return _paginated("/endpoints/agents/enrollment_tokens/", limit=limit)
+    return _paginated("/endpoints/agents/enrollment_tokens/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
@@ -86,7 +86,7 @@ def view_enrollment_token_key(id: str):
 @_op(authentik_read)
 def list_device_access_groups(limit: int = 20):
     """List device access groups."""
-    return _paginated("/endpoints/device_access_groups/", limit=limit)
+    return _paginated("/endpoints/device_access_groups/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
@@ -101,7 +101,7 @@ def show_device_access_group(id: str):
 @_op(authentik_read)
 def list_device_bindings(limit: int = 20):
     """List device bindings."""
-    return _paginated("/endpoints/device_bindings/", limit=limit)
+    return _paginated("/endpoints/device_bindings/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
@@ -116,7 +116,7 @@ def show_device_binding(id: str):
 @_op(authentik_read)
 def list_fleet_connectors(limit: int = 20):
     """List fleet connectors."""
-    return _paginated("/endpoints/fleet_connectors/", limit=limit)
+    return _paginated("/endpoints/fleet_connectors/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
@@ -131,7 +131,7 @@ def show_fleet_connector(id: str):
 @_op(authentik_read)
 def list_google_chrome_connectors(limit: int = 20):
     """List Google Chrome connectors."""
-    return _paginated("/endpoints/google_chrome_connectors/", limit=limit)
+    return _paginated("/endpoints/google_chrome_connectors/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)

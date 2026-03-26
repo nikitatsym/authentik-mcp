@@ -1,6 +1,6 @@
 from ..registry import _op
 from .groups import authentik_flows_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_SOURCE, SLIM_SOURCE_CONNECTION, _get_client, _paginated
 
 # ── Sources — All ────────────────────────────────────────────────────
 
@@ -8,7 +8,7 @@ from .helpers import _get_client, _paginated
 @_op(authentik_flows_read)
 def list_sources(limit: int = 20):
     """List all sources."""
-    return _paginated("/sources/all/", limit=limit)
+    return _paginated("/sources/all/", limit=limit, slim_fields=SLIM_SOURCE)
 
 
 @_op(authentik_flows_read)
@@ -29,7 +29,7 @@ def list_source_types():
 @_op(authentik_flows_read)
 def list_ldap_sources(limit: int = 20):
     """List LDAP sources."""
-    return _paginated("/sources/ldap/", limit=limit)
+    return _paginated("/sources/ldap/", limit=limit, slim_fields=SLIM_SOURCE)
 
 
 @_op(authentik_flows_read)
@@ -50,7 +50,7 @@ def get_ldap_sync_status(slug: str):
 @_op(authentik_flows_read)
 def list_oauth_sources(limit: int = 20):
     """List OAuth sources."""
-    return _paginated("/sources/oauth/", limit=limit)
+    return _paginated("/sources/oauth/", limit=limit, slim_fields=SLIM_SOURCE)
 
 
 @_op(authentik_flows_read)
@@ -71,7 +71,7 @@ def list_oauth_source_types():
 @_op(authentik_flows_read)
 def list_saml_sources(limit: int = 20):
     """List SAML sources."""
-    return _paginated("/sources/saml/", limit=limit)
+    return _paginated("/sources/saml/", limit=limit, slim_fields=SLIM_SOURCE)
 
 
 @_op(authentik_flows_read)
@@ -92,7 +92,7 @@ def get_saml_source_metadata(slug: str):
 @_op(authentik_flows_read)
 def list_scim_sources(limit: int = 20):
     """List SCIM sources."""
-    return _paginated("/sources/scim/", limit=limit)
+    return _paginated("/sources/scim/", limit=limit, slim_fields=SLIM_SOURCE)
 
 
 @_op(authentik_flows_read)
@@ -113,7 +113,7 @@ def get_scim_source_sync_status(slug: str):
 @_op(authentik_flows_read)
 def list_plex_sources(limit: int = 20):
     """List Plex sources."""
-    return _paginated("/sources/plex/", limit=limit)
+    return _paginated("/sources/plex/", limit=limit, slim_fields=SLIM_SOURCE)
 
 
 @_op(authentik_flows_read)
@@ -128,7 +128,7 @@ def show_plex_source(slug: str):
 @_op(authentik_flows_read)
 def list_kerberos_sources(limit: int = 20):
     """List Kerberos sources."""
-    return _paginated("/sources/kerberos/", limit=limit)
+    return _paginated("/sources/kerberos/", limit=limit, slim_fields=SLIM_SOURCE)
 
 
 @_op(authentik_flows_read)
@@ -149,7 +149,7 @@ def get_kerberos_sync_status(slug: str):
 @_op(authentik_flows_read)
 def list_telegram_sources(limit: int = 20):
     """List Telegram sources."""
-    return _paginated("/sources/telegram/", limit=limit)
+    return _paginated("/sources/telegram/", limit=limit, slim_fields=SLIM_SOURCE)
 
 
 @_op(authentik_flows_read)
@@ -164,7 +164,7 @@ def show_telegram_source(slug: str):
 @_op(authentik_flows_read)
 def list_user_connections(limit: int = 20):
     """List user source connections."""
-    return _paginated("/sources/user_connections/all/", limit=limit)
+    return _paginated("/sources/user_connections/all/", limit=limit, slim_fields=SLIM_SOURCE_CONNECTION)
 
 
 @_op(authentik_flows_read)
@@ -176,7 +176,7 @@ def show_user_connection(id: int):
 @_op(authentik_flows_read)
 def list_group_connections(limit: int = 20):
     """List group source connections."""
-    return _paginated("/sources/group_connections/all/", limit=limit)
+    return _paginated("/sources/group_connections/all/", limit=limit, slim_fields=SLIM_SOURCE_CONNECTION)
 
 
 @_op(authentik_flows_read)

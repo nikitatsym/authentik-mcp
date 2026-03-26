@@ -2,11 +2,13 @@ from ..registry import _op
 from .groups import authentik_read
 from .helpers import (
     SLIM_APP,
+    SLIM_APP_ENTITLEMENT,
     SLIM_BRAND,
     SLIM_GROUP,
     SLIM_SESSION,
     SLIM_TOKEN,
     SLIM_USER,
+    SLIM_USER_CONSENT,
     _get_client,
     _paginated,
 )
@@ -49,7 +51,7 @@ def list_user_consent(user: int | None = None, limit: int = 20):
     p = {}
     if user is not None:
         p["user"] = user
-    return _paginated("/core/user_consent/", p, limit)
+    return _paginated("/core/user_consent/", p, limit, SLIM_USER_CONSENT)
 
 
 @_op(authentik_read)
@@ -109,7 +111,7 @@ def list_app_entitlements(app: str | None = None, limit: int = 20):
     p = {}
     if app is not None:
         p["app"] = app
-    return _paginated("/core/application_entitlements/", p, limit)
+    return _paginated("/core/application_entitlements/", p, limit, SLIM_APP_ENTITLEMENT)
 
 
 @_op(authentik_read)

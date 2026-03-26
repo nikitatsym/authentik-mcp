@@ -1,12 +1,12 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_SSF_STREAM, _get_client, _paginated
 
 
 @_op(authentik_read)
 def list_ssf_streams(limit: int = 20):
     """List SSF streams."""
-    return _paginated("/ssf/streams/", limit=limit)
+    return _paginated("/ssf/streams/", limit=limit, slim_fields=SLIM_SSF_STREAM)
 
 
 @_op(authentik_read)

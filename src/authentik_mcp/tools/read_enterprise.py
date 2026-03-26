@@ -1,12 +1,12 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_LICENSE, _get_client, _paginated
 
 
 @_op(authentik_read)
 def list_licenses(limit: int = 20):
     """List enterprise licenses."""
-    return _paginated("/enterprise/license/", limit=limit)
+    return _paginated("/enterprise/license/", limit=limit, slim_fields=SLIM_LICENSE)
 
 
 @_op(authentik_read)

@@ -1,6 +1,6 @@
 from ..registry import _op
 from .groups import authentik_flows_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_STAGE, _get_client, _paginated
 
 # ── Stages — All ─────────────────────────────────────────────────────
 
@@ -8,7 +8,7 @@ from .helpers import _get_client, _paginated
 @_op(authentik_flows_read)
 def list_stages(limit: int = 20):
     """List all stages."""
-    return _paginated("/stages/all/", limit=limit)
+    return _paginated("/stages/all/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -29,7 +29,7 @@ def list_stage_types():
 @_op(authentik_flows_read)
 def list_identification_stages(limit: int = 20):
     """List identification stages."""
-    return _paginated("/stages/identification/", limit=limit)
+    return _paginated("/stages/identification/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -44,7 +44,7 @@ def show_identification_stage(id: str):
 @_op(authentik_flows_read)
 def list_password_stages(limit: int = 20):
     """List password stages."""
-    return _paginated("/stages/password/", limit=limit)
+    return _paginated("/stages/password/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -59,7 +59,7 @@ def show_password_stage(id: str):
 @_op(authentik_flows_read)
 def list_authenticator_totp_stages(limit: int = 20):
     """List authenticator TOTP stages."""
-    return _paginated("/stages/authenticator/totp/", limit=limit)
+    return _paginated("/stages/authenticator/totp/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -71,7 +71,7 @@ def show_authenticator_totp_stage(id: str):
 @_op(authentik_flows_read)
 def list_authenticator_webauthn_stages(limit: int = 20):
     """List authenticator WebAuthn stages."""
-    return _paginated("/stages/authenticator/webauthn/", limit=limit)
+    return _paginated("/stages/authenticator/webauthn/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -83,7 +83,7 @@ def show_authenticator_webauthn_stage(id: str):
 @_op(authentik_flows_read)
 def list_authenticator_duo_stages(limit: int = 20):
     """List authenticator Duo stages."""
-    return _paginated("/stages/authenticator/duo/", limit=limit)
+    return _paginated("/stages/authenticator/duo/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -95,7 +95,7 @@ def show_authenticator_duo_stage(id: str):
 @_op(authentik_flows_read)
 def list_authenticator_sms_stages(limit: int = 20):
     """List authenticator SMS stages."""
-    return _paginated("/stages/authenticator/sms/", limit=limit)
+    return _paginated("/stages/authenticator/sms/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -107,7 +107,7 @@ def show_authenticator_sms_stage(id: str):
 @_op(authentik_flows_read)
 def list_authenticator_email_stages(limit: int = 20):
     """List authenticator email stages."""
-    return _paginated("/stages/authenticator/email/", limit=limit)
+    return _paginated("/stages/authenticator/email/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -119,7 +119,7 @@ def show_authenticator_email_stage(id: str):
 @_op(authentik_flows_read)
 def list_authenticator_static_stages(limit: int = 20):
     """List authenticator static stages."""
-    return _paginated("/stages/authenticator/static/", limit=limit)
+    return _paginated("/stages/authenticator/static/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -131,7 +131,7 @@ def show_authenticator_static_stage(id: str):
 @_op(authentik_flows_read)
 def list_authenticator_validate_stages(limit: int = 20):
     """List authenticator validate stages."""
-    return _paginated("/stages/authenticator/validate/", limit=limit)
+    return _paginated("/stages/authenticator/validate/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -143,7 +143,7 @@ def show_authenticator_validate_stage(id: str):
 @_op(authentik_flows_read)
 def list_authenticator_endpoint_gdtc_stages(limit: int = 20):
     """List authenticator endpoint GDTC stages."""
-    return _paginated("/stages/authenticator/endpoint_gdtc/", limit=limit)
+    return _paginated("/stages/authenticator/endpoint_gdtc/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -158,7 +158,7 @@ def show_authenticator_endpoint_gdtc_stage(id: str):
 @_op(authentik_flows_read)
 def list_user_login_stages(limit: int = 20):
     """List user login stages."""
-    return _paginated("/stages/user_login/", limit=limit)
+    return _paginated("/stages/user_login/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -170,7 +170,7 @@ def show_user_login_stage(id: str):
 @_op(authentik_flows_read)
 def list_user_logout_stages(limit: int = 20):
     """List user logout stages."""
-    return _paginated("/stages/user_logout/", limit=limit)
+    return _paginated("/stages/user_logout/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -182,7 +182,7 @@ def show_user_logout_stage(id: str):
 @_op(authentik_flows_read)
 def list_user_write_stages(limit: int = 20):
     """List user write stages."""
-    return _paginated("/stages/user_write/", limit=limit)
+    return _paginated("/stages/user_write/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -194,7 +194,7 @@ def show_user_write_stage(id: str):
 @_op(authentik_flows_read)
 def list_user_delete_stages(limit: int = 20):
     """List user delete stages."""
-    return _paginated("/stages/user_delete/", limit=limit)
+    return _paginated("/stages/user_delete/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -209,7 +209,7 @@ def show_user_delete_stage(id: str):
 @_op(authentik_flows_read)
 def list_consent_stages(limit: int = 20):
     """List consent stages."""
-    return _paginated("/stages/consent/", limit=limit)
+    return _paginated("/stages/consent/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -224,7 +224,7 @@ def show_consent_stage(id: str):
 @_op(authentik_flows_read)
 def list_captcha_stages(limit: int = 20):
     """List captcha stages."""
-    return _paginated("/stages/captcha/", limit=limit)
+    return _paginated("/stages/captcha/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -239,7 +239,7 @@ def show_captcha_stage(id: str):
 @_op(authentik_flows_read)
 def list_deny_stages(limit: int = 20):
     """List deny stages."""
-    return _paginated("/stages/deny/", limit=limit)
+    return _paginated("/stages/deny/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -254,7 +254,7 @@ def show_deny_stage(id: str):
 @_op(authentik_flows_read)
 def list_dummy_stages(limit: int = 20):
     """List dummy stages."""
-    return _paginated("/stages/dummy/", limit=limit)
+    return _paginated("/stages/dummy/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -269,7 +269,7 @@ def show_dummy_stage(id: str):
 @_op(authentik_flows_read)
 def list_email_stages(limit: int = 20):
     """List email stages."""
-    return _paginated("/stages/email/", limit=limit)
+    return _paginated("/stages/email/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -290,7 +290,7 @@ def list_email_stage_templates():
 @_op(authentik_flows_read)
 def list_redirect_stages(limit: int = 20):
     """List redirect stages."""
-    return _paginated("/stages/redirect/", limit=limit)
+    return _paginated("/stages/redirect/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -305,7 +305,7 @@ def show_redirect_stage(id: str):
 @_op(authentik_flows_read)
 def list_source_stages(limit: int = 20):
     """List source stages."""
-    return _paginated("/stages/source/", limit=limit)
+    return _paginated("/stages/source/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -320,7 +320,7 @@ def show_source_stage(id: str):
 @_op(authentik_flows_read)
 def list_mtls_stages(limit: int = 20):
     """List mTLS stages."""
-    return _paginated("/stages/mtls/", limit=limit)
+    return _paginated("/stages/mtls/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -335,7 +335,7 @@ def show_mtls_stage(id: str):
 @_op(authentik_flows_read)
 def list_endpoint_stages(limit: int = 20):
     """List endpoint stages."""
-    return _paginated("/stages/endpoints/", limit=limit)
+    return _paginated("/stages/endpoints/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -350,7 +350,7 @@ def show_endpoint_stage(id: str):
 @_op(authentik_flows_read)
 def list_invitation_stages(limit: int = 20):
     """List invitation stages."""
-    return _paginated("/stages/invitation/stages/", limit=limit)
+    return _paginated("/stages/invitation/stages/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -362,7 +362,7 @@ def show_invitation_stage(id: str):
 @_op(authentik_flows_read)
 def list_invitations(limit: int = 20):
     """List invitations."""
-    return _paginated("/stages/invitation/invitations/", limit=limit)
+    return _paginated("/stages/invitation/invitations/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -377,7 +377,7 @@ def show_invitation(id: str):
 @_op(authentik_flows_read)
 def list_prompt_stages(limit: int = 20):
     """List prompt stages."""
-    return _paginated("/stages/prompt/stages/", limit=limit)
+    return _paginated("/stages/prompt/stages/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)
@@ -389,7 +389,7 @@ def show_prompt_stage(id: str):
 @_op(authentik_flows_read)
 def list_prompts(limit: int = 20):
     """List prompts."""
-    return _paginated("/stages/prompt/prompts/", limit=limit)
+    return _paginated("/stages/prompt/prompts/", limit=limit, slim_fields=SLIM_STAGE)
 
 
 @_op(authentik_flows_read)

@@ -1,6 +1,6 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_PROVIDER, _get_client, _paginated
 
 # ── Providers — All ──────────────────────────────────────────────────
 
@@ -8,7 +8,7 @@ from .helpers import _get_client, _paginated
 @_op(authentik_read)
 def list_providers(limit: int = 20):
     """List all providers."""
-    return _paginated("/providers/all/", limit=limit)
+    return _paginated("/providers/all/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -29,7 +29,7 @@ def list_provider_types():
 @_op(authentik_read)
 def list_oauth2_providers(limit: int = 20):
     """List OAuth2 providers."""
-    return _paginated("/providers/oauth2/", limit=limit)
+    return _paginated("/providers/oauth2/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -56,7 +56,7 @@ def preview_oauth2_user(id: int):
 @_op(authentik_read)
 def list_ldap_providers(limit: int = 20):
     """List LDAP providers."""
-    return _paginated("/providers/ldap/", limit=limit)
+    return _paginated("/providers/ldap/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -71,7 +71,7 @@ def show_ldap_provider(id: int):
 @_op(authentik_read)
 def list_saml_providers(limit: int = 20):
     """List SAML providers."""
-    return _paginated("/providers/saml/", limit=limit)
+    return _paginated("/providers/saml/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -98,7 +98,7 @@ def preview_saml_user(id: int):
 @_op(authentik_read)
 def list_proxy_providers(limit: int = 20):
     """List proxy providers."""
-    return _paginated("/providers/proxy/", limit=limit)
+    return _paginated("/providers/proxy/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -113,7 +113,7 @@ def show_proxy_provider(id: int):
 @_op(authentik_read)
 def list_scim_providers(limit: int = 20):
     """List SCIM providers."""
-    return _paginated("/providers/scim/", limit=limit)
+    return _paginated("/providers/scim/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -146,7 +146,7 @@ def list_scim_groups(provider: int):
 @_op(authentik_read)
 def list_radius_providers(limit: int = 20):
     """List Radius providers."""
-    return _paginated("/providers/radius/", limit=limit)
+    return _paginated("/providers/radius/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -161,7 +161,7 @@ def show_radius_provider(id: int):
 @_op(authentik_read)
 def list_rac_providers(limit: int = 20):
     """List RAC providers."""
-    return _paginated("/providers/rac/", limit=limit)
+    return _paginated("/providers/rac/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -176,7 +176,7 @@ def show_rac_provider(id: int):
 @_op(authentik_read)
 def list_google_workspace_providers(limit: int = 20):
     """List Google Workspace providers."""
-    return _paginated("/providers/google_workspace/", limit=limit)
+    return _paginated("/providers/google_workspace/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -197,7 +197,7 @@ def get_google_workspace_sync_status(id: int):
 @_op(authentik_read)
 def list_microsoft_entra_providers(limit: int = 20):
     """List Microsoft Entra providers."""
-    return _paginated("/providers/microsoft_entra/", limit=limit)
+    return _paginated("/providers/microsoft_entra/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -218,7 +218,7 @@ def get_microsoft_entra_sync_status(id: int):
 @_op(authentik_read)
 def list_wsfed_providers(limit: int = 20):
     """List WS-Fed providers."""
-    return _paginated("/providers/wsfed/", limit=limit)
+    return _paginated("/providers/wsfed/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)
@@ -239,7 +239,7 @@ def get_wsfed_metadata(id: int):
 @_op(authentik_read)
 def list_ssf_providers(limit: int = 20):
     """List SSF providers."""
-    return _paginated("/providers/ssf/", limit=limit)
+    return _paginated("/providers/ssf/", limit=limit, slim_fields=SLIM_PROVIDER)
 
 
 @_op(authentik_read)

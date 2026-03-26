@@ -1,6 +1,13 @@
 from ..registry import _op
 from .groups import authentik_admin
-from .helpers import _get_client, _ok, _paginated
+from .helpers import (
+    SLIM_ADMIN_FILE,
+    SLIM_AUTHENTICATOR_DEVICE,
+    SLIM_VERSION_HISTORY,
+    _get_client,
+    _ok,
+    _paginated,
+)
 
 # ── Admin (Read) ─────────────────────────────────────────────────────
 
@@ -38,7 +45,7 @@ def get_admin_version():
 @_op(authentik_admin)
 def list_version_history(limit: int = 20):
     """List version history."""
-    return _paginated("/admin/version/history/", limit=limit)
+    return _paginated("/admin/version/history/", limit=limit, slim_fields=SLIM_VERSION_HISTORY)
 
 
 @_op(authentik_admin)
@@ -50,7 +57,7 @@ def show_version_history(id: int):
 @_op(authentik_admin)
 def list_admin_files(limit: int = 20):
     """List admin files."""
-    return _paginated("/admin/file/", limit=limit)
+    return _paginated("/admin/file/", limit=limit, slim_fields=SLIM_ADMIN_FILE)
 
 
 # ── Admin (Write) ────────────────────────────────────────────────────
@@ -86,7 +93,7 @@ def list_admin_authenticators():
 @_op(authentik_admin)
 def list_admin_duo_devices(limit: int = 20):
     """List admin Duo devices."""
-    return _paginated("/authenticators/admin/duo/", limit=limit)
+    return _paginated("/authenticators/admin/duo/", limit=limit, slim_fields=SLIM_AUTHENTICATOR_DEVICE)
 
 
 @_op(authentik_admin)
@@ -98,7 +105,7 @@ def show_admin_duo_device(id: int):
 @_op(authentik_admin)
 def list_admin_email_devices(limit: int = 20):
     """List admin email devices."""
-    return _paginated("/authenticators/admin/email/", limit=limit)
+    return _paginated("/authenticators/admin/email/", limit=limit, slim_fields=SLIM_AUTHENTICATOR_DEVICE)
 
 
 @_op(authentik_admin)
@@ -110,7 +117,7 @@ def show_admin_email_device(id: int):
 @_op(authentik_admin)
 def list_admin_endpoint_devices(limit: int = 20):
     """List admin endpoint devices."""
-    return _paginated("/authenticators/admin/endpoint/", limit=limit)
+    return _paginated("/authenticators/admin/endpoint/", limit=limit, slim_fields=SLIM_AUTHENTICATOR_DEVICE)
 
 
 @_op(authentik_admin)
@@ -122,7 +129,7 @@ def show_admin_endpoint_device(id: int):
 @_op(authentik_admin)
 def list_admin_sms_devices(limit: int = 20):
     """List admin SMS devices."""
-    return _paginated("/authenticators/admin/sms/", limit=limit)
+    return _paginated("/authenticators/admin/sms/", limit=limit, slim_fields=SLIM_AUTHENTICATOR_DEVICE)
 
 
 @_op(authentik_admin)
@@ -134,7 +141,7 @@ def show_admin_sms_device(id: int):
 @_op(authentik_admin)
 def list_admin_static_devices(limit: int = 20):
     """List admin static devices."""
-    return _paginated("/authenticators/admin/static/", limit=limit)
+    return _paginated("/authenticators/admin/static/", limit=limit, slim_fields=SLIM_AUTHENTICATOR_DEVICE)
 
 
 @_op(authentik_admin)
@@ -146,7 +153,7 @@ def show_admin_static_device(id: int):
 @_op(authentik_admin)
 def list_admin_totp_devices(limit: int = 20):
     """List admin TOTP devices."""
-    return _paginated("/authenticators/admin/totp/", limit=limit)
+    return _paginated("/authenticators/admin/totp/", limit=limit, slim_fields=SLIM_AUTHENTICATOR_DEVICE)
 
 
 @_op(authentik_admin)
@@ -158,7 +165,7 @@ def show_admin_totp_device(id: int):
 @_op(authentik_admin)
 def list_admin_webauthn_devices(limit: int = 20):
     """List admin WebAuthn devices."""
-    return _paginated("/authenticators/admin/webauthn/", limit=limit)
+    return _paginated("/authenticators/admin/webauthn/", limit=limit, slim_fields=SLIM_AUTHENTICATOR_DEVICE)
 
 
 @_op(authentik_admin)

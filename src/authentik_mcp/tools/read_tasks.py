@@ -1,12 +1,12 @@
 from ..registry import _op
 from .groups import authentik_read
-from .helpers import _get_client, _paginated
+from .helpers import SLIM_TASK, _get_client, _paginated
 
 
 @_op(authentik_read)
 def list_task_schedules(limit: int = 20):
     """List task schedules."""
-    return _paginated("/tasks/schedules/", limit=limit)
+    return _paginated("/tasks/schedules/", limit=limit, slim_fields=SLIM_TASK)
 
 
 @_op(authentik_read)
@@ -18,7 +18,7 @@ def show_task_schedule(id: str):
 @_op(authentik_read)
 def list_tasks(limit: int = 20):
     """List tasks."""
-    return _paginated("/tasks/tasks/", limit=limit)
+    return _paginated("/tasks/tasks/", limit=limit, slim_fields=SLIM_TASK)
 
 
 @_op(authentik_read)
