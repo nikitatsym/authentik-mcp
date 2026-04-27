@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from ..registry import _op
 from .groups import authentik_admin
 from .helpers import (
@@ -76,9 +78,15 @@ def create_admin_system():
 
 
 @_op(authentik_admin)
-def create_admin_file(**kwargs):
-    """Create admin file."""
-    return _ok(_get_client().post("/admin/file/", json=kwargs))
+def create_admin_file(file_path: str, name: str | None = None):
+    """Upload a file to authentik media (/media/public/). Returns the served URL."""
+    p = Path(file_path)
+    with p.open("rb") as f:
+        return _ok(_get_client().post(
+            "/admin/file/",
+            files={"file": (name or p.name, f)},
+            data={"name": name or p.name},
+        ))
 
 
 # ── Authenticators — Admin (Read) ────────────────────────────────────
