@@ -1,6 +1,14 @@
+from pathlib import Path
+
 from ..registry import _op
 from .groups import authentik_write
-from .helpers import _get_client, _ok
+from .helpers import _get_client, _ok, _verify_response
+
+# Fields PATCH /core/applications/{slug}/ silently drops because they need a
+# dedicated endpoint. Used by update_application to fail fast with a hint.
+_APP_PATCH_DROPS = {
+    "meta_icon": "Use SetApplicationIconUrl(slug, url) or SetApplicationIcon(slug, file_path).",
+}
 
 # ── Core — Users ─────────────────────────────────────────────────────
 
@@ -98,13 +106,50 @@ def create_application(name: str, slug: str, **kwargs):
 @_op(authentik_write)
 def update_application(slug: str, **kwargs):
     """Update an application. Pass fields to change."""
-    return _ok(_get_client().patch(f"/core/applications/{slug}/", json=kwargs))
+    bad = [k for k in kwargs if k in _APP_PATCH_DROPS]
+    if bad:
+        hints = "; ".join(f"{k}: {_APP_PATCH_DROPS[k]}" for k in bad)
+        raise ValueError(
+            f"PATCH /core/applications/ silently drops these fields: {bad}. {hints}"
+        )
+    response = _get_client().patch(f"/core/applications/{slug}/", json=kwargs)
+    _verify_response(kwargs, response, _APP_PATCH_DROPS)
+    return _ok(response)
 
 
 @_op(authentik_write)
 def update_transactional_application(**kwargs):
     """Create or update an application and its provider atomically."""
     return _ok(_get_client().put("/core/transactional_applications/", json=kwargs))
+
+
+@_op(authentik_write)
+def set_application_icon_url(slug: str, url: str):
+    """Set application icon by URL (use this instead of UpdateApplication for meta_icon)."""
+    return _ok(_get_client().post(
+        f"/core/applications/{slug}/set_icon_url/",
+        json={"url": url},
+    ))
+
+
+@_op(authentik_write)
+def set_application_icon(slug: str, file_path: str):
+    """Upload application icon from a local file path (multipart)."""
+    p = Path(file_path)
+    with p.open("rb") as f:
+        return _ok(_get_client().post(
+            f"/core/applications/{slug}/set_icon/",
+            files={"file": (p.name, f)},
+        ))
+
+
+@_op(authentik_write)
+def clear_application_icon(slug: str):
+    """Remove the application icon."""
+    return _ok(_get_client().post(
+        f"/core/applications/{slug}/set_icon_url/",
+        json={"url": "", "clear": True},
+    ))
 
 
 # ── Core — Application Entitlements ──────────────────────────────────

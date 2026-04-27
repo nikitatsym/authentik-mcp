@@ -16,6 +16,26 @@ def _ok(data):
     return data
 
 
+def _verify_response(sent: dict, received: dict, drops: dict | None = None) -> None:
+    """Raise if the API silently dropped a sent field (sent non-null → null in response).
+
+    drops: optional {field: hint} for known-drop fields that need a dedicated endpoint.
+    """
+    if not isinstance(received, dict):
+        return
+    drops = drops or {}
+    for key, sent_val in sent.items():
+        if sent_val is None or sent_val == "":
+            continue
+        if key not in received:
+            continue
+        if received[key] is None:
+            hint = drops.get(key, "")
+            raise ValueError(
+                f"API silently dropped {key!r}: sent {sent_val!r}, got null. {hint}".strip()
+            )
+
+
 def _slim(item: dict, fields: set) -> dict:
     out = {}
     for f in fields:
