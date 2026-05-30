@@ -1,4 +1,7 @@
 from pathlib import Path
+from typing import Annotated
+
+from pydantic import Field
 
 from ..registry import _op
 from .groups import authentik_write
@@ -14,9 +17,19 @@ _APP_PATCH_DROPS = {
 
 
 @_op(authentik_write)
-def create_user(username: str, name: str, **kwargs):
-    """Create a user. Required: username, name. Optional: email, is_active, path, groups, etc."""
-    return _ok(_get_client().post("/core/users/", json={"username": username, "name": name, **kwargs}))
+def create_user(
+    username: str,
+    name: str,
+    groups: Annotated[
+        list[str] | None,
+        Field(description="Group UUIDs the user belongs to. Authentik requires this key; defaults to empty."),
+    ] = None,
+    **kwargs,
+):
+    """Create a user. Required: username, name. Optional: email, is_active, path, etc."""
+    return _ok(_get_client().post("/core/users/", json={
+        "username": username, "name": name, "groups": groups or [], **kwargs,
+    }))
 
 
 @_op(authentik_write)
@@ -71,9 +84,22 @@ def impersonate_end():
 
 
 @_op(authentik_write)
-def create_group(name: str, **kwargs):
-    """Create a group. Required: name."""
-    return _ok(_get_client().post("/core/groups/", json={"name": name, **kwargs}))
+def create_group(
+    name: str,
+    parent: Annotated[
+        str | None,
+        Field(description="Parent group UUID; null = top-level group (default)."),
+    ] = None,
+    users: Annotated[
+        list[int] | None,
+        Field(description="Member user PKs. Authentik requires this key; defaults to empty."),
+    ] = None,
+    **kwargs,
+):
+    """Create a group. Required: name. parent/users default to null/empty (Authentik requires them present)."""
+    return _ok(_get_client().post("/core/groups/", json={
+        "name": name, "parent": parent, "users": users or [], **kwargs,
+    }))
 
 
 @_op(authentik_write)

@@ -1,6 +1,10 @@
-from ..registry import _op
+from typing import Annotated
+
+from pydantic import Field
+
+from ..registry import _UNSET, _op
 from .groups import authentik_flows_write
-from .helpers import _get_client, _ok
+from .helpers import _body, _get_client, _ok
 
 
 @_op(authentik_flows_write)
@@ -16,15 +20,58 @@ def clear_policy_cache():
 
 
 @_op(authentik_flows_write)
-def create_policy_binding(target: str, policy: str, order: int, **kwargs):
-    """Create a policy binding. Required: target, policy, order."""
-    return _ok(_get_client().post("/policies/bindings/", json={"target": target, "policy": policy, "order": order, **kwargs}))
+def create_policy_binding(
+    target: str,
+    order: int,
+    policy: Annotated[
+        str | None,
+        Field(description="Policy UUID. Exactly one of policy/group/user must be set."),
+    ] = _UNSET,
+    group: Annotated[
+        str | None,
+        Field(description="Group UUID — bind a group to gate access (the group→application gate); leave policy unset."),
+    ] = _UNSET,
+    user: Annotated[
+        int | None,
+        Field(description="User PK — bind a single user directly."),
+    ] = _UNSET,
+    **kwargs,
+):
+    """Create a policy binding. Required: target and order, plus exactly one of policy/group/user.
+
+    target is the bound object's pk (an application's pk for an application
+    access gate, a flow's pk, etc.). To gate an application by group, set
+    group (or user) to the subject's id and leave policy unset — no policy or
+    blueprint needed. Authentik rejects the bind if zero or more than one of
+    policy/group/user is set.
+    """
+    return _ok(_get_client().post("/policies/bindings/", json=_body(locals())))
 
 
 @_op(authentik_flows_write)
-def update_policy_binding(id: str, **kwargs):
-    """Update a policy binding."""
-    return _ok(_get_client().patch(f"/policies/bindings/{id}/", json=kwargs))
+def update_policy_binding(
+    id: str,
+    policy: Annotated[
+        str | None, Field(description="Policy UUID, or null to clear it.")
+    ] = _UNSET,
+    group: Annotated[
+        str | None, Field(description="Group UUID, or null to clear it.")
+    ] = _UNSET,
+    user: Annotated[
+        int | None, Field(description="User PK, or null to clear it.")
+    ] = _UNSET,
+    **kwargs,
+):
+    """Update a policy binding (PATCH). Pass only the fields to change.
+
+    To switch the bound subject (e.g. from a policy to a group) pass the new
+    one and null the old (policy=null, group="<uuid>") — exactly one of
+    policy/group/user must end up set.
+    """
+    return _ok(_get_client().patch(
+        f"/policies/bindings/{id}/",
+        json=_body(locals(), exclude=("id",), keep_null=("policy", "group", "user")),
+    ))
 
 
 @_op(authentik_flows_write)

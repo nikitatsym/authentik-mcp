@@ -1,4 +1,5 @@
 from ..client import AuthentikClient
+from ..registry import _UNSET
 
 _client: AuthentikClient | None = None
 
@@ -14,6 +15,50 @@ def _ok(data):
     if data is None:
         return {"status": "ok"}
     return data
+
+
+def _body(
+    local_vars: dict,
+    exclude=(),
+    rename: dict | None = None,
+    keep_null=(),
+) -> dict:
+    """Build a JSON body from a function's locals(), dropping omitted fields.
+
+    Drops keys whose value is `_UNSET` (caller omitted) or `None` (unless the
+    key is listed in `keep_null`, for nullable fields the API clears on null).
+    `exclude` drops keys outright (e.g. path params); `rename` maps Python
+    parameter names to API field names. A `**kwargs` dict in locals() is
+    merged in (extras passed by the caller), under the same drop rules.
+
+    Usage:
+        return _ok(_get_client().post("/x/", json=_body(locals())))
+        return _ok(_get_client().patch(f"/x/{id}/", json=_body(
+            locals(), exclude=("id",), keep_null=("group",))))
+    """
+    excl = set(exclude)
+    rmap = rename or {}
+    keep = set(keep_null)
+    out: dict = {}
+
+    def _add(k, v):
+        if k in excl:
+            return
+        if v is _UNSET:
+            return
+        if v is None and k not in keep:
+            return
+        out[rmap.get(k, k)] = v
+
+    for k, v in local_vars.items():
+        if k == "kwargs":
+            continue
+        _add(k, v)
+    extra = local_vars.get("kwargs")
+    if isinstance(extra, dict):
+        for k, v in extra.items():
+            _add(k, v)
+    return out
 
 
 def _verify_response(sent: dict, received: dict, drops: dict | None = None) -> None:

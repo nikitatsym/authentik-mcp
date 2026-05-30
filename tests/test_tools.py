@@ -65,7 +65,7 @@ def test_dispatch_help():
 
     expected = {
         "authentik_read": 183,
-        "authentik_write": 133,
+        "authentik_write": 136,
         "authentik_delete": 131,
         "authentik_flows_read": 127,
         "authentik_flows_write": 114,
