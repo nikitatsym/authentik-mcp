@@ -2,7 +2,7 @@ from ..registry import Group
 
 authentik_read = Group(
     "authentik_read",
-    "Query Authentik data (safe, read-only).\n\n"
+    "Query Authentik data (safe, read-only). Policy bindings (app/flow access gates) are in authentik_flows_read.\n\n"
     "Call with operation=\"help\" to list all available read operations.\n"
     "Otherwise pass the operation name and a JSON object with parameters.\n\n"
     "Example: authentik_read(operation=\"ListUsers\", params={\"search\": \"admin\"})",
@@ -10,7 +10,7 @@ authentik_read = Group(
 
 authentik_write = Group(
     "authentik_write",
-    "Create or update Authentik resources (non-destructive).\n\n"
+    "Create or update Authentik resources (non-destructive). Application/flow access gating (policy bindings) is in authentik_flows_write.\n\n"
     "Call with operation=\"help\" to list all available write operations.\n"
     "Otherwise pass the operation name and a JSON object with parameters.\n\n"
     "Example: authentik_write(operation=\"CreateUser\", "

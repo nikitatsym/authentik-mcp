@@ -83,7 +83,7 @@ def show_group(id: str):
 
 @_op(authentik_read)
 def list_applications(search: str | None = None, limit: int = 20):
-    """List applications (slim)."""
+    """List applications (slim). Access gating is via policy bindings — see ListPolicyBindings in authentik_flows_read."""
     p = {}
     if search is not None:
         p["search"] = search

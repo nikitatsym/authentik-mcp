@@ -37,13 +37,11 @@ def create_policy_binding(
     ] = _UNSET,
     **kwargs,
 ):
-    """Create a policy binding. Required: target and order, plus exactly one of policy/group/user.
+    """Gate access to an application or flow: bind a group, user, or policy to it.
 
-    target is the bound object's pk (an application's pk for an application
-    access gate, a flow's pk, etc.). To gate an application by group, set
-    group (or user) to the subject's id and leave policy unset — no policy or
-    blueprint needed. Authentik rejects the bind if zero or more than one of
-    policy/group/user is set.
+    target = the bound object's pk (e.g. an application's pk). Set exactly one
+    of group/user/policy; for a group access gate, set group and leave policy
+    unset. Authentik rejects zero or more than one subject.
     """
     return _ok(_get_client().post("/policies/bindings/", json=_body(locals())))
 
@@ -62,13 +60,11 @@ def update_policy_binding(
     ] = _UNSET,
     **kwargs,
 ):
-    """Update a policy binding. Pass only the fields to change.
+    """Update a policy binding (access gate). Pass only the fields to change.
 
-    Read-modify-write via PUT: Authentik rejects PATCH on policy bindings
-    (405) on some versions, so the current binding is fetched, the changes are
-    overlaid, and the full object is PUT back. The bound subject is preserved
-    unless you override it; exactly one of policy/group/user must remain set
-    (to switch subject, pass the new one and null the old).
+    Read-modify-write via PUT (Authentik 405s PATCH on bindings): the subject
+    is preserved unless overridden; exactly one of policy/group/user must
+    remain set.
     """
     changes = _body(locals(), exclude=("id",), keep_null=("policy", "group", "user"))
     client = _get_client()

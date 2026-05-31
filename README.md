@@ -42,3 +42,7 @@ Authentik admin panel → Directory → Tokens and App passwords → Create with
 | `authentik_admin` | Admin settings, system info, lifecycle |
 
 Call any group with `operation="help"` to list available operations.
+
+## Application access control
+
+Apps are open to all authenticated users until gated. Restrict an app to a group/user by binding it: `CreatePolicyBinding(target=<app pk>, group=<group pk>)` (or `user=`) in `authentik_flows_write`; inspect gates with `ListPolicyBindings` / `ShowPolicyBinding` in `authentik_flows_read`. Policy bindings live under the `authentik_flows_*` groups, not the core ones.

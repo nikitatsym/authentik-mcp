@@ -25,13 +25,13 @@ def list_policy_types():
 
 @_op(authentik_flows_read)
 def list_policy_bindings(limit: int = 20):
-    """List policy bindings."""
+    """List policy bindings (access gates: which group/user/policy is allowed on an app or flow)."""
     return _paginated("/policies/bindings/", limit=limit, slim_fields=SLIM_POLICY_BINDING)
 
 
 @_op(authentik_flows_read)
 def show_policy_binding(id: str):
-    """Get policy binding details."""
+    """Get policy binding details (one access gate)."""
     return _get_client().get(f"/policies/bindings/{id}/")
 
 

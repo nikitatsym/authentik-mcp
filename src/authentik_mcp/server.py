@@ -245,16 +245,22 @@ def _build_help(group_name: str, search: str | None = None) -> str:
 
     if search:
         s = search.lower()
-        matched = {
-            pn: fn for pn, fn in ops.items()
-            if s in pn.lower() or s in fn.__name__.lower()
-        }
+
+        def _hit(pn: str, fn) -> bool:
+            # Match the op name and its docstring, so intent words (e.g.
+            # "access", "gate") find ops named differently (e.g. PolicyBinding).
+            return (
+                s in pn.lower()
+                or s in fn.__name__.lower()
+                or s in (inspect.getdoc(fn) or "").lower()
+            )
+
+        matched = {pn: fn for pn, fn in ops.items() if _hit(pn, fn)}
         elsewhere: dict[str, list[str]] = {}
         for op_name, other_group in _all_grouped.items():
             if other_group == group_name:
                 continue
-            other_fn = _group_ops[other_group][op_name]
-            if s in op_name.lower() or s in other_fn.__name__.lower():
+            if _hit(op_name, _group_ops[other_group][op_name]):
                 elsewhere.setdefault(other_group, []).append(op_name)
         if not matched:
             msg = f"No ops in {group_name} matching {search!r}."

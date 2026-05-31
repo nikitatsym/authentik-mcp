@@ -187,7 +187,7 @@ def delete_policy(id: str):
 
 @_op(authentik_delete)
 def delete_policy_binding(id: str):
-    """Delete a policy binding. Irreversible."""
+    """Delete a policy binding (remove an access gate). Irreversible."""
     return _ok(_get_client().delete(f"/policies/bindings/{id}/"))
 
 

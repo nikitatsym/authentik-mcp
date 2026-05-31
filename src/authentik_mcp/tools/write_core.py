@@ -125,7 +125,11 @@ def remove_user_from_group(group_id: str, user_id: int):
 
 @_op(authentik_write)
 def create_application(name: str, slug: str, **kwargs):
-    """Create an application. Required: name, slug."""
+    """Create an application. Required: name, slug.
+
+    Ungated apps are open to all users. Restrict to a group/user with
+    CreatePolicyBinding(target=<app pk>, group=...) in authentik_flows_write.
+    """
     return _ok(_get_client().post("/core/applications/", json={"name": name, "slug": slug, **kwargs}))
 
 
