@@ -62,16 +62,20 @@ def update_policy_binding(
     ] = _UNSET,
     **kwargs,
 ):
-    """Update a policy binding (PATCH). Pass only the fields to change.
+    """Update a policy binding. Pass only the fields to change.
 
-    To switch the bound subject (e.g. from a policy to a group) pass the new
-    one and null the old (policy=null, group="<uuid>") — exactly one of
-    policy/group/user must end up set.
+    Read-modify-write via PUT: Authentik rejects PATCH on policy bindings
+    (405) on some versions, so the current binding is fetched, the changes are
+    overlaid, and the full object is PUT back. The bound subject is preserved
+    unless you override it; exactly one of policy/group/user must remain set
+    (to switch subject, pass the new one and null the old).
     """
-    return _ok(_get_client().patch(
-        f"/policies/bindings/{id}/",
-        json=_body(locals(), exclude=("id",), keep_null=("policy", "group", "user")),
-    ))
+    changes = _body(locals(), exclude=("id",), keep_null=("policy", "group", "user"))
+    client = _get_client()
+    current = client.get(f"/policies/bindings/{id}/")
+    body = {k: v for k, v in current.items() if k != "pk" and not k.endswith("_obj")}
+    body.update(changes)
+    return _ok(client.put(f"/policies/bindings/{id}/", json=body))
 
 
 @_op(authentik_flows_write)

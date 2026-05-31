@@ -5,7 +5,7 @@
 # no scraping required. The worker applies the bootstrap on first start;
 # scripts/bootstrap.py polls /api/v3/core/users/me/ until that token works.
 #
-# Tag defaults to `stable`; override with AUTHENTIK_TAG.
+# Tag is pinned for reproducible local + CI runs; override with AUTHENTIK_TAG.
 
 services:
   postgresql:
@@ -32,7 +32,7 @@ services:
       retries: 20
 
   server:
-    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-stable}
+    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2025.8.4}
     restart: unless-stopped
     command: server
     environment:
@@ -56,7 +56,7 @@ services:
         condition: service_healthy
 
   worker:
-    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-stable}
+    image: ${AUTHENTIK_IMAGE:-ghcr.io/goauthentik/server}:${AUTHENTIK_TAG:-2025.8.4}
     restart: unless-stopped
     command: worker
     environment:
