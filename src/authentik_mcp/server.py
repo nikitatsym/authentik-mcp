@@ -14,7 +14,7 @@ import types as _types
 import typing
 from typing import Annotated, Any
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 from pydantic import (
     BaseModel,
     ConfigDict,
@@ -27,7 +27,7 @@ from pydantic import (
 from . import tools as _tools_module
 from .registry import ROOT, _UNSET, _Unset
 
-mcp = FastMCP("authentik")
+mcp = MCPServer("authentik")
 
 # ── State (populated by _register_tools) ──────────────────────────────
 

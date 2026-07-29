@@ -185,11 +185,11 @@ def test_provider_application_group_gate(agent):
         agent.call("delete_oauth2_provider", id=prov_pk)
 
 
-# ── Meta-tool boundary (the client-facing FastMCP surface) ─────────────
+# ── Meta-tool boundary (the client-facing MCPServer surface) ───────────
 
 
 def _meta_tools() -> dict:
-    """The registered FastMCP meta-tool callables, keyed by group name."""
+    """The registered MCPServer meta-tool callables, keyed by group name."""
     from authentik_mcp.server import mcp
 
     return {t.name: t.fn for t in mcp._tool_manager._tools.values()}
