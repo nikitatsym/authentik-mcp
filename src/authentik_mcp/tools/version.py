@@ -10,10 +10,11 @@ def authentik_version():
     service = {}
     try:
         service.update(_get_client().health())
-    except Exception:
+    except Exception as e:  # noqa: BLE001 - reporting reachability is this tool's whole contract
         service["status"] = "error"
+        service["error"] = f"{type(e).__name__}: {e}"
     try:
         service.update(_get_client().get("/admin/version/"))
-    except Exception:
-        pass
+    except Exception as e:  # noqa: BLE001 - admin-only endpoint; still report status without it
+        service["version_error"] = f"{type(e).__name__}: {e}"
     return {"mcp": version("authentik-mcp"), "service": service}

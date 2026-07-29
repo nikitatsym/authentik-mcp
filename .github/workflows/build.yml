@@ -28,8 +28,8 @@ jobs:
           AUTHENTIK_READY_TIMEOUT: "600"
         run: uv run python scripts/bootstrap.py
 
-      - name: Run tests (unit + e2e)
-        run: uv run pytest -q
+      - name: Run checks (lint + tests)
+        run: uv run python dev.py check
 
       - name: Authentik logs on failure
         if: failure()

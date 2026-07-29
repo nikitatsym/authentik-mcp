@@ -1,5 +1,3 @@
-import os
-
 from authentik_mcp.config import Settings, _reset_settings, get_settings
 
 

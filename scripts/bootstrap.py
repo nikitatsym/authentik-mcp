@@ -35,9 +35,9 @@ _TOKEN_SNIPPET = (
     "from authentik.core.models import Token, User\n"
     "u = User.objects.get(username='akadmin')\n"
     "Token.objects.update_or_create(identifier='mcp-e2e', "
-    "defaults=dict(user=u, intent='api', expiring=False, key='%s'))\n"
+    f"defaults=dict(user=u, intent='api', expiring=False, key='{API_TOKEN}'))\n"
     "print('TOKEN_OK')\n"
-) % API_TOKEN
+)
 
 
 def _compose(*args: str, capture: bool = False) -> subprocess.CompletedProcess:

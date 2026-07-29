@@ -1,6 +1,12 @@
 from ..registry import _op
 from .groups import authentik_flows_read
-from .helpers import SLIM_POLICY, SLIM_POLICY_BINDING, SLIM_REPUTATION_SCORE, _get_client, _paginated
+from .helpers import (
+    SLIM_POLICY,
+    SLIM_POLICY_BINDING,
+    SLIM_REPUTATION_SCORE,
+    _get_client,
+    _paginated,
+)
 
 # ── Policies — All ───────────────────────────────────────────────────
 

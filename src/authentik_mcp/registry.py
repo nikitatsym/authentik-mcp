@@ -1,7 +1,10 @@
+from typing import Any
+
+
 class Group:
     """A named group of MCP tool operations exposed as a single meta-tool."""
 
-    __slots__ = ("name", "doc")
+    __slots__ = ("doc", "name")
 
     def __init__(self, name: str, doc: str):
         self.name = name
@@ -38,7 +41,10 @@ class _Unset:
         return False
 
 
-_UNSET = _Unset()
+# `Any` by design: tool signatures declare their public type (e.g. `str |
+# None`) and use `_UNSET` as the default. If `_UNSET` were typed as `_Unset`,
+# every `x: str | None = _UNSET` default would trip mypy's assignment check.
+_UNSET: Any = _Unset()
 
 
 def _op(group: Group):

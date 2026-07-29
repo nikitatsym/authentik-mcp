@@ -17,7 +17,6 @@ from typing import Annotated, Any
 from mcp.server.mcpserver import MCPServer
 from pydantic import (
     BaseModel,
-    ConfigDict,
     Field,
     ValidationError,
     create_model,
@@ -25,7 +24,7 @@ from pydantic import (
 )
 
 from . import tools as _tools_module
-from .registry import ROOT, _UNSET, _Unset
+from .registry import _UNSET, ROOT, _Unset
 
 mcp = MCPServer("authentik")
 
@@ -40,6 +39,32 @@ def _to_pascal(name: str) -> str:
 
 
 # ── Params model + validation ─────────────────────────────────────────
+
+
+class _BoolCoercingBase(BaseModel):
+    """Base for generated per-op models: loose str->bool coercion.
+
+    The validator lives on a real class so `@classmethod` binds correctly
+    under mypy - a classmethod on a local closure isn't a method of any
+    class. Each generated model sets `extra` via `__cls_kwargs__` in
+    `_build_params_model` (forbid, or allow for ops declaring **kwargs).
+    """
+
+    @field_validator("*", mode="before")
+    @classmethod
+    def _coerce_string_bool(cls, v: Any, info: Any) -> Any:
+        if not isinstance(v, str):
+            return v
+        ann = cls.model_fields[info.field_name].annotation
+        types_in_ann = (ann,) + typing.get_args(ann)
+        if bool not in types_in_ann:
+            return v
+        lower = v.lower()
+        if lower in ("true", "1", "yes"):
+            return True
+        if lower in ("false", "0", "no"):
+            return False
+        return v
 
 
 def _build_params_model(fn) -> type[BaseModel]:
@@ -76,26 +101,10 @@ def _build_params_model(fn) -> type[BaseModel]:
         fields[name] = (ann, field_spec)
     extra = "allow" if has_var_keyword else "forbid"
 
-    @field_validator("*", mode="before")
-    @classmethod
-    def _coerce_string_bool(cls, v, info):
-        if not isinstance(v, str):
-            return v
-        ann = cls.model_fields[info.field_name].annotation
-        types_in_ann = (ann,) + typing.get_args(ann)
-        if bool not in types_in_ann:
-            return v
-        lower = v.lower()
-        if lower in ("true", "1", "yes"):
-            return True
-        if lower in ("false", "0", "no"):
-            return False
-        return v
-
     return create_model(
         f"{_to_pascal(fn.__name__)}Params",
-        __config__=ConfigDict(extra=extra),
-        __validators__={"_coerce_string_bool": _coerce_string_bool},
+        __base__=_BoolCoercingBase,
+        __cls_kwargs__={"extra": extra},
         **fields,
     )
 

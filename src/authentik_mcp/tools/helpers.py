@@ -1,3 +1,5 @@
+from typing import Any
+
 from ..client import AuthentikClient
 from ..registry import _UNSET
 
@@ -86,7 +88,7 @@ def _slim(item: dict, fields: set) -> dict:
     for f in fields:
         if "." in f:
             parts = f.split(".")
-            val = item
+            val: Any = item
             for p in parts:
                 if isinstance(val, dict):
                     val = val.get(p)

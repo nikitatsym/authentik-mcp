@@ -30,7 +30,7 @@ class AuthentikClient:
         if r.status_code >= 400:
             try:
                 body = r.json()
-            except Exception:
+            except Exception:  # noqa: BLE001 - any error body degrades to r.text
                 body = r.text
             raise APIError(r.status_code, r.request.method, str(r.url), body)
         if r.status_code == 204 or not r.content:

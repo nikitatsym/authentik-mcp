@@ -5,7 +5,6 @@ from authentik_mcp.tools.helpers import (
     SLIM_GROUP,
     SLIM_USER,
     _ok,
-    _paginated,
     _slim,
     _slim_list,
 )
