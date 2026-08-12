@@ -10,6 +10,7 @@ function; an explicit `null` (for nullable fields the API clears) is preserved.
 """
 
 import inspect
+import re
 import types as _types
 import typing
 from typing import Annotated, Any
@@ -340,6 +341,26 @@ def _dispatch(operation: str, group_name: str, params: dict):
 # ── Discovery + registration ──────────────────────────────────────────
 
 
+_EXAMPLE_OPERATION = re.compile(r'operation="(\w+)"')
+
+
+def _validate_doc_examples(group_name: str, doc: str, ops: dict) -> None:
+    """Reject a group doc whose example names an operation the group does not expose.
+
+    Examples are hand-written while operation names are derived from the @_op
+    function names, so only this check keeps the two from drifting apart.
+    """
+    unknown = sorted(
+        name
+        for name in _EXAMPLE_OPERATION.findall(doc)
+        if name != "help" and name not in ops
+    )
+    if unknown:
+        raise RuntimeError(
+            f"{group_name} doc example references unknown operations: {unknown}"
+        )
+
+
 def _collect_ops():
     """Collect @_op-decorated functions from all submodules of the tools package."""
     import importlib
@@ -372,6 +393,7 @@ def _register_tools():
     for group_name, (group, fns) in groups.items():
         ops = {_to_pascal(n): fn for n, fn in fns.items()}
         _group_ops[group_name] = ops
+        _validate_doc_examples(group_name, group.doc, ops)
         for pascal_name in ops:
             _all_grouped[pascal_name] = group_name
 

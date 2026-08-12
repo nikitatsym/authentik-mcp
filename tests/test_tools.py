@@ -1,3 +1,7 @@
+import inspect
+
+import pytest
+
 from authentik_mcp.tools.helpers import (
     SLIM_APP,
     SLIM_EVENT,
@@ -72,3 +76,35 @@ def test_dispatch_help():
     }
     for name, count in expected.items():
         assert len(_group_ops[name]) == count, f"{name}: expected {count}, got {len(_group_ops[name])}"
+
+
+def test_group_doc_examples_name_registered_operations():
+    from authentik_mcp import server, tools
+    from authentik_mcp.registry import Group
+
+    groups = [
+        obj
+        for _, obj in inspect.getmembers(tools, lambda o: isinstance(o, Group))
+        if obj.name in server._group_ops
+    ]
+    assert len(groups) == len(server._group_ops)
+    for group in groups:
+        for name in server._EXAMPLE_OPERATION.findall(group.doc):
+            if name == "help":
+                continue
+            assert name in server._group_ops[group.name], (
+                f"{group.name} example names {name!r}, which it does not expose"
+            )
+
+
+def test_doc_example_validation_rejects_unknown_operation():
+    from authentik_mcp import server
+
+    with pytest.raises(RuntimeError, match="NoSuchOp"):
+        server._validate_doc_examples(
+            "authentik_read",
+            'Example: authentik_read(operation="NoSuchOp")',
+            {"ListUsers": None},
+        )
+
+    server._validate_doc_examples("authentik_read", 'operation="help"', {})
