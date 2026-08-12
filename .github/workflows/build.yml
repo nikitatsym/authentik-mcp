@@ -18,7 +18,9 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - uses: astral-sh/setup-uv@v8.1.0
+      - uses: astral-sh/setup-uv@v10.0.0
+        with:
+          version: "latest-known"
 
       - name: Install dependencies
         run: uv sync
@@ -51,7 +53,9 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: astral-sh/setup-uv@v8.1.0
+      - uses: astral-sh/setup-uv@v10.0.0
+        with:
+          version: "latest-known"
 
       - name: Compute next version
         id: version
