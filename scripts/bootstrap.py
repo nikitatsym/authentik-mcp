@@ -102,10 +102,13 @@ def verify(url: str, token: str) -> None:
 
 def write_env_file(url: str, token: str) -> None:
     ENV_FILE.parent.mkdir(parents=True, exist_ok=True)
+    # LF pinned: shells `source` this file, and CRLF would leave \r inside the token.
     ENV_FILE.write_text(
         "# Written by scripts/bootstrap.py — consumed by tests and local shells\n"
         f"AUTHENTIK_URL={url}\n"
-        f"AUTHENTIK_TOKEN={token}\n"
+        f"AUTHENTIK_TOKEN={token}\n",
+        encoding="utf-8",
+        newline="\n",
     )
     print(f"[bootstrap] wrote {ENV_FILE}")
 
