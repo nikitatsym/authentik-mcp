@@ -87,9 +87,9 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Providers — SCIM** | | |
 | `list_scim_providers()` | `GET /providers/scim/` | |
 | `show_scim_provider(id)` | `GET /providers/scim/{id}/` | |
-| `get_scim_sync_status(id)` | `GET /providers/scim/{id}/sync_status/` | |
-| `list_scim_users(provider)` | `GET /providers/scim/{id}/users/` | |
-| `list_scim_groups(provider)` | `GET /providers/scim/{id}/groups/` | |
+| `get_scim_sync_status(id)` | `GET /providers/scim/{id}/sync/status/` | |
+| `list_scim_users(provider)` | `GET /providers/scim_users/?provider__id=` | |
+| `list_scim_groups(provider)` | `GET /providers/scim_groups/?provider__id=` | |
 | **Providers — Radius** | | |
 | `list_radius_providers()` | `GET /providers/radius/` | |
 | `show_radius_provider(id)` | `GET /providers/radius/{id}/` | |
@@ -99,11 +99,11 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Providers — Google Workspace** | | |
 | `list_google_workspace_providers()` | `GET /providers/google_workspace/` | |
 | `show_google_workspace_provider(id)` | `GET /providers/google_workspace/{id}/` | |
-| `get_google_workspace_sync_status(id)` | `GET /providers/google_workspace/{id}/sync_status/` | |
+| `get_google_workspace_sync_status(id)` | `GET /providers/google_workspace/{id}/sync/status/` | |
 | **Providers — Microsoft Entra** | | |
 | `list_microsoft_entra_providers()` | `GET /providers/microsoft_entra/` | |
 | `show_microsoft_entra_provider(id)` | `GET /providers/microsoft_entra/{id}/` | |
-| `get_microsoft_entra_sync_status(id)` | `GET /providers/microsoft_entra/{id}/sync_status/` | |
+| `get_microsoft_entra_sync_status(id)` | `GET /providers/microsoft_entra/{id}/sync/status/` | |
 | **Providers — WS-Fed** | | |
 | `list_wsfed_providers()` | `GET /providers/wsfed/` | |
 | `show_wsfed_provider(id)` | `GET /providers/wsfed/{id}/` | |
@@ -124,9 +124,9 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `show_docker_service_connection(id)` | `GET /outposts/service_connections/docker/{id}/` | |
 | `list_kubernetes_service_connections()` | `GET /outposts/service_connections/kubernetes/` | |
 | `show_kubernetes_service_connection(id)` | `GET /outposts/service_connections/kubernetes/{id}/` | |
-| `list_outpost_ldap(id)` | `GET /outposts/ldap/` | |
-| `list_outpost_proxy(id)` | `GET /outposts/proxy/` | |
-| `list_outpost_radius(id)` | `GET /outposts/radius/` | |
+| `list_outpost_ldap(name)` | `GET /outposts/ldap/` | Filters on `name` only |
+| `list_outpost_proxy(name)` | `GET /outposts/proxy/` | Filters on `name` only |
+| `list_outpost_radius(name)` | `GET /outposts/radius/` | Filters on `name` only |
 | **Crypto** | | |
 | `list_certificates()` | `GET /crypto/certificatekeypairs/` | |
 | `show_certificate(id)` | `GET /crypto/certificatekeypairs/{id}/` | |
@@ -223,10 +223,10 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `show_device_access_group(id)` | `GET /endpoints/device_access_groups/{id}/` | |
 | `list_device_bindings()` | `GET /endpoints/device_bindings/` | |
 | `show_device_binding(id)` | `GET /endpoints/device_bindings/{id}/` | |
-| `list_fleet_connectors()` | `GET /endpoints/fleet_connectors/` | |
-| `show_fleet_connector(id)` | `GET /endpoints/fleet_connectors/{id}/` | |
-| `list_google_chrome_connectors()` | `GET /endpoints/google_chrome_connectors/` | |
-| `show_google_chrome_connector(id)` | `GET /endpoints/google_chrome_connectors/{id}/` | |
+| `list_fleet_connectors()` | `GET /endpoints/fleet/connectors/` | |
+| `show_fleet_connector(id)` | `GET /endpoints/fleet/connectors/{id}/` | |
+| `list_google_chrome_connectors()` | `GET /endpoints/google_chrome/connectors/` | |
+| `show_google_chrome_connector(id)` | `GET /endpoints/google_chrome/connectors/{id}/` | |
 | **Enterprise** | | |
 | `list_licenses()` | `GET /enterprise/license/` | |
 | `show_license(id)` | `GET /enterprise/license/{id}/` | |
@@ -243,8 +243,7 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `show_task_schedule(id)` | `GET /tasks/schedules/{id}/` | |
 | `list_tasks()` | `GET /tasks/tasks/` | |
 | `show_task(id)` | `GET /tasks/tasks/{id}/` | |
-| `get_task_status(id)` | `GET /tasks/tasks/{id}/status/` | |
-| `list_workers()` | `GET /tasks/workers/` | |
+| `list_workers()` | `GET /tasks/workers` | No trailing slash |
 | **Reports** | | |
 | `list_exports()` | `GET /reports/exports/` | |
 | `show_export(id)` | `GET /reports/exports/{id}/` | |
@@ -299,7 +298,6 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `list_events(action, search)` | `GET /events/events/` | Slim `_slim_event` |
 | `show_event(id)` | `GET /events/events/{id}/` | Full |
 | `list_event_actions()` | `GET /events/events/actions/` | |
-| `list_event_per_month()` | `GET /events/events/per_month/` | |
 | `list_event_top_per_user()` | `GET /events/events/top_per_user/` | |
 | `get_event_volume()` | `GET /events/events/volume/` | |
 | `list_notifications()` | `GET /events/notifications/` | |
@@ -308,8 +306,6 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `show_notification_rule(id)` | `GET /events/rules/{id}/` | |
 | `list_notification_transports()` | `GET /events/transports/` | |
 | `show_notification_transport(id)` | `GET /events/transports/{id}/` | |
-| `list_system_tasks()` | `GET /events/system_tasks/` | |
-| `show_system_task(id)` | `GET /events/system_tasks/{id}/` | |
 | **Stages — All** | | |
 | `list_stages()` | `GET /stages/all/` | |
 | `show_stage(id)` | `GET /stages/all/{id}/` | |
@@ -391,7 +387,7 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Sources — LDAP** | | |
 | `list_ldap_sources()` | `GET /sources/ldap/` | |
 | `show_ldap_source(slug)` | `GET /sources/ldap/{slug}/` | |
-| `get_ldap_sync_status(slug)` | `GET /sources/ldap/{slug}/sync_status/` | |
+| `get_ldap_sync_status(slug)` | `GET /sources/ldap/{slug}/sync/status/` | |
 | **Sources — OAuth** | | |
 | `list_oauth_sources()` | `GET /sources/oauth/` | |
 | `show_oauth_source(slug)` | `GET /sources/oauth/{slug}/` | |
@@ -403,14 +399,13 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Sources — SCIM** | | |
 | `list_scim_sources()` | `GET /sources/scim/` | |
 | `show_scim_source(slug)` | `GET /sources/scim/{slug}/` | |
-| `get_scim_sync_status(slug)` | `GET /sources/scim/{slug}/sync_status/` | |
 | **Sources — Plex** | | |
 | `list_plex_sources()` | `GET /sources/plex/` | |
 | `show_plex_source(slug)` | `GET /sources/plex/{slug}/` | |
 | **Sources — Kerberos** | | |
 | `list_kerberos_sources()` | `GET /sources/kerberos/` | |
 | `show_kerberos_source(slug)` | `GET /sources/kerberos/{slug}/` | |
-| `get_kerberos_sync_status(slug)` | `GET /sources/kerberos/{slug}/sync_status/` | |
+| `get_kerberos_sync_status(slug)` | `GET /sources/kerberos/{slug}/sync/status/` | |
 | **Sources — Telegram** | | |
 | `list_telegram_sources()` | `GET /sources/telegram/` | |
 | `show_telegram_source(slug)` | `GET /sources/telegram/{slug}/` | |
@@ -479,7 +474,7 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `create_user(username, name, ...)` | `POST /core/users/` | |
 | `update_user(id, ...)` | `PATCH /core/users/{id}/` | |
 | `set_password(id, password)` | `POST /core/users/{id}/set_password/` | |
-| `create_service_account(username, ...)` | `POST /core/users/service_account/` | |
+| `create_service_account(name, ...)` | `POST /core/users/service_account/` | `name` also becomes the username |
 | `create_recovery_link(id)` | `POST /core/users/{id}/recovery/` | |
 | `send_recovery_email(id)` | `POST /core/users/{id}/recovery_email/` | |
 | `export_users()` | `POST /core/users/export/` | |
@@ -493,7 +488,10 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Core — Applications** | | |
 | `create_application(name, slug, ...)` | `POST /core/applications/` | |
 | `update_application(slug, ...)` | `PATCH /core/applications/{slug}/` | |
-| `update_transactional_application(...)` | `PUT /core/transactional_applications/` | |
+| `update_transactional_application(...)` | `PUT /core/transactional/applications/` | |
+| `set_application_icon_url(slug, url)` | `POST /core/applications/{slug}/set_icon_url/` | Use instead of `meta_icon` on update |
+| `set_application_icon(slug, file_path)` | `POST /core/applications/{slug}/set_icon/` | Multipart upload |
+| `clear_application_icon(slug)` | `POST /core/applications/{slug}/set_icon_url/` | Empty `url` clears; the endpoint takes no other field |
 | **Core — Application Entitlements** | | |
 | `create_app_entitlement(app, ...)` | `POST /core/application_entitlements/` | |
 | `update_app_entitlement(id, ...)` | `PATCH /core/application_entitlements/{id}/` | |
@@ -520,7 +518,7 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Providers — SCIM** | | |
 | `create_scim_provider(name, ...)` | `POST /providers/scim/` | |
 | `update_scim_provider(id, ...)` | `PATCH /providers/scim/{id}/` | |
-| `sync_scim_object(id, ...)` | `POST /providers/scim/{id}/sync_object/` | |
+| `sync_scim_object(id, ...)` | `POST /providers/scim/{id}/sync/object/` | |
 | **Providers — Radius** | | |
 | `create_radius_provider(name, ...)` | `POST /providers/radius/` | |
 | `update_radius_provider(id, ...)` | `PATCH /providers/radius/{id}/` | |
@@ -530,11 +528,11 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Providers — Google Workspace** | | |
 | `create_google_workspace_provider(name, ...)` | `POST /providers/google_workspace/` | |
 | `update_google_workspace_provider(id, ...)` | `PATCH /providers/google_workspace/{id}/` | |
-| `sync_google_workspace_object(id, ...)` | `POST /providers/google_workspace/{id}/sync_object/` | |
+| `sync_google_workspace_object(id, ...)` | `POST /providers/google_workspace/{id}/sync/object/` | |
 | **Providers — Microsoft Entra** | | |
 | `create_microsoft_entra_provider(name, ...)` | `POST /providers/microsoft_entra/` | |
 | `update_microsoft_entra_provider(id, ...)` | `PATCH /providers/microsoft_entra/{id}/` | |
-| `sync_microsoft_entra_object(id, ...)` | `POST /providers/microsoft_entra/{id}/sync_object/` | |
+| `sync_microsoft_entra_object(id, ...)` | `POST /providers/microsoft_entra/{id}/sync/object/` | |
 | **Providers — WS-Fed** | | |
 | `create_wsfed_provider(name, ...)` | `POST /providers/wsfed/` | |
 | `update_wsfed_provider(id, ...)` | `PATCH /providers/wsfed/{id}/` | |
@@ -551,7 +549,7 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Crypto** | | |
 | `create_certificate(name, ...)` | `POST /crypto/certificatekeypairs/` | |
 | `update_certificate(id, ...)` | `PATCH /crypto/certificatekeypairs/{id}/` | |
-| `generate_certificate(name, ...)` | `POST /crypto/certificatekeypairs/generate/` | |
+| `generate_certificate(common_name, validity_days, ...)` | `POST /crypto/certificatekeypairs/generate/` | |
 | **RBAC** | | |
 | `create_role(name)` | `POST /rbac/roles/` | |
 | `update_role(id, ...)` | `PATCH /rbac/roles/{id}/` | |
@@ -559,8 +557,8 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `remove_user_from_role(role_id, user_id)` | `POST /rbac/roles/{id}/remove_user/` | |
 | `create_initial_permission(...)` | `POST /rbac/initial_permissions/` | |
 | `update_initial_permission(id, ...)` | `PATCH /rbac/initial_permissions/{id}/` | |
-| `assign_permissions_to_role(role, ...)` | `POST /rbac/permissions/assigned_by_roles/assign/` | |
-| `unassign_permissions_from_role(role, ...)` | `PATCH /rbac/permissions/assigned_by_roles/unassign/` | |
+| `assign_permissions_to_role(role, ...)` | `POST /rbac/permissions/assigned_by_roles/{role}/assign/` | |
+| `unassign_permissions_from_role(role, ...)` | `PATCH /rbac/permissions/assigned_by_roles/{role}/unassign/` | |
 | **Property Mappings** | | |
 | `test_property_mapping(id, ...)` | `POST /propertymappings/all/{id}/test/` | |
 | `create_scope_mapping(name, ...)` | `POST /propertymappings/provider/scope/` | |
@@ -611,10 +609,10 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `update_device_access_group(id, ...)` | `PATCH /endpoints/device_access_groups/{id}/` | |
 | `create_device_binding(...)` | `POST /endpoints/device_bindings/` | |
 | `update_device_binding(id, ...)` | `PATCH /endpoints/device_bindings/{id}/` | |
-| `create_fleet_connector(name, ...)` | `POST /endpoints/fleet_connectors/` | |
-| `update_fleet_connector(id, ...)` | `PATCH /endpoints/fleet_connectors/{id}/` | |
-| `create_google_chrome_connector(name, ...)` | `POST /endpoints/google_chrome_connectors/` | |
-| `update_google_chrome_connector(id, ...)` | `PATCH /endpoints/google_chrome_connectors/{id}/` | |
+| `create_fleet_connector(name, ...)` | `POST /endpoints/fleet/connectors/` | |
+| `update_fleet_connector(id, ...)` | `PATCH /endpoints/fleet/connectors/{id}/` | |
+| `create_google_chrome_connector(name, ...)` | `POST /endpoints/google_chrome/connectors/` | |
+| `update_google_chrome_connector(id, ...)` | `PATCH /endpoints/google_chrome/connectors/{id}/` | |
 | **Enterprise** | | |
 | `create_license(key)` | `POST /enterprise/license/` | |
 | `update_license(id, ...)` | `PATCH /enterprise/license/{id}/` | |
@@ -755,8 +753,8 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | **Sources — Plex** | | |
 | `create_plex_source(name, ...)` | `POST /sources/plex/` | |
 | `update_plex_source(slug, ...)` | `PATCH /sources/plex/{slug}/` | |
-| `redeem_plex_token(slug)` | `POST /sources/plex/{slug}/redeem_token/` | |
-| `redeem_plex_token_authenticated(slug)` | `POST /sources/plex/{slug}/redeem_token_authenticated/` | |
+| `redeem_plex_token(slug, plex_token)` | `POST /sources/plex/redeem_token/?slug=` | |
+| `redeem_plex_token_authenticated(slug, plex_token)` | `POST /sources/plex/redeem_token_authenticated/?slug=` | |
 | **Sources — Kerberos** | | |
 | `create_kerberos_source(name, ...)` | `POST /sources/kerberos/` | |
 | `update_kerberos_source(slug, ...)` | `PATCH /sources/kerberos/{slug}/` | |
@@ -898,15 +896,15 @@ authentik_admin       — admin-only: settings, system, version, files, admin au
 | `delete_endpoint_device(id)` | `DELETE /endpoints/devices/{id}/` | |
 | `delete_device_access_group(id)` | `DELETE /endpoints/device_access_groups/{id}/` | |
 | `delete_device_binding(id)` | `DELETE /endpoints/device_bindings/{id}/` | |
-| `delete_fleet_connector(id)` | `DELETE /endpoints/fleet_connectors/{id}/` | |
-| `delete_google_chrome_connector(id)` | `DELETE /endpoints/google_chrome_connectors/{id}/` | |
+| `delete_fleet_connector(id)` | `DELETE /endpoints/fleet/connectors/{id}/` | |
+| `delete_google_chrome_connector(id)` | `DELETE /endpoints/google_chrome/connectors/{id}/` | |
 | **Enterprise** | | |
 | `delete_license(id)` | `DELETE /enterprise/license/{id}/` | |
 | **Tenants** | | |
 | `delete_tenant(id)` | `DELETE /tenants/tenants/{id}/` | |
 | `delete_tenant_domain(id)` | `DELETE /tenants/domains/{id}/` | |
 | **Admin** | | |
-| `delete_admin_file(id)` | `DELETE /admin/file/{id}/` | |
+| `delete_admin_file(name)` | `DELETE /admin/file/?name=` | |
 | **Authenticators** | | |
 | `delete_authenticator_totp(id)` | `DELETE /authenticators/totp/{id}/` | |
 | `delete_authenticator_webauthn(id)` | `DELETE /authenticators/webauthn/{id}/` | |
@@ -985,7 +983,7 @@ SLIM_RAC_TOKEN = {"pk", "provider", "endpoint", "user"}
 SLIM_ENDPOINT = {"pk", "name"}
 SLIM_EXPORT = {"pk", "name", "created"}
 SLIM_SSF_STREAM = {"pk", "provider", "delivery_method", "endpoint_url"}
-SLIM_VERSION_HISTORY = {"pk", "version", "build", "created"}
+SLIM_VERSION_HISTORY = {"id", "version", "build", "timestamp"}
 SLIM_ADMIN_FILE = {"pk", "name", "path"}
 ```
 

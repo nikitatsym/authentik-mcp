@@ -41,11 +41,13 @@ def update_initial_permission(id: int, **kwargs):
 
 @_op(authentik_write)
 def assign_permissions_to_role(role: str, **kwargs):
-    """Assign permissions to a role."""
-    return _ok(_get_client().post("/rbac/permissions/assigned_by_roles/assign/", json={"role": role, **kwargs}))
+    """Assign permissions to a role. Required: role, permissions."""
+    return _ok(_get_client().post(
+        f"/rbac/permissions/assigned_by_roles/{role}/assign/", json=kwargs))
 
 
 @_op(authentik_write)
 def unassign_permissions_from_role(role: str, **kwargs):
-    """Unassign permissions from a role."""
-    return _ok(_get_client().patch("/rbac/permissions/assigned_by_roles/unassign/", json={"role": role, **kwargs}))
+    """Unassign permissions from a role. Required: role, permissions."""
+    return _ok(_get_client().patch(
+        f"/rbac/permissions/assigned_by_roles/{role}/unassign/", json=kwargs))

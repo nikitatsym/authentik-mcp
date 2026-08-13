@@ -83,28 +83,31 @@ def show_kubernetes_service_connection(id: str):
 # ── Outpost Protocol Lists ───────────────────────────────────────────
 
 
+# These three filter on `name` only: authentik exposes no per-id filter for them.
+
+
 @_op(authentik_read)
-def list_outpost_ldap(id: str | None = None, limit: int = 20):
+def list_outpost_ldap(name: str | None = None, limit: int = 20):
     """List outpost LDAP configs."""
     p = {}
-    if id is not None:
-        p["id"] = id
+    if name is not None:
+        p["name"] = name
     return _paginated("/outposts/ldap/", p, limit, slim_fields=SLIM_OUTPOST)
 
 
 @_op(authentik_read)
-def list_outpost_proxy(id: str | None = None, limit: int = 20):
+def list_outpost_proxy(name: str | None = None, limit: int = 20):
     """List outpost proxy configs."""
     p = {}
-    if id is not None:
-        p["id"] = id
+    if name is not None:
+        p["name"] = name
     return _paginated("/outposts/proxy/", p, limit, slim_fields=SLIM_OUTPOST)
 
 
 @_op(authentik_read)
-def list_outpost_radius(id: str | None = None, limit: int = 20):
+def list_outpost_radius(name: str | None = None, limit: int = 20):
     """List outpost Radius configs."""
     p = {}
-    if id is not None:
-        p["id"] = id
+    if name is not None:
+        p["name"] = name
     return _paginated("/outposts/radius/", p, limit, slim_fields=SLIM_OUTPOST)

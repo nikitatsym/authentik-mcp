@@ -41,7 +41,7 @@ def show_ldap_source(slug: str):
 @_op(authentik_flows_read)
 def get_ldap_sync_status(slug: str):
     """Get LDAP source sync status."""
-    return _get_client().get(f"/sources/ldap/{slug}/sync_status/")
+    return _get_client().get(f"/sources/ldap/{slug}/sync/status/")
 
 
 # ── Sources — OAuth ──────────────────────────────────────────────────
@@ -101,12 +101,6 @@ def show_scim_source(slug: str):
     return _get_client().get(f"/sources/scim/{slug}/")
 
 
-@_op(authentik_flows_read)
-def get_scim_source_sync_status(slug: str):
-    """Get SCIM source sync status."""
-    return _get_client().get(f"/sources/scim/{slug}/sync_status/")
-
-
 # ── Sources — Plex ───────────────────────────────────────────────────
 
 
@@ -140,7 +134,7 @@ def show_kerberos_source(slug: str):
 @_op(authentik_flows_read)
 def get_kerberos_sync_status(slug: str):
     """Get Kerberos source sync status."""
-    return _get_client().get(f"/sources/kerberos/{slug}/sync_status/")
+    return _get_client().get(f"/sources/kerberos/{slug}/sync/status/")
 
 
 # ── Sources — Telegram ───────────────────────────────────────────────

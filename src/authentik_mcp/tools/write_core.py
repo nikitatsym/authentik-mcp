@@ -45,9 +45,9 @@ def set_password(id: int, password: str):
 
 
 @_op(authentik_write)
-def create_service_account(username: str, **kwargs):
-    """Create a service account. Required: username."""
-    return _ok(_get_client().post("/core/users/service_account/", json={"username": username, **kwargs}))
+def create_service_account(name: str, **kwargs):
+    """Create a service account. Required: name (also becomes the username)."""
+    return _ok(_get_client().post("/core/users/service_account/", json={"name": name, **kwargs}))
 
 
 @_op(authentik_write)
@@ -150,7 +150,7 @@ def update_application(slug: str, **kwargs):
 @_op(authentik_write)
 def update_transactional_application(**kwargs):
     """Create or update an application and its provider atomically."""
-    return _ok(_get_client().put("/core/transactional_applications/", json=kwargs))
+    return _ok(_get_client().put("/core/transactional/applications/", json=kwargs))
 
 
 @_op(authentik_write)
@@ -176,9 +176,10 @@ def set_application_icon(slug: str, file_path: str):
 @_op(authentik_write)
 def clear_application_icon(slug: str):
     """Remove the application icon."""
+    # An empty url is what clears it; the endpoint takes no other field.
     return _ok(_get_client().post(
         f"/core/applications/{slug}/set_icon_url/",
-        json={"url": "", "clear": True},
+        json={"url": ""},
     ))
 
 

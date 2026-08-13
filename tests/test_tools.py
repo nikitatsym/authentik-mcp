@@ -67,10 +67,10 @@ def test_dispatch_help():
         assert len(ops) > 0, f"Group {group_name} has no operations"
 
     expected = {
-        "authentik_read": 183,
+        "authentik_read": 182,
         "authentik_write": 136,
         "authentik_delete": 131,
-        "authentik_flows_read": 127,
+        "authentik_flows_read": 123,
         "authentik_flows_write": 114,
         "authentik_admin": 41,
     }

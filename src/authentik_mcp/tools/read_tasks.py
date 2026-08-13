@@ -28,12 +28,8 @@ def show_task(id: str):
 
 
 @_op(authentik_read)
-def get_task_status(id: str):
-    """Get task status."""
-    return _get_client().get(f"/tasks/tasks/{id}/status/")
-
-
-@_op(authentik_read)
 def list_workers():
     """List task workers."""
-    return _get_client().get("/tasks/workers/")
+    # No trailing slash: authentik routes this one without it and httpx does not
+    # follow the APPEND_SLASH redirect.
+    return _get_client().get("/tasks/workers")

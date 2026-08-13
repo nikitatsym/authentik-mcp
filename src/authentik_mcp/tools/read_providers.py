@@ -125,19 +125,19 @@ def show_scim_provider(id: int):
 @_op(authentik_read)
 def get_scim_sync_status(id: int):
     """Get SCIM provider sync status."""
-    return _get_client().get(f"/providers/scim/{id}/sync_status/")
+    return _get_client().get(f"/providers/scim/{id}/sync/status/")
 
 
 @_op(authentik_read)
-def list_scim_users(provider: int):
+def list_scim_users(provider: int, limit: int = 20):
     """List SCIM provider users."""
-    return _get_client().get(f"/providers/scim/{provider}/users/")
+    return _paginated("/providers/scim_users/", {"provider__id": provider}, limit)
 
 
 @_op(authentik_read)
-def list_scim_groups(provider: int):
+def list_scim_groups(provider: int, limit: int = 20):
     """List SCIM provider groups."""
-    return _get_client().get(f"/providers/scim/{provider}/groups/")
+    return _paginated("/providers/scim_groups/", {"provider__id": provider}, limit)
 
 
 # ── Providers — Radius ───────────────────────────────────────────────
@@ -188,7 +188,7 @@ def show_google_workspace_provider(id: int):
 @_op(authentik_read)
 def get_google_workspace_sync_status(id: int):
     """Get Google Workspace provider sync status."""
-    return _get_client().get(f"/providers/google_workspace/{id}/sync_status/")
+    return _get_client().get(f"/providers/google_workspace/{id}/sync/status/")
 
 
 # ── Providers — Microsoft Entra ──────────────────────────────────────
@@ -209,7 +209,7 @@ def show_microsoft_entra_provider(id: int):
 @_op(authentik_read)
 def get_microsoft_entra_sync_status(id: int):
     """Get Microsoft Entra provider sync status."""
-    return _get_client().get(f"/providers/microsoft_entra/{id}/sync_status/")
+    return _get_client().get(f"/providers/microsoft_entra/{id}/sync/status/")
 
 
 # ── Providers — WS-Fed ───────────────────────────────────────────────

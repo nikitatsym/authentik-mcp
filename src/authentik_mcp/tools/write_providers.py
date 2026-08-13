@@ -86,7 +86,7 @@ def update_scim_provider(id: int, **kwargs):
 @_op(authentik_write)
 def sync_scim_object(id: int, **kwargs):
     """Trigger SCIM object sync."""
-    return _ok(_get_client().post(f"/providers/scim/{id}/sync_object/", json=kwargs))
+    return _ok(_get_client().post(f"/providers/scim/{id}/sync/object/", json=kwargs))
 
 
 # ── Providers — Radius ───────────────────────────────────────────────
@@ -137,7 +137,7 @@ def update_google_workspace_provider(id: int, **kwargs):
 @_op(authentik_write)
 def sync_google_workspace_object(id: int, **kwargs):
     """Trigger Google Workspace object sync."""
-    return _ok(_get_client().post(f"/providers/google_workspace/{id}/sync_object/", json=kwargs))
+    return _ok(_get_client().post(f"/providers/google_workspace/{id}/sync/object/", json=kwargs))
 
 
 # ── Providers — Microsoft Entra ──────────────────────────────────────
@@ -158,7 +158,7 @@ def update_microsoft_entra_provider(id: int, **kwargs):
 @_op(authentik_write)
 def sync_microsoft_entra_object(id: int, **kwargs):
     """Trigger Microsoft Entra object sync."""
-    return _ok(_get_client().post(f"/providers/microsoft_entra/{id}/sync_object/", json=kwargs))
+    return _ok(_get_client().post(f"/providers/microsoft_entra/{id}/sync/object/", json=kwargs))
 
 
 # ── Providers — WS-Fed ───────────────────────────────────────────────

@@ -78,15 +78,23 @@ def update_plex_source(slug: str, **kwargs):
 
 
 @_op(authentik_flows_write)
-def redeem_plex_token(slug: str):
+def redeem_plex_token(slug: str, plex_token: str):
     """Redeem a Plex token."""
-    return _ok(_get_client().post(f"/sources/plex/{slug}/redeem_token/"))
+    return _ok(_get_client().post(
+        "/sources/plex/redeem_token/",
+        params={"slug": slug},
+        json={"plex_token": plex_token},
+    ))
 
 
 @_op(authentik_flows_write)
-def redeem_plex_token_authenticated(slug: str):
+def redeem_plex_token_authenticated(slug: str, plex_token: str):
     """Redeem a Plex token (authenticated)."""
-    return _ok(_get_client().post(f"/sources/plex/{slug}/redeem_token_authenticated/"))
+    return _ok(_get_client().post(
+        "/sources/plex/redeem_token_authenticated/",
+        params={"slug": slug},
+        json={"plex_token": plex_token},
+    ))
 
 
 # ── Sources — Kerberos ───────────────────────────────────────────────

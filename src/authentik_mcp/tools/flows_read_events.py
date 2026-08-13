@@ -34,12 +34,6 @@ def list_event_actions():
 
 
 @_op(authentik_flows_read)
-def list_event_per_month():
-    """List events per month."""
-    return _get_client().get("/events/events/per_month/")
-
-
-@_op(authentik_flows_read)
 def list_event_top_per_user():
     """List top events per user."""
     return _get_client().get("/events/events/top_per_user/")
@@ -88,18 +82,3 @@ def list_notification_transports(limit: int = 20):
 def show_notification_transport(id: str):
     """Get notification transport details."""
     return _get_client().get(f"/events/transports/{id}/")
-
-
-# ── System Tasks ─────────────────────────────────────────────────────
-
-
-@_op(authentik_flows_read)
-def list_system_tasks():
-    """List system tasks."""
-    return _get_client().get("/events/system_tasks/")
-
-
-@_op(authentik_flows_read)
-def show_system_task(id: str):
-    """Get system task details."""
-    return _get_client().get(f"/events/system_tasks/{id}/")

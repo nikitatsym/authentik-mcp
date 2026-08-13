@@ -716,13 +716,13 @@ def delete_device_binding(id: str):
 @_op(authentik_delete)
 def delete_fleet_connector(id: str):
     """Delete a fleet connector. Irreversible."""
-    return _ok(_get_client().delete(f"/endpoints/fleet_connectors/{id}/"))
+    return _ok(_get_client().delete(f"/endpoints/fleet/connectors/{id}/"))
 
 
 @_op(authentik_delete)
 def delete_google_chrome_connector(id: str):
     """Delete a Google Chrome connector. Irreversible."""
-    return _ok(_get_client().delete(f"/endpoints/google_chrome_connectors/{id}/"))
+    return _ok(_get_client().delete(f"/endpoints/google_chrome/connectors/{id}/"))
 
 
 # ── Enterprise ───────────────────────────────────────────────────────
@@ -753,9 +753,9 @@ def delete_tenant_domain(id: str):
 
 
 @_op(authentik_delete)
-def delete_admin_file(id: str):
-    """Delete an admin file. Irreversible."""
-    return _ok(_get_client().delete(f"/admin/file/{id}/"))
+def delete_admin_file(name: str):
+    """Delete an admin file by name. Irreversible."""
+    return _ok(_get_client().delete("/admin/file/", params={"name": name}))
 
 
 # ── Authenticators ───────────────────────────────────────────────────

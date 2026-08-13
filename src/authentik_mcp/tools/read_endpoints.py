@@ -116,13 +116,13 @@ def show_device_binding(id: str):
 @_op(authentik_read)
 def list_fleet_connectors(limit: int = 20):
     """List fleet connectors."""
-    return _paginated("/endpoints/fleet_connectors/", limit=limit, slim_fields=SLIM_ENDPOINT)
+    return _paginated("/endpoints/fleet/connectors/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
 def show_fleet_connector(id: str):
     """Get fleet connector details."""
-    return _get_client().get(f"/endpoints/fleet_connectors/{id}/")
+    return _get_client().get(f"/endpoints/fleet/connectors/{id}/")
 
 
 # ── Google Chrome Connectors ─────────────────────────────────────────
@@ -131,10 +131,10 @@ def show_fleet_connector(id: str):
 @_op(authentik_read)
 def list_google_chrome_connectors(limit: int = 20):
     """List Google Chrome connectors."""
-    return _paginated("/endpoints/google_chrome_connectors/", limit=limit, slim_fields=SLIM_ENDPOINT)
+    return _paginated("/endpoints/google_chrome/connectors/", limit=limit, slim_fields=SLIM_ENDPOINT)
 
 
 @_op(authentik_read)
 def show_google_chrome_connector(id: str):
     """Get Google Chrome connector details."""
-    return _get_client().get(f"/endpoints/google_chrome_connectors/{id}/")
+    return _get_client().get(f"/endpoints/google_chrome/connectors/{id}/")

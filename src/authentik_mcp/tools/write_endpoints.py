@@ -60,22 +60,22 @@ def update_device_binding(id: str, **kwargs):
 @_op(authentik_write)
 def create_fleet_connector(name: str, **kwargs):
     """Create a fleet connector. Required: name."""
-    return _ok(_get_client().post("/endpoints/fleet_connectors/", json={"name": name, **kwargs}))
+    return _ok(_get_client().post("/endpoints/fleet/connectors/", json={"name": name, **kwargs}))
 
 
 @_op(authentik_write)
 def update_fleet_connector(id: str, **kwargs):
     """Update a fleet connector."""
-    return _ok(_get_client().patch(f"/endpoints/fleet_connectors/{id}/", json=kwargs))
+    return _ok(_get_client().patch(f"/endpoints/fleet/connectors/{id}/", json=kwargs))
 
 
 @_op(authentik_write)
 def create_google_chrome_connector(name: str, **kwargs):
     """Create a Google Chrome connector. Required: name."""
-    return _ok(_get_client().post("/endpoints/google_chrome_connectors/", json={"name": name, **kwargs}))
+    return _ok(_get_client().post("/endpoints/google_chrome/connectors/", json={"name": name, **kwargs}))
 
 
 @_op(authentik_write)
 def update_google_chrome_connector(id: str, **kwargs):
     """Update a Google Chrome connector."""
-    return _ok(_get_client().patch(f"/endpoints/google_chrome_connectors/{id}/", json=kwargs))
+    return _ok(_get_client().patch(f"/endpoints/google_chrome/connectors/{id}/", json=kwargs))

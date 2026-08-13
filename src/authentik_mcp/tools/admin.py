@@ -9,6 +9,7 @@ from .helpers import (
     _get_client,
     _ok,
     _paginated,
+    _slim_list,
 )
 
 # ── Admin (Read) ─────────────────────────────────────────────────────
@@ -47,7 +48,8 @@ def get_admin_version():
 @_op(authentik_admin)
 def list_version_history(limit: int = 20):
     """List version history."""
-    return _paginated("/admin/version/history/", limit=limit, slim_fields=SLIM_VERSION_HISTORY)
+    # Unpaginated endpoint: it answers a plain array, so limit is applied here.
+    return _slim_list(_get_client().get("/admin/version/history/"), SLIM_VERSION_HISTORY)[:limit]
 
 
 @_op(authentik_admin)
@@ -59,7 +61,8 @@ def show_version_history(id: int):
 @_op(authentik_admin)
 def list_admin_files(limit: int = 20):
     """List admin files."""
-    return _paginated("/admin/file/", limit=limit, slim_fields=SLIM_ADMIN_FILE)
+    # Unpaginated endpoint: it answers a plain array, so limit is applied here.
+    return _slim_list(_get_client().get("/admin/file/"), SLIM_ADMIN_FILE)[:limit]
 
 
 # ── Admin (Write) ────────────────────────────────────────────────────
