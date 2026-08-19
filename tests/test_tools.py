@@ -78,7 +78,7 @@ def test_dispatch_help():
         assert len(_group_ops[name]) == count, f"{name}: expected {count}, got {len(_group_ops[name])}"
 
 
-def test_group_doc_examples_name_registered_operations():
+def test_group_docs_resolve_operation_placeholders():
     from authentik_mcp import server, tools
     from authentik_mcp.registry import Group
 
@@ -89,22 +89,45 @@ def test_group_doc_examples_name_registered_operations():
     ]
     assert len(groups) == len(server._group_ops)
     for group in groups:
-        for name in server._EXAMPLE_OPERATION.findall(group.doc):
-            if name == "help":
-                continue
-            assert name in server._group_ops[group.name], (
-                f"{group.name} example names {name!r}, which it does not expose"
-            )
+        rendered = server._render_group_doc(
+            group.name, group.doc, server._group_ops[group.name]
+        )
+        assert "$" not in rendered, f"{group.name} doc left a placeholder unrendered"
 
 
-def test_doc_example_validation_rejects_unknown_operation():
+def test_render_group_doc_rejects_unknown_placeholder():
     from authentik_mcp import server
 
     with pytest.raises(RuntimeError, match="NoSuchOp"):
-        server._validate_doc_examples(
+        server._render_group_doc(
             "authentik_read",
-            'Example: authentik_read(operation="NoSuchOp")',
+            'Example: authentik_read(operation="$NoSuchOp")',
             {"ListUsers": None},
         )
 
-    server._validate_doc_examples("authentik_read", 'operation="help"', {})
+
+def test_render_group_doc_rejects_hardcoded_operation():
+    from authentik_mcp import server
+
+    with pytest.raises(RuntimeError, match="hardcodes"):
+        server._render_group_doc(
+            "authentik_read",
+            'Example: authentik_read(operation="ListUsers")',
+            {"ListUsers": None},
+        )
+
+    with pytest.raises(RuntimeError, match="hardcodes"):
+        server._render_group_doc(
+            "authentik_read",
+            'Example: authentik_read(operation = "ListUsers")',
+            {"ListUsers": None},
+        )
+
+
+def test_render_group_doc_resolves_meta_and_keeps_generic_form():
+    from authentik_mcp import server
+
+    rendered = server._render_group_doc(
+        "authentik_read", 'operation="$help" or operation="<OpName>"', {}
+    )
+    assert rendered == 'operation="help" or operation="<OpName>"'
