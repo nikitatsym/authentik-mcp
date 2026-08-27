@@ -14,8 +14,6 @@ import uuid
 
 import pytest
 
-from authentik_mcp.client import APIError
-
 pytestmark = pytest.mark.integration
 
 
@@ -97,23 +95,21 @@ def test_group_application_binding_gate(agent):
 
 
 def test_create_policy_binding_validation(agent):
-    """Missing required `target` is a Pydantic ValueError before any HTTP call."""
-    with pytest.raises(ValueError) as exc:
-        agent.call("create_policy_binding", order=0, group="whatever")
-    assert "target" in str(exc.value)
+    """Missing required `target` returns a Pydantic validation result before HTTP."""
+    result = agent.call("create_policy_binding", order=0, group="whatever")
+    assert "target" in result["error"]
 
 
 def test_unknown_key_rejected(agent):
-    """A non-**kwargs op rejects unknown keys (extra='forbid')."""
-    with pytest.raises(ValueError) as exc:
-        agent.call("show_application", slug="default", bogus="x")
-    assert "bogus" in str(exc.value).lower() or "extra" in str(exc.value).lower()
+    """A non-**kwargs op returns a validation result for unknown keys."""
+    result = agent.call("show_application", slug="default", bogus="x")
+    assert "bogus" in result["error"].lower() or "extra" in result["error"].lower()
 
 
-def test_http_error_surfaces_as_apierror(agent):
-    """A 404 from the API propagates as APIError, not a swallowed dict."""
-    with pytest.raises(APIError):
-        agent.call("show_application", slug=_uniq("does-not-exist"))
+def test_http_error_returns_context(agent):
+    """A 404 from the API is returned with its contextual API error."""
+    result = agent.call("show_application", slug=_uniq("does-not-exist"))
+    assert "404" in result["error"]
 
 
 # ── Broad read smoke across resource types ─────────────────────────────
@@ -214,7 +210,7 @@ def test_meta_tool_help_schema_dispatch(agent):
 
 
 def test_meta_tool_unknown_op_errors(agent):
-    """An unknown operation raises (not a swallowed error dict)."""
+    """An unknown operation returns an actionable validation result."""
     read = _meta_tools()["authentik_read"]
-    with pytest.raises(ValueError):
-        read(operation="NotARealOp", params={})
+    result = read(operation="NotARealOp", params={})
+    assert "Unknown operation" in result["error"]

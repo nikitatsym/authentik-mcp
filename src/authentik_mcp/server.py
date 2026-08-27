@@ -15,7 +15,9 @@ import string
 import types as _types
 import typing
 from typing import Annotated, Any
+from urllib.parse import urlsplit, urlunsplit
 
+import httpx
 from mcp.server.mcpserver import MCPServer
 from pydantic import (
     BaseModel,
@@ -26,6 +28,7 @@ from pydantic import (
 )
 
 from . import tools as _tools_module
+from .client import APIError
 from .registry import _UNSET, ROOT, _Unset
 
 mcp = MCPServer("authentik")
@@ -34,6 +37,65 @@ mcp = MCPServer("authentik")
 
 _group_ops: dict[str, dict] = {}  # {group_name: {PascalName: fn}}
 _all_grouped: dict[str, str] = {}  # {PascalName: group_name}
+
+
+_URL_RE = re.compile(r"[a-z][a-z0-9+.-]*://[^\s'\"<>]+", re.IGNORECASE)
+_RELATIVE_QUERY_RE = re.compile(r"/[^\s?,'\"<>]*\?[^ \t\r\n,'\"<>]*")
+_SECRET_VALUE_RE = re.compile(
+    r"""(?ix)
+    (["']?(?:authorization|token|api[_-]?key|secret|password|credential|dsn)
+    ["']?\s*[:=]\s*)
+    (?:["'][^"']*["']|\[[^\]]*\]|\{[^}]*\}|[^,\s}]+)
+    """
+)
+_AUTHORIZATION_RE = re.compile(
+    r"(?i)(authorization\s*[:=]\s*)(?:bearer|basic)\s+[^\s,;]+"
+)
+
+
+def _redact_error_text(value: object) -> str:
+    """Remove credentials and query values from an error string."""
+    text = str(value)
+
+    def _redact_url(match: re.Match[str]) -> str:
+        try:
+            parts = urlsplit(match.group())
+            host = parts.hostname
+            if host is None:
+                return "<redacted-url>"
+            if ":" in host:
+                host = f"[{host}]"
+            try:
+                port = parts.port
+            except ValueError:
+                port = None
+            netloc = f"{host}:{port}" if port is not None else host
+            return urlunsplit((parts.scheme, netloc, parts.path, "", ""))
+        except ValueError:
+            return "<redacted-url>"
+
+    text = _URL_RE.sub(_redact_url, text)
+    text = _RELATIVE_QUERY_RE.sub(lambda match: match.group().split("?", 1)[0], text)
+    text = _AUTHORIZATION_RE.sub(r"\1<redacted>", text)
+    return _SECRET_VALUE_RE.sub(r"\1<redacted>", text)
+
+
+def _error_result(exc: ValueError | APIError | httpx.RequestError) -> dict[str, str]:
+    if isinstance(exc, httpx.RequestError):
+        try:
+            request = exc.request
+        except RuntimeError:
+            request = None
+        method = request.method if request is not None else "REQUEST"
+        path = request.url.path if request is not None else "<unknown path>"
+        cause = _redact_error_text(exc) or "request failed"
+        return {
+            "error": (
+                f"Authentik transport failure: {method} {path}: "
+                f"{type(exc).__name__}: {cause}"
+            )
+        }
+    return {"error": _redact_error_text(exc)}
 
 
 def _to_pascal(name: str) -> str:
@@ -321,22 +383,27 @@ def _build_schema(group_name: str, op_name: str | None) -> dict:
 
 
 def _dispatch(operation: str, group_name: str, params: dict):
-    """Route an operation call: schema/help-aware, fails loud on anything wrong."""
-    if operation == "schema":
-        return _build_schema(group_name, params.get("op"))
-    ops = _group_ops[group_name]
-    if operation not in ops:
-        if operation in _all_grouped:
-            correct = _all_grouped[operation]
+    """Route an operation call and serialize expected service failures."""
+    try:
+        if operation == "schema":
+            return _build_schema(group_name, params.get("op"))
+        ops = _group_ops[group_name]
+        if operation not in ops:
+            if operation in _all_grouped:
+                correct = _all_grouped[operation]
+                raise ValueError(
+                    f"{operation!r} belongs to {correct!r}, not {group_name!r}. "
+                    f"Call {correct}(operation={operation!r}, ...) instead."
+                )
             raise ValueError(
-                f"{operation!r} belongs to {correct!r}, not {group_name!r}. "
-                f"Call {correct}(operation={operation!r}, ...) instead."
+                f"Unknown operation {operation!r} in {group_name}. "
+                "Use operation='help' to list or operation='schema' for details."
             )
-        raise ValueError(
-            f"Unknown operation {operation!r} in {group_name}. "
-            "Use operation='help' to list or operation='schema' for details."
-        )
-    return _coerce_call(ops[operation], params, operation)
+        return _coerce_call(ops[operation], params, operation)
+    except (ValueError, APIError) as exc:
+        return _error_result(exc)
+    except httpx.RequestError as exc:
+        return _error_result(exc)
 
 
 # ── Discovery + registration ──────────────────────────────────────────

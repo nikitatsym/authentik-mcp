@@ -50,8 +50,8 @@ class AgentSimulator:
     `call("create_application", name=..., slug=...)` resolves the snake_case op
     to its PascalCase name, finds its group, and routes through
     `server._dispatch` — exercising the real Pydantic validation + dispatch
-    path. Returns the raw result object (dict/list) or raises (ValueError for
-    bad params, APIError for HTTP failures).
+    path. Returns either the raw success value or a structured expected-failure
+    result.
     """
 
     def __init__(self) -> None:
