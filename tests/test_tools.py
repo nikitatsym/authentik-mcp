@@ -1,4 +1,6 @@
+import asyncio
 import inspect
+import json
 
 import pytest
 
@@ -76,6 +78,29 @@ def test_dispatch_help():
     }
     for name, count in expected.items():
         assert len(_group_ops[name]) == count, f"{name}: expected {count}, got {len(_group_ops[name])}"
+
+
+def test_registered_tools_emit_compact_json():
+    from mcp.types import TextContent
+
+    from authentik_mcp import server
+
+    assert all(
+        tool.fn_metadata.output_schema is None
+        for tool in server.mcp._tool_manager.list_tools()
+    )
+
+    expected = server._dispatch("schema", "authentik_read", {})
+    result = asyncio.run(
+        server.mcp.call_tool("authentik_read", {"operation": "schema"})
+    )
+
+    assert result.structured_content is None
+    assert len(result.content) == 1
+    content = result.content[0]
+    assert isinstance(content, TextContent)
+    assert "\n" not in content.text
+    assert json.loads(content.text) == expected
 
 
 def test_group_docs_resolve_operation_placeholders():
