@@ -10,9 +10,11 @@ no `policy`, created straight through the MCP (no blueprint, policy not required
 
 from __future__ import annotations
 
+import json
 import uuid
 
 import pytest
+from mcp.types import TextContent
 
 pytestmark = pytest.mark.integration
 
@@ -191,6 +193,12 @@ def _meta_tools() -> dict:
     return {t.name: t.fn for t in mcp._tool_manager._tools.values()}
 
 
+def _data(result):
+    """Registered tools hand the SDK a one-line JSON text block, not a dict."""
+    assert isinstance(result, TextContent)
+    return json.loads(result.text)
+
+
 def test_meta_tool_help_schema_dispatch(agent):
     """help / schema / dispatch all work through the registered meta-tool."""
     read = _meta_tools()["authentik_read"]
@@ -202,15 +210,15 @@ def test_meta_tool_help_schema_dispatch(agent):
     filtered = read(operation="help", params={"search": "listusers"})
     assert "ListUsers" in filtered
 
-    schema = read(operation="schema", params={"op": "ListUsers"})
+    schema = _data(read(operation="schema", params={"op": "ListUsers"}))
     assert isinstance(schema, dict) and "properties" in schema
 
-    listed = read(operation="ListUsers", params={"limit": 5})
+    listed = _data(read(operation="ListUsers", params={"limit": 5}))
     assert isinstance(listed, list)
 
 
 def test_meta_tool_unknown_op_errors(agent):
     """An unknown operation returns an actionable validation result."""
     read = _meta_tools()["authentik_read"]
-    result = read(operation="NotARealOp", params={})
+    result = _data(read(operation="NotARealOp", params={}))
     assert "Unknown operation" in result["error"]
