@@ -26,6 +26,10 @@ MCP server for [Authentik](https://goauthentik.io/) identity provider.
 
 Or use the [setup wizard](https://nikitatsym.github.io/authentik-mcp/) to generate the config.
 
+### HTTP
+
+`authentik-mcp --http` serves streamable HTTP at `http://127.0.0.1:8000/mcp` (`--host`, `--port`) instead of stdio, same environment variables. No authentication: put a gateway in front.
+
 ## Getting an API token
 
 Authentik admin panel → Directory → Tokens and App passwords → Create with API scope.
