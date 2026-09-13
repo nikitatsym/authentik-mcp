@@ -1,13 +1,19 @@
+from contextvars import ContextVar
 from typing import Any
 
 from ..client import AuthentikClient
 from ..registry import _UNSET
+
+# A host serving several Authentik instances in one process binds the client per request.
+client_var: ContextVar[AuthentikClient | None] = ContextVar("authentik_client", default=None)
 
 _client: AuthentikClient | None = None
 
 
 def _get_client() -> AuthentikClient:
     global _client
+    if (bound := client_var.get()) is not None:
+        return bound
     if _client is None:
         _client = AuthentikClient()
     return _client

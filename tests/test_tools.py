@@ -4,6 +4,8 @@ import json
 
 import pytest
 
+from authentik_mcp import client_var
+from authentik_mcp.tools import helpers
 from authentik_mcp.tools.helpers import (
     SLIM_APP,
     SLIM_EVENT,
@@ -60,6 +62,17 @@ def test_slim_fields_defined():
     assert "provider_obj.name" in SLIM_APP
     assert "pk" in SLIM_FLOW
     assert "pk" in SLIM_EVENT
+
+
+def test_client_var_overrides_module_singleton(monkeypatch):
+    singleton, bound = object(), object()
+    monkeypatch.setattr(helpers, "_client", singleton)
+    assert helpers._get_client() is singleton
+    token = client_var.set(bound)
+    try:
+        assert helpers._get_client() is bound
+    finally:
+        client_var.reset(token)
 
 
 def test_dispatch_help():

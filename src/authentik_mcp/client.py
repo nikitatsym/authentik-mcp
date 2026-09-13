@@ -1,6 +1,6 @@
 import httpx
 
-from .config import get_settings
+from .config import Settings, get_settings
 
 
 class APIError(Exception):
@@ -17,8 +17,10 @@ class AuthentikClient:
         self,
         base_url: str | None = None,
         token: str | None = None,
+        *,
+        settings: Settings | None = None,
     ):
-        s = get_settings()
+        s = settings or get_settings()
         self._root = (base_url or s.authentik_url).rstrip("/")
         self._http = httpx.Client(
             base_url=self._root + "/api/v3/",
