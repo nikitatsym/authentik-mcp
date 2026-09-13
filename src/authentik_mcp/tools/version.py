@@ -14,7 +14,7 @@ def authentik_version():
         service["status"] = "error"
         service["error"] = f"{type(e).__name__}: {e}"
     try:
-        service.update(_get_client().get("/admin/version/"))
+        service.update(_get_client().check())
     except Exception as e:  # noqa: BLE001 - admin-only endpoint; still report status without it
         service["version_error"] = f"{type(e).__name__}: {e}"
     return {"mcp": version("authentik-mcp"), "service": service}

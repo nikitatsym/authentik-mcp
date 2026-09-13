@@ -42,9 +42,13 @@ pytestmark = pytest.mark.integration
 # this test. The reasons are matched exactly, so a second unreadable shape in an
 # already-waived op still surfaces.
 UNANALYZABLE_OK: dict[str, tuple[str, ...]] = {
-    # health() probes /-/health/live/, outside the API root and so outside the
-    # schema. The op's /admin/version/ GET is read and checked as usual.
-    "authentik_version": ("unknown client method 'health'",),
+    # Neither probe is readable here: health() hits /-/health/live/, outside the
+    # API root and so outside the schema, and check() keeps the /admin/version/
+    # GET in the client so startup and this op make one and the same request.
+    "authentik_version": (
+        "unknown client method 'check'",
+        "unknown client method 'health'",
+    ),
     # The PUT body is a read-modify-write of the fetched binding, so its keys
     # come from the response schema: PolicyBinding minus pk and the *_obj
     # expansions is exactly PolicyBindingRequest. Both calls' paths and methods

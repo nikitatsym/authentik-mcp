@@ -22,9 +22,10 @@ class AuthentikClient:
     ):
         s = settings or get_settings()
         self._root = (base_url or s.authentik_url).rstrip("/")
+        self._token = token or s.authentik_token
         self._http = httpx.Client(
             base_url=self._root + "/api/v3/",
-            headers={"Authorization": f"Bearer {token or s.authentik_token}"},
+            headers={"Authorization": f"Bearer {self._token}"},
             timeout=30.0,
         )
 
@@ -53,6 +54,12 @@ class AuthentikClient:
 
     def delete(self, path: str, **kwargs):
         return self._handle(self._http.delete(path, **kwargs))
+
+    def check(self) -> dict:
+        """Authenticated probe: main() calls it at startup, the version tool reports it."""
+        if not self._root or not self._token:
+            raise ValueError("AUTHENTIK_URL and AUTHENTIK_TOKEN must be set")
+        return self.get("/admin/version/")
 
     def health(self):
         """Check service health (/-/health/live/, outside /api/v3/)."""
