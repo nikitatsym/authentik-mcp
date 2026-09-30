@@ -1,0 +1,534 @@
+[
+  {
+    "operationId": "policies_all_cache_clear_create",
+    "name": "ClearPolicyCache",
+    "description": "Clear policy cache.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_all_cache_info_retrieve",
+    "name": "ShowPolicyCacheInfo",
+    "description": "Show the cached policy count.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_all_destroy",
+    "name": "DeletePolicy",
+    "description": "Irreversibly delete a policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_all_list",
+    "name": "ListPolicies",
+    "description": "List all policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_all_retrieve",
+    "name": "ShowPolicy",
+    "description": "Get policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_all_test_create",
+    "name": "TestPolicy",
+    "description": "Test a policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_all_types_list",
+    "name": "ListPolicyTypes",
+    "description": "List creatable policy types.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_all_used_by_list",
+    "name": "ShowPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_bindings_create",
+    "name": "CreatePolicyBinding",
+    "description": "Gate an application or flow with exactly one group, user, or policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_bindings_destroy",
+    "name": "DeletePolicyBinding",
+    "description": "Irreversibly remove an access gate.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_bindings_list",
+    "name": "ListPolicyBindings",
+    "description": "List application and flow access gates.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_bindings_partial_update",
+    "name": "UpdatePolicyBinding",
+    "description": "Change an access gate; omitted subjects stay unchanged and null clears them.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_bindings_retrieve",
+    "name": "ShowPolicyBinding",
+    "description": "Show an application or flow access gate.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_bindings_update",
+    "name": "ReplacePolicyBinding",
+    "description": "Replace an application or flow access gate.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_bindings_used_by_list",
+    "name": "ShowPolicyBindingUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_dummy_create",
+    "name": "CreateDummyPolicy",
+    "description": "Create a fixed-result test policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_dummy_destroy",
+    "name": "DeleteDummyPolicy",
+    "description": "Irreversibly delete a dummy policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_dummy_list",
+    "name": "ListDummyPolicies",
+    "description": "List fixed-result test policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_dummy_partial_update",
+    "name": "UpdateDummyPolicy",
+    "description": "Update a dummy policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_dummy_retrieve",
+    "name": "ShowDummyPolicy",
+    "description": "Get dummy policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_dummy_update",
+    "name": "ReplaceDummyPolicy",
+    "description": "Replace dummy policy.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_dummy_used_by_list",
+    "name": "ShowDummyPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_event_matcher_create",
+    "name": "CreateEventMatcherPolicy",
+    "description": "Create an event matcher policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_event_matcher_destroy",
+    "name": "DeleteEventMatcherPolicy",
+    "description": "Irreversibly delete an event matcher policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_event_matcher_list",
+    "name": "ListEventMatcherPolicies",
+    "description": "List event matcher policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_event_matcher_partial_update",
+    "name": "UpdateEventMatcherPolicy",
+    "description": "Update an event matcher policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_event_matcher_retrieve",
+    "name": "ShowEventMatcherPolicy",
+    "description": "Get event matcher policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_event_matcher_update",
+    "name": "ReplaceEventMatcherPolicy",
+    "description": "Replace event matcher policy.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_event_matcher_used_by_list",
+    "name": "ShowEventMatcherPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_expression_create",
+    "name": "CreateExpressionPolicy",
+    "description": "Create a policy evaluated from a Python expression.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_expression_destroy",
+    "name": "DeleteExpressionPolicy",
+    "description": "Irreversibly delete an expression policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_expression_list",
+    "name": "ListExpressionPolicies",
+    "description": "List expression policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_expression_partial_update",
+    "name": "UpdateExpressionPolicy",
+    "description": "Update an expression policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_expression_retrieve",
+    "name": "ShowExpressionPolicy",
+    "description": "Get expression policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_expression_update",
+    "name": "ReplaceExpressionPolicy",
+    "description": "Replace expression policy.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_expression_used_by_list",
+    "name": "ShowExpressionPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_geoip_create",
+    "name": "CreateGeoipPolicy",
+    "description": "Create a policy checking IP location or network.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_geoip_destroy",
+    "name": "DeleteGeoipPolicy",
+    "description": "Irreversibly delete a GeoIP policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_geoip_iso3166_list",
+    "name": "ListGeoipCountries",
+    "description": "List countries with ISO-3166-1 codes.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_geoip_list",
+    "name": "ListGeoipPolicies",
+    "description": "List GeoIP policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_geoip_partial_update",
+    "name": "UpdateGeoipPolicy",
+    "description": "Update a GeoIP policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_geoip_retrieve",
+    "name": "ShowGeoipPolicy",
+    "description": "Get GeoIP policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_geoip_update",
+    "name": "ReplaceGeoipPolicy",
+    "description": "Replace a GeoIP policy.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_geoip_used_by_list",
+    "name": "ShowGeoipPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_create",
+    "name": "CreatePasswordPolicy",
+    "description": "Create a password policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_destroy",
+    "name": "DeletePasswordPolicy",
+    "description": "Irreversibly delete a password policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_expiry_create",
+    "name": "CreatePasswordExpiryPolicy",
+    "description": "Create a password expiry policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_expiry_destroy",
+    "name": "DeletePasswordExpiryPolicy",
+    "description": "Irreversibly delete a password expiry policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_expiry_list",
+    "name": "ListPasswordExpiryPolicies",
+    "description": "List password expiry policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_expiry_partial_update",
+    "name": "UpdatePasswordExpiryPolicy",
+    "description": "Update a password expiry policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_expiry_retrieve",
+    "name": "ShowPasswordExpiryPolicy",
+    "description": "Get password expiry policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_expiry_update",
+    "name": "ReplacePasswordExpiryPolicy",
+    "description": "Replace password expiry policy.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_password_expiry_used_by_list",
+    "name": "ShowPasswordExpiryPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_list",
+    "name": "ListPasswordPolicies",
+    "description": "List password policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_partial_update",
+    "name": "UpdatePasswordPolicy",
+    "description": "Update a password policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_retrieve",
+    "name": "ShowPasswordPolicy",
+    "description": "Get password policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_password_update",
+    "name": "ReplacePasswordPolicy",
+    "description": "Replace password policy.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_password_used_by_list",
+    "name": "ShowPasswordPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_create",
+    "name": "CreateReputationPolicy",
+    "description": "Create a policy checking IP or username reputation.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_destroy",
+    "name": "DeleteReputationPolicy",
+    "description": "Irreversibly delete a reputation policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_list",
+    "name": "ListReputationPolicies",
+    "description": "List reputation policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_partial_update",
+    "name": "UpdateReputationPolicy",
+    "description": "Update a reputation policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_retrieve",
+    "name": "ShowReputationPolicy",
+    "description": "Get reputation policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_scores_destroy",
+    "name": "DeleteReputationScore",
+    "description": "Irreversibly delete a reputation score.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_scores_list",
+    "name": "ListReputationScores",
+    "description": "List reputation scores.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_scores_retrieve",
+    "name": "ShowReputationScore",
+    "description": "Get reputation score details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_scores_used_by_list",
+    "name": "ShowReputationScoreUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_reputation_update",
+    "name": "ReplaceReputationPolicy",
+    "description": "Replace reputation policy.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_reputation_used_by_list",
+    "name": "ShowReputationPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_unique_password_create",
+    "name": "CreateUniquePasswordPolicy",
+    "description": "Create a policy preventing password reuse.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_unique_password_destroy",
+    "name": "DeleteUniquePasswordPolicy",
+    "description": "Irreversibly delete a unique password policy.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_unique_password_list",
+    "name": "ListUniquePasswordPolicies",
+    "description": "List unique password policies.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_unique_password_partial_update",
+    "name": "UpdateUniquePasswordPolicy",
+    "description": "Update a unique password policy.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_unique_password_retrieve",
+    "name": "ShowUniquePasswordPolicy",
+    "description": "Get unique password policy details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "policies_unique_password_update",
+    "name": "ReplaceUniquePasswordPolicy",
+    "description": "Replace unique password policy.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "policies_unique_password_used_by_list",
+    "name": "ShowUniquePasswordPolicyUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  }
+]

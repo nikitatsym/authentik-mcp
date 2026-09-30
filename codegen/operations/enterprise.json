@@ -1,0 +1,72 @@
+[
+  {
+    "operationId": "enterprise_license_create",
+    "name": "CreateLicense",
+    "description": "Create an enterprise license.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "enterprise_license_destroy",
+    "name": "DeleteLicense",
+    "description": "Permanently delete an enterprise license.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "enterprise_license_forecast_retrieve",
+    "name": "ShowLicenseForecast",
+    "description": "Forecast the required user count in a year.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "enterprise_license_install_id_retrieve",
+    "name": "ShowInstallId",
+    "description": "Return the installation ID.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "enterprise_license_list",
+    "name": "ListLicenses",
+    "description": "List enterprise licenses.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "enterprise_license_partial_update",
+    "name": "UpdateLicense",
+    "description": "Update an enterprise license.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "enterprise_license_retrieve",
+    "name": "ShowLicense",
+    "description": "Get license details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "enterprise_license_summary_retrieve",
+    "name": "ShowLicenseSummary",
+    "description": "Show the overall license status.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "enterprise_license_update",
+    "name": "ReplaceLicense",
+    "description": "Replace an enterprise license.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "enterprise_license_used_by_list",
+    "name": "ShowLicenseUsedBy",
+    "description": "List objects referencing this license.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

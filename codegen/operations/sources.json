@@ -1,0 +1,1213 @@
+[
+  {
+    "operationId": "sources_all_destroy",
+    "name": "DeleteSource",
+    "description": "Irreversibly delete a source.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_all_list",
+    "name": "ListSources",
+    "description": "List all sources.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_all_retrieve",
+    "name": "ShowSource",
+    "description": "Get source details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_all_types_list",
+    "name": "ListSourceTypes",
+    "description": "List source types.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_all_used_by_list",
+    "name": "ShowSourceUsedBy",
+    "description": "List objects referencing a source.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_all_user_settings_list",
+    "name": "ListSourceUserSettings",
+    "description": "List sources the current user can configure.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_all_destroy",
+    "name": "DeleteGroupConnection",
+    "description": "Irreversibly delete a group source connection.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_all_list",
+    "name": "ListGroupConnections",
+    "description": "List group source connections.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_all_partial_update",
+    "name": "UpdateGroupConnection",
+    "description": "Update a group source connection.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_all_retrieve",
+    "name": "ShowGroupConnection",
+    "description": "Get group source connection details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_all_update",
+    "name": "ReplaceGroupConnection",
+    "description": "Replace a group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_group_connections_all_used_by_list",
+    "name": "ShowGroupConnectionUsedBy",
+    "description": "List objects referencing a group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_kerberos_create",
+    "name": "CreateKerberosGroupConnection",
+    "description": "Create a Kerberos group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_kerberos_destroy",
+    "name": "DeleteKerberosGroupConnection",
+    "description": "Irreversibly delete a Kerberos group-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_kerberos_list",
+    "name": "ListKerberosGroupConnections",
+    "description": "List Kerberos group-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_kerberos_partial_update",
+    "name": "UpdateKerberosGroupConnection",
+    "description": "Update a Kerberos group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_kerberos_retrieve",
+    "name": "ShowKerberosGroupConnection",
+    "description": "Show a Kerberos group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_kerberos_update",
+    "name": "ReplaceKerberosGroupConnection",
+    "description": "Replace a Kerberos group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_group_connections_kerberos_used_by_list",
+    "name": "ShowKerberosGroupConnectionUsedBy",
+    "description": "List objects referencing a Kerberos group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_ldap_create",
+    "name": "CreateLdapGroupConnection",
+    "description": "Create a LDAP group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_ldap_destroy",
+    "name": "DeleteLdapGroupConnection",
+    "description": "Irreversibly delete a LDAP group-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_ldap_list",
+    "name": "ListLdapGroupConnections",
+    "description": "List LDAP group-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_ldap_partial_update",
+    "name": "UpdateLdapGroupConnection",
+    "description": "Update a LDAP group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_ldap_retrieve",
+    "name": "ShowLdapGroupConnection",
+    "description": "Show a LDAP group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_ldap_update",
+    "name": "ReplaceLdapGroupConnection",
+    "description": "Replace a LDAP group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_group_connections_ldap_used_by_list",
+    "name": "ShowLdapGroupConnectionUsedBy",
+    "description": "List objects referencing a LDAP group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_oauth_create",
+    "name": "CreateOauthGroupConnection",
+    "description": "Create a OAuth group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_oauth_destroy",
+    "name": "DeleteOauthGroupConnection",
+    "description": "Irreversibly delete a OAuth group-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_oauth_list",
+    "name": "ListOauthGroupConnections",
+    "description": "List OAuth group-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_oauth_partial_update",
+    "name": "UpdateOauthGroupConnection",
+    "description": "Update a OAuth group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_oauth_retrieve",
+    "name": "ShowOauthGroupConnection",
+    "description": "Show a OAuth group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_oauth_update",
+    "name": "ReplaceOauthGroupConnection",
+    "description": "Replace a OAuth group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_group_connections_oauth_used_by_list",
+    "name": "ShowOauthGroupConnectionUsedBy",
+    "description": "List objects referencing a OAuth group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_plex_create",
+    "name": "CreatePlexGroupConnection",
+    "description": "Create a Plex group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_plex_destroy",
+    "name": "DeletePlexGroupConnection",
+    "description": "Irreversibly delete a Plex group-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_plex_list",
+    "name": "ListPlexGroupConnections",
+    "description": "List Plex group-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_plex_partial_update",
+    "name": "UpdatePlexGroupConnection",
+    "description": "Update a Plex group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_plex_retrieve",
+    "name": "ShowPlexGroupConnection",
+    "description": "Show a Plex group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_plex_update",
+    "name": "ReplacePlexGroupConnection",
+    "description": "Replace a Plex group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_group_connections_plex_used_by_list",
+    "name": "ShowPlexGroupConnectionUsedBy",
+    "description": "List objects referencing a Plex group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_saml_create",
+    "name": "CreateSamlGroupConnection",
+    "description": "Create a SAML group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_saml_destroy",
+    "name": "DeleteSamlGroupConnection",
+    "description": "Irreversibly delete a SAML group-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_saml_list",
+    "name": "ListSamlGroupConnections",
+    "description": "List SAML group-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_saml_partial_update",
+    "name": "UpdateSamlGroupConnection",
+    "description": "Update a SAML group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_saml_retrieve",
+    "name": "ShowSamlGroupConnection",
+    "description": "Show a SAML group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_saml_update",
+    "name": "ReplaceSamlGroupConnection",
+    "description": "Replace a SAML group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_group_connections_saml_used_by_list",
+    "name": "ShowSamlGroupConnectionUsedBy",
+    "description": "List objects referencing a SAML group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_telegram_create",
+    "name": "CreateTelegramGroupConnection",
+    "description": "Create a Telegram group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_telegram_destroy",
+    "name": "DeleteTelegramGroupConnection",
+    "description": "Irreversibly delete a Telegram group-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_telegram_list",
+    "name": "ListTelegramGroupConnections",
+    "description": "List Telegram group-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_telegram_partial_update",
+    "name": "UpdateTelegramGroupConnection",
+    "description": "Update a Telegram group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_telegram_retrieve",
+    "name": "ShowTelegramGroupConnection",
+    "description": "Show a Telegram group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_group_connections_telegram_update",
+    "name": "ReplaceTelegramGroupConnection",
+    "description": "Replace a Telegram group-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_group_connections_telegram_used_by_list",
+    "name": "ShowTelegramGroupConnectionUsedBy",
+    "description": "List objects referencing a Telegram group-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_kerberos_create",
+    "name": "CreateKerberosSource",
+    "description": "Create a Kerberos source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_kerberos_destroy",
+    "name": "DeleteKerberosSource",
+    "description": "Irreversibly delete a Kerberos source.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_kerberos_list",
+    "name": "ListKerberosSources",
+    "description": "List Kerberos sources.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_kerberos_partial_update",
+    "name": "UpdateKerberosSource",
+    "description": "Update a Kerberos source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_kerberos_retrieve",
+    "name": "ShowKerberosSource",
+    "description": "Get Kerberos source details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_kerberos_sync_status_retrieve",
+    "name": "ShowKerberosSyncStatus",
+    "description": "Get Kerberos source sync status.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_kerberos_update",
+    "name": "ReplaceKerberosSource",
+    "description": "Replace a Kerberos source.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_kerberos_used_by_list",
+    "name": "ShowKerberosSourceUsedBy",
+    "description": "List objects referencing a Kerberos source.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_ldap_create",
+    "name": "CreateLdapSource",
+    "description": "Create an LDAP source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_ldap_debug_retrieve",
+    "name": "ShowLdapSourceDebug",
+    "description": "Show raw LDAP data for debugging.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_ldap_destroy",
+    "name": "DeleteLdapSource",
+    "description": "Irreversibly delete an LDAP source.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_ldap_list",
+    "name": "ListLdapSources",
+    "description": "List LDAP sources.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_ldap_partial_update",
+    "name": "UpdateLdapSource",
+    "description": "Update an LDAP source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_ldap_retrieve",
+    "name": "ShowLdapSource",
+    "description": "Get LDAP source details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_ldap_sync_status_retrieve",
+    "name": "ShowLdapSyncStatus",
+    "description": "Get LDAP source sync status.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_ldap_update",
+    "name": "ReplaceLdapSource",
+    "description": "Replace an LDAP source.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_ldap_used_by_list",
+    "name": "ShowLdapSourceUsedBy",
+    "description": "List objects referencing a LDAP source.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_oauth_create",
+    "name": "CreateOauthSource",
+    "description": "Create an OAuth source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_oauth_destroy",
+    "name": "DeleteOauthSource",
+    "description": "Irreversibly delete an OAuth source.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_oauth_list",
+    "name": "ListOauthSources",
+    "description": "List OAuth sources.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_oauth_partial_update",
+    "name": "UpdateOauthSource",
+    "description": "Update an OAuth source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_oauth_retrieve",
+    "name": "ShowOauthSource",
+    "description": "Get OAuth source details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_oauth_source_types_list",
+    "name": "ListOauthSourceTypes",
+    "description": "List OAuth source types.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_oauth_update",
+    "name": "ReplaceOauthSource",
+    "description": "Replace an OAuth source.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_oauth_used_by_list",
+    "name": "ShowOauthSourceUsedBy",
+    "description": "List objects referencing a OAuth source.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_plex_create",
+    "name": "CreatePlexSource",
+    "description": "Create a Plex source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_plex_destroy",
+    "name": "DeletePlexSource",
+    "description": "Irreversibly delete a Plex source.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_plex_list",
+    "name": "ListPlexSources",
+    "description": "List Plex sources.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_plex_partial_update",
+    "name": "UpdatePlexSource",
+    "description": "Update a Plex source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_plex_redeem_token_authenticated_create",
+    "name": "RedeemPlexTokenAuthenticated",
+    "description": "Link a Plex account to the authenticated user.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_plex_redeem_token_create",
+    "name": "RedeemPlexToken",
+    "description": "Check allowed Plex access and redirect to an authentication or enrollment flow.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_plex_retrieve",
+    "name": "ShowPlexSource",
+    "description": "Get Plex source details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_plex_update",
+    "name": "ReplacePlexSource",
+    "description": "Replace a Plex source.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_plex_used_by_list",
+    "name": "ShowPlexSourceUsedBy",
+    "description": "List objects referencing a Plex source.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_saml_create",
+    "name": "CreateSamlSource",
+    "description": "Create a SAML source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_saml_destroy",
+    "name": "DeleteSamlSource",
+    "description": "Irreversibly delete a SAML source.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_saml_list",
+    "name": "ListSamlSources",
+    "description": "List SAML sources.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_saml_metadata_retrieve",
+    "name": "ShowSamlSourceMetadata",
+    "description": "Return SAML metadata as XML.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_saml_partial_update",
+    "name": "UpdateSamlSource",
+    "description": "Update a SAML source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_saml_retrieve",
+    "name": "ShowSamlSource",
+    "description": "Get SAML source details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_saml_update",
+    "name": "ReplaceSamlSource",
+    "description": "Replace a SAML source.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_saml_used_by_list",
+    "name": "ShowSamlSourceUsedBy",
+    "description": "List objects referencing a SAML source.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_create",
+    "name": "CreateScimSource",
+    "description": "Create a SCIM source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_destroy",
+    "name": "DeleteScimSource",
+    "description": "Irreversibly delete a SCIM source.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_groups_create",
+    "name": "CreateScimGroupConnection",
+    "description": "Link an existing group to a SCIM source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_groups_destroy",
+    "name": "DeleteScimGroupConnection",
+    "description": "Irreversibly delete a group-source SCIM link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_groups_list",
+    "name": "ListScimGroupConnections",
+    "description": "List group-source SCIM links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_groups_partial_update",
+    "name": "UpdateScimGroupConnection",
+    "description": "Update a group-source SCIM link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_groups_retrieve",
+    "name": "ShowScimGroupConnection",
+    "description": "Show a group-source SCIM link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_groups_update",
+    "name": "ReplaceScimGroupConnection",
+    "description": "Replace a group-source SCIM link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_scim_groups_used_by_list",
+    "name": "ShowScimGroupConnectionUsedBy",
+    "description": "List objects referencing a group-source SCIM link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_list",
+    "name": "ListScimSources",
+    "description": "List SCIM sources.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_partial_update",
+    "name": "UpdateScimSource",
+    "description": "Update a SCIM source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_retrieve",
+    "name": "ShowScimSource",
+    "description": "Get SCIM source details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_update",
+    "name": "ReplaceScimSource",
+    "description": "Replace a SCIM source.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_scim_used_by_list",
+    "name": "ShowScimSourceUsedBy",
+    "description": "List objects referencing a SCIM source.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_users_create",
+    "name": "CreateScimUserConnection",
+    "description": "Link an existing user to a SCIM source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_users_destroy",
+    "name": "DeleteScimUserConnection",
+    "description": "Irreversibly delete a user-source SCIM link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_users_list",
+    "name": "ListScimUserConnections",
+    "description": "List user-source SCIM links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_users_partial_update",
+    "name": "UpdateScimUserConnection",
+    "description": "Update a user-source SCIM link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_users_retrieve",
+    "name": "ShowScimUserConnection",
+    "description": "Show a user-source SCIM link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_scim_users_update",
+    "name": "ReplaceScimUserConnection",
+    "description": "Replace a user-source SCIM link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_scim_users_used_by_list",
+    "name": "ShowScimUserConnectionUsedBy",
+    "description": "List objects referencing a user-source SCIM link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_telegram_connect_user_create",
+    "name": "ConnectTelegramUser",
+    "description": "Link a Telegram account to the current user.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_telegram_create",
+    "name": "CreateTelegramSource",
+    "description": "Create a Telegram source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_telegram_destroy",
+    "name": "DeleteTelegramSource",
+    "description": "Irreversibly delete a Telegram source.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_telegram_list",
+    "name": "ListTelegramSources",
+    "description": "List Telegram sources.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_telegram_partial_update",
+    "name": "UpdateTelegramSource",
+    "description": "Update a Telegram source.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_telegram_retrieve",
+    "name": "ShowTelegramSource",
+    "description": "Get Telegram source details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_telegram_update",
+    "name": "ReplaceTelegramSource",
+    "description": "Replace a Telegram source.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_telegram_used_by_list",
+    "name": "ShowTelegramSourceUsedBy",
+    "description": "List objects referencing a Telegram source.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_all_destroy",
+    "name": "DeleteUserConnection",
+    "description": "Irreversibly delete a user source connection.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_all_list",
+    "name": "ListUserConnections",
+    "description": "List user source connections.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_all_partial_update",
+    "name": "UpdateUserConnection",
+    "description": "Update a user source connection.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_all_retrieve",
+    "name": "ShowUserConnection",
+    "description": "Get user source connection details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_all_update",
+    "name": "ReplaceUserConnection",
+    "description": "Replace a user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_user_connections_all_used_by_list",
+    "name": "ShowUserConnectionUsedBy",
+    "description": "List objects referencing a user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_kerberos_create",
+    "name": "CreateKerberosUserConnection",
+    "description": "Create a Kerberos user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_kerberos_destroy",
+    "name": "DeleteKerberosUserConnection",
+    "description": "Irreversibly delete a Kerberos user-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_kerberos_list",
+    "name": "ListKerberosUserConnections",
+    "description": "List Kerberos user-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_kerberos_partial_update",
+    "name": "UpdateKerberosUserConnection",
+    "description": "Update a Kerberos user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_kerberos_retrieve",
+    "name": "ShowKerberosUserConnection",
+    "description": "Show a Kerberos user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_kerberos_update",
+    "name": "ReplaceKerberosUserConnection",
+    "description": "Replace a Kerberos user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_user_connections_kerberos_used_by_list",
+    "name": "ShowKerberosUserConnectionUsedBy",
+    "description": "List objects referencing a Kerberos user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_ldap_create",
+    "name": "CreateLdapUserConnection",
+    "description": "Create a LDAP user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_ldap_destroy",
+    "name": "DeleteLdapUserConnection",
+    "description": "Irreversibly delete a LDAP user-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_ldap_list",
+    "name": "ListLdapUserConnections",
+    "description": "List LDAP user-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_ldap_partial_update",
+    "name": "UpdateLdapUserConnection",
+    "description": "Update a LDAP user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_ldap_retrieve",
+    "name": "ShowLdapUserConnection",
+    "description": "Show a LDAP user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_ldap_update",
+    "name": "ReplaceLdapUserConnection",
+    "description": "Replace a LDAP user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_user_connections_ldap_used_by_list",
+    "name": "ShowLdapUserConnectionUsedBy",
+    "description": "List objects referencing a LDAP user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_oauth_create",
+    "name": "CreateOauthUserConnection",
+    "description": "Create a OAuth user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_oauth_destroy",
+    "name": "DeleteOauthUserConnection",
+    "description": "Irreversibly delete a OAuth user-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_oauth_list",
+    "name": "ListOauthUserConnections",
+    "description": "List OAuth user-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_oauth_partial_update",
+    "name": "UpdateOauthUserConnection",
+    "description": "Update a OAuth user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_oauth_retrieve",
+    "name": "ShowOauthUserConnection",
+    "description": "Show a OAuth user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_oauth_update",
+    "name": "ReplaceOauthUserConnection",
+    "description": "Replace a OAuth user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_user_connections_oauth_used_by_list",
+    "name": "ShowOauthUserConnectionUsedBy",
+    "description": "List objects referencing a OAuth user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_plex_create",
+    "name": "CreatePlexUserConnection",
+    "description": "Create a Plex user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_plex_destroy",
+    "name": "DeletePlexUserConnection",
+    "description": "Irreversibly delete a Plex user-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_plex_list",
+    "name": "ListPlexUserConnections",
+    "description": "List Plex user-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_plex_partial_update",
+    "name": "UpdatePlexUserConnection",
+    "description": "Update a Plex user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_plex_retrieve",
+    "name": "ShowPlexUserConnection",
+    "description": "Show a Plex user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_plex_update",
+    "name": "ReplacePlexUserConnection",
+    "description": "Replace a Plex user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_user_connections_plex_used_by_list",
+    "name": "ShowPlexUserConnectionUsedBy",
+    "description": "List objects referencing a Plex user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_saml_create",
+    "name": "CreateSamlUserConnection",
+    "description": "Create a SAML user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_saml_destroy",
+    "name": "DeleteSamlUserConnection",
+    "description": "Irreversibly delete a SAML user-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_saml_list",
+    "name": "ListSamlUserConnections",
+    "description": "List SAML user-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_saml_partial_update",
+    "name": "UpdateSamlUserConnection",
+    "description": "Update a SAML user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_saml_retrieve",
+    "name": "ShowSamlUserConnection",
+    "description": "Show a SAML user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_saml_update",
+    "name": "ReplaceSamlUserConnection",
+    "description": "Replace a SAML user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_user_connections_saml_used_by_list",
+    "name": "ShowSamlUserConnectionUsedBy",
+    "description": "List objects referencing a SAML user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_telegram_create",
+    "name": "CreateTelegramUserConnection",
+    "description": "Create a Telegram user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_telegram_destroy",
+    "name": "DeleteTelegramUserConnection",
+    "description": "Irreversibly delete a Telegram user-source link.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_telegram_list",
+    "name": "ListTelegramUserConnections",
+    "description": "List Telegram user-source links.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_telegram_partial_update",
+    "name": "UpdateTelegramUserConnection",
+    "description": "Update a Telegram user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_telegram_retrieve",
+    "name": "ShowTelegramUserConnection",
+    "description": "Show a Telegram user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "sources_user_connections_telegram_update",
+    "name": "ReplaceTelegramUserConnection",
+    "description": "Replace a Telegram user-source link.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "sources_user_connections_telegram_used_by_list",
+    "name": "ShowTelegramUserConnectionUsedBy",
+    "description": "List objects referencing a Telegram user-source link.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  }
+]

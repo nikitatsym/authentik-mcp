@@ -1,0 +1,93 @@
+[
+  {
+    "operationId": "rac_connection_tokens_destroy",
+    "name": "DeleteRacConnectionToken",
+    "description": "Delete a remote access connection token irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_connection_tokens_list",
+    "name": "ListRacConnectionTokens",
+    "description": "List remote access connection tokens.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_connection_tokens_partial_update",
+    "name": "UpdateRacConnectionToken",
+    "description": "Update a remote access connection token.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_connection_tokens_retrieve",
+    "name": "ShowRacConnectionToken",
+    "description": "Show a remote access connection token.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_connection_tokens_update",
+    "name": "ReplaceRacConnectionToken",
+    "description": "Replace a remote access connection token.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "rac_connection_tokens_used_by_list",
+    "name": "ShowRacConnectionTokenUsedBy",
+    "description": "Show references to this remote access connection token.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_endpoints_create",
+    "name": "CreateRacEndpoint",
+    "description": "Create a remote access endpoint.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_endpoints_destroy",
+    "name": "DeleteRacEndpoint",
+    "description": "Delete a remote access endpoint irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_endpoints_list",
+    "name": "ListRacEndpoints",
+    "description": "List accessible remote access endpoints.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_endpoints_partial_update",
+    "name": "UpdateRacEndpoint",
+    "description": "Update a remote access endpoint.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_endpoints_retrieve",
+    "name": "ShowRacEndpoint",
+    "description": "Show a remote access endpoint.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rac_endpoints_update",
+    "name": "ReplaceRacEndpoint",
+    "description": "Replace a remote access endpoint.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "rac_endpoints_used_by_list",
+    "name": "ShowRacEndpointUsedBy",
+    "description": "Show references to this remote access endpoint.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

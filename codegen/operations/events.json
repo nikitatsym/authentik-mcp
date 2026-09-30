@@ -1,0 +1,233 @@
+[
+  {
+    "operationId": "events_events_actions_list",
+    "name": "ListEventActions",
+    "description": "List event action types.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_create",
+    "name": "CreateEvent",
+    "description": "Create an event.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_destroy",
+    "name": "DeleteEvent",
+    "description": "Irreversibly delete an event.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_export_create",
+    "name": "ExportEvents",
+    "description": "Queue an event export and return its status; requires an enterprise license.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_list",
+    "name": "ListEvents",
+    "description": "List events (slim).",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_partial_update",
+    "name": "UpdateEvent",
+    "description": "Update an event.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_retrieve",
+    "name": "ShowEvent",
+    "description": "Get full event details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_stats_retrieve",
+    "name": "ShowEventStats",
+    "description": "Show unique-user and event counts over time windows.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_top_per_user_list",
+    "name": "ListTopEventApplications",
+    "description": "Rank applications by event count with unique-user totals.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_events_update",
+    "name": "ReplaceEvent",
+    "description": "Replace event.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "events_events_volume_list",
+    "name": "ShowEventVolume",
+    "description": "Count events by action in six-hour buckets, capped at 90 days.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_notifications_destroy",
+    "name": "DeleteNotification",
+    "description": "Irreversibly delete a notification.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "events_notifications_list",
+    "name": "ListNotifications",
+    "description": "List notifications.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_notifications_mark_all_seen_create",
+    "name": "MarkAllNotificationsSeen",
+    "description": "Mark all current-user notifications as seen.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_notifications_partial_update",
+    "name": "UpdateNotification",
+    "description": "Update a notification.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_notifications_retrieve",
+    "name": "ShowNotification",
+    "description": "Get notification details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_notifications_update",
+    "name": "ReplaceNotification",
+    "description": "Replace notification.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "events_notifications_used_by_list",
+    "name": "ShowNotificationUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_rules_create",
+    "name": "CreateNotificationRule",
+    "description": "Create a rule selecting notification recipients and transports.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_rules_destroy",
+    "name": "DeleteNotificationRule",
+    "description": "Irreversibly delete a notification rule.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "events_rules_list",
+    "name": "ListNotificationRules",
+    "description": "List notification rules.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_rules_partial_update",
+    "name": "UpdateNotificationRule",
+    "description": "Update a notification rule.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_rules_retrieve",
+    "name": "ShowNotificationRule",
+    "description": "Get notification rule details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_rules_update",
+    "name": "ReplaceNotificationRule",
+    "description": "Replace notification rule.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "events_rules_used_by_list",
+    "name": "ShowNotificationRuleUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_transports_create",
+    "name": "CreateNotificationTransport",
+    "description": "Create an email or webhook delivery channel.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_transports_destroy",
+    "name": "DeleteNotificationTransport",
+    "description": "Irreversibly delete a notification transport.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "events_transports_list",
+    "name": "ListNotificationTransports",
+    "description": "List email and webhook delivery channels.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_transports_partial_update",
+    "name": "UpdateNotificationTransport",
+    "description": "Update a notification transport.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_transports_retrieve",
+    "name": "ShowNotificationTransport",
+    "description": "Get notification transport details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "events_transports_test_create",
+    "name": "TestNotificationTransport",
+    "description": "Send a sample notification; requires modify permission.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "events_transports_update",
+    "name": "ReplaceNotificationTransport",
+    "description": "Replace notification transport.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "events_transports_used_by_list",
+    "name": "ShowNotificationTransportUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  }
+]

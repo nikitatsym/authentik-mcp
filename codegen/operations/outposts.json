@@ -1,0 +1,240 @@
+[
+  {
+    "operationId": "outposts_instances_create",
+    "name": "CreateOutpost",
+    "description": "Create an outpost.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_instances_default_settings_retrieve",
+    "name": "ShowOutpostDefaultSettings",
+    "description": "Show global default outpost configuration.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_instances_destroy",
+    "name": "DeleteOutpost",
+    "description": "Irreversibly delete an outpost.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_instances_health_list",
+    "name": "ShowOutpostHealth",
+    "description": "Show the outpost's current health.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_instances_list",
+    "name": "ListOutposts",
+    "description": "List outposts.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_instances_partial_update",
+    "name": "UpdateOutpost",
+    "description": "Update an outpost.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_instances_retrieve",
+    "name": "ShowOutpost",
+    "description": "Get outpost details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_instances_update",
+    "name": "ReplaceOutpost",
+    "description": "Replace an outpost.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "outposts_instances_used_by_list",
+    "name": "ShowOutpostUsedBy",
+    "description": "Show objects that reference outpost.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_ldap_access_check",
+    "name": "CheckOutpostLdapAccess",
+    "description": "Check access to an application through an LDAP provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_ldap_list",
+    "name": "ListOutpostLdap",
+    "description": "List LDAP provider configurations for outposts.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_proxy_list",
+    "name": "ListOutpostProxy",
+    "description": "List proxy provider configurations for outposts.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_radius_access_check",
+    "name": "CheckOutpostRadiusAccess",
+    "description": "Check access to an application through a RADIUS provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_radius_list",
+    "name": "ListOutpostRadius",
+    "description": "List RADIUS provider configurations for outposts.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_all_destroy",
+    "name": "DeleteOutpostServiceConnection",
+    "description": "Irreversibly delete an outpost service connection.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_all_list",
+    "name": "ListOutpostServiceConnections",
+    "description": "List all outpost service connections.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_all_retrieve",
+    "name": "ShowOutpostServiceConnection",
+    "description": "Get service connection details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_all_state_retrieve",
+    "name": "ShowServiceConnectionState",
+    "description": "Show service connection state.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_all_types_list",
+    "name": "ListServiceConnectionTypes",
+    "description": "List service connection types.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_all_used_by_list",
+    "name": "ShowOutpostServiceConnectionUsedBy",
+    "description": "Show objects that reference outpost service connection.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_docker_create",
+    "name": "CreateDockerServiceConnection",
+    "description": "Create a Docker service connection.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_docker_destroy",
+    "name": "DeleteDockerServiceConnection",
+    "description": "Irreversibly delete a Docker service connection.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_docker_list",
+    "name": "ListDockerServiceConnections",
+    "description": "List Docker service connections.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_docker_partial_update",
+    "name": "UpdateDockerServiceConnection",
+    "description": "Update a Docker service connection.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_docker_retrieve",
+    "name": "ShowDockerServiceConnection",
+    "description": "Get Docker service connection details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_docker_update",
+    "name": "ReplaceDockerServiceConnection",
+    "description": "Replace a Docker service connection.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "outposts_service_connections_docker_used_by_list",
+    "name": "ShowDockerServiceConnectionUsedBy",
+    "description": "Show objects that reference docker service connection.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_kubernetes_create",
+    "name": "CreateKubernetesServiceConnection",
+    "description": "Create a Kubernetes service connection.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_kubernetes_destroy",
+    "name": "DeleteKubernetesServiceConnection",
+    "description": "Irreversibly delete a Kubernetes service connection.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_kubernetes_list",
+    "name": "ListKubernetesServiceConnections",
+    "description": "List Kubernetes service connections.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_kubernetes_partial_update",
+    "name": "UpdateKubernetesServiceConnection",
+    "description": "Update a Kubernetes service connection.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_kubernetes_retrieve",
+    "name": "ShowKubernetesServiceConnection",
+    "description": "Get Kubernetes service connection details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "outposts_service_connections_kubernetes_update",
+    "name": "ReplaceKubernetesServiceConnection",
+    "description": "Replace a Kubernetes service connection.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "outposts_service_connections_kubernetes_used_by_list",
+    "name": "ShowKubernetesServiceConnectionUsedBy",
+    "description": "Show objects that reference kubernetes service connection.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "operationId": "tasks_schedules_list",
+    "name": "ListTaskSchedules",
+    "description": "List task schedules.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "tasks_schedules_partial_update",
+    "name": "UpdateTaskSchedule",
+    "description": "Update a task schedule.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "tasks_schedules_retrieve",
+    "name": "ShowTaskSchedule",
+    "description": "Get task schedule details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "tasks_schedules_send_create",
+    "name": "TriggerTaskSchedule",
+    "description": "Trigger the scheduled task now.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "tasks_schedules_update",
+    "name": "ReplaceTaskSchedule",
+    "description": "Replace a task schedule.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "tasks_tasks_list",
+    "name": "ListTasks",
+    "description": "List tasks.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "tasks_tasks_retrieve",
+    "name": "ShowTask",
+    "description": "Get task details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "tasks_tasks_retry_create",
+    "name": "RetryTask",
+    "description": "Retry a task.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "tasks_tasks_status_retrieve",
+    "name": "ShowTaskStatus",
+    "description": "Show global status for all tasks.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "tasks_workers_list",
+    "name": "ListWorkers",
+    "description": "List currently connected task workers.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

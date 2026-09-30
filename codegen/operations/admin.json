@@ -1,0 +1,100 @@
+[
+  {
+    "operationId": "admin_apps_list",
+    "name": "ListAdminApps",
+    "description": "List installed backend apps.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_file_create",
+    "name": "CreateAdminFile",
+    "description": "Upload a server-local file to Authentik storage.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_file_destroy",
+    "name": "DeleteAdminFile",
+    "description": "Irreversibly delete a stored admin file.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_file_list",
+    "name": "ListAdminFiles",
+    "description": "List admin files.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_file_used_by_list",
+    "name": "ShowAdminFileUsedBy",
+    "description": "Show objects that reference admin file.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_models_list",
+    "name": "ListAdminModels",
+    "description": "List installed backend models.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_settings_partial_update",
+    "name": "UpdateAdminSettings",
+    "description": "Update admin settings.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_settings_retrieve",
+    "name": "ShowAdminSettings",
+    "description": "Show admin settings.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_settings_update",
+    "name": "ReplaceAdminSettings",
+    "description": "Replace admin settings.",
+    "group": "authentik_admin",
+    "exposed": false
+  },
+  {
+    "operationId": "admin_system_create",
+    "name": "ShowSystemInfoViaPost",
+    "description": "Return system diagnostics via POST without creating a resource.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_system_retrieve",
+    "name": "ShowSystemInfo",
+    "description": "Show system info.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_version_history_list",
+    "name": "ListVersionHistory",
+    "description": "List version history.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_version_history_retrieve",
+    "name": "ShowVersionHistory",
+    "description": "Get version history entry details.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "admin_version_retrieve",
+    "name": "ShowAdminVersion",
+    "description": "Show running and latest Authentik versions.",
+    "group": "authentik_admin",
+    "exposed": true
+  }
+]

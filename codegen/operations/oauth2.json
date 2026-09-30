@@ -1,0 +1,86 @@
+[
+  {
+    "operationId": "oauth2_access_tokens_destroy",
+    "name": "DeleteOauth2AccessToken",
+    "description": "Delete an OAuth2 access token irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_access_tokens_list",
+    "name": "ListOauth2AccessTokens",
+    "description": "List OAuth2 access tokens.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_access_tokens_retrieve",
+    "name": "ShowOauth2AccessToken",
+    "description": "Get OAuth2 access token details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_access_tokens_used_by_list",
+    "name": "ShowOauth2AccessTokenUsedBy",
+    "description": "Show references to this OAuth2 access token.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_authorization_codes_destroy",
+    "name": "DeleteOauth2AuthorizationCode",
+    "description": "Delete an OAuth2 authorization code irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_authorization_codes_list",
+    "name": "ListOauth2AuthorizationCodes",
+    "description": "List OAuth2 authorization codes.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_authorization_codes_retrieve",
+    "name": "ShowOauth2AuthorizationCode",
+    "description": "Get OAuth2 authorization code details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_authorization_codes_used_by_list",
+    "name": "ShowOauth2AuthorizationCodeUsedBy",
+    "description": "Show references to this OAuth2 authorization code.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_refresh_tokens_destroy",
+    "name": "DeleteOauth2RefreshToken",
+    "description": "Delete an OAuth2 refresh token irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_refresh_tokens_list",
+    "name": "ListOauth2RefreshTokens",
+    "description": "List OAuth2 refresh tokens.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_refresh_tokens_retrieve",
+    "name": "ShowOauth2RefreshToken",
+    "description": "Get OAuth2 refresh token details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "oauth2_refresh_tokens_used_by_list",
+    "name": "ShowOauth2RefreshTokenUsedBy",
+    "description": "Show references to this OAuth2 refresh token.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "operationId": "ssf_streams_destroy",
+    "name": "DeleteSsfStream",
+    "description": "Irreversibly delete a Shared Signals Framework event stream.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "ssf_streams_list",
+    "name": "ListSsfStreams",
+    "description": "List Shared Signals Framework event streams.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "ssf_streams_retrieve",
+    "name": "ShowSsfStream",
+    "description": "Show a Shared Signals Framework event stream.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

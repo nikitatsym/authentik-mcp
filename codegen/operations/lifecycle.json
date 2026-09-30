@@ -1,0 +1,100 @@
+[
+  {
+    "operationId": "lifecycle_iterations_create",
+    "name": "CreateLifecycleIteration",
+    "description": "Create a lifecycle review iteration with an enterprise license.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_iterations_list_latest",
+    "name": "ListLatestLifecycleIterations",
+    "description": "List the latest lifecycle review iterations for an object.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_iterations_list_open",
+    "name": "ListOpenLifecycleIterations",
+    "description": "List open lifecycle review iterations.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_reviews_create",
+    "name": "CreateLifecycleReview",
+    "description": "Record a lifecycle iteration review with an enterprise license.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_rules_create",
+    "name": "CreateLifecycleRule",
+    "description": "Create a lifecycle review rule.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_rules_destroy",
+    "name": "DeleteLifecycleRule",
+    "description": "Irreversibly delete a lifecycle review rule.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_rules_list",
+    "name": "ListLifecycleRules",
+    "description": "List lifecycle review rules.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_rules_partial_update",
+    "name": "UpdateLifecycleRule",
+    "description": "Update a lifecycle review rule.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_rules_retrieve",
+    "name": "ShowLifecycleRule",
+    "description": "Show a lifecycle review rule.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_rules_update",
+    "name": "ReplaceLifecycleRule",
+    "description": "Replace a lifecycle review rule.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "lifecycle_user_offboarding_create",
+    "name": "ScheduleUserOffboarding",
+    "description": "Schedule user deactivation or deletion with optional session and token revocation.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_user_offboarding_destroy",
+    "name": "CancelUserOffboarding",
+    "description": "Cancel pending offboarding while retaining its audit record, except your own.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_user_offboarding_list",
+    "name": "ListUserOffboardings",
+    "description": "List scheduled user offboarding records.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "lifecycle_user_offboarding_retrieve",
+    "name": "ShowUserOffboarding",
+    "description": "Show a scheduled user offboarding record.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

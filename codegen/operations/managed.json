@@ -1,0 +1,72 @@
+[
+  {
+    "operationId": "managed_blueprints_apply_create",
+    "name": "ApplyBlueprint",
+    "description": "Apply a stored YAML configuration blueprint.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "managed_blueprints_available_list",
+    "name": "ListAvailableBlueprints",
+    "description": "List available blueprint templates.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "managed_blueprints_create",
+    "name": "CreateBlueprint",
+    "description": "Create a stored YAML configuration blueprint.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "managed_blueprints_destroy",
+    "name": "DeleteBlueprint",
+    "description": "Permanently delete a blueprint instance.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "managed_blueprints_import_create",
+    "name": "ImportBlueprint",
+    "description": "Apply blueprint or flow-export YAML once without creating a blueprint instance.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "managed_blueprints_list",
+    "name": "ListBlueprints",
+    "description": "List stored blueprint instances.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "managed_blueprints_partial_update",
+    "name": "UpdateBlueprint",
+    "description": "Update a blueprint.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "managed_blueprints_retrieve",
+    "name": "ShowBlueprint",
+    "description": "Get blueprint instance details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "managed_blueprints_update",
+    "name": "ReplaceBlueprint",
+    "description": "Replace a blueprint instance.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "managed_blueprints_used_by_list",
+    "name": "ShowBlueprintUsedBy",
+    "description": "List objects referencing this blueprint instance.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

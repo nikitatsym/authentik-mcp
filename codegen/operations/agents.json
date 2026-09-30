@@ -1,0 +1,44 @@
+[
+  {
+    "operationId": "agents_agents_create",
+    "name": "CreateAgent",
+    "description": "Create a delegate identity owned by a parent user.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "agents_agents_destroy",
+    "name": "DeleteAgent",
+    "description": "Irreversibly delete a delegate identity.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "agents_agents_list",
+    "name": "ListAgents",
+    "description": "List admin-provisioned delegate identities.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "agents_agents_partial_update",
+    "name": "UpdateAgent",
+    "description": "Update a delegate identity.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "agents_agents_retrieve",
+    "name": "ShowAgent",
+    "description": "Show a delegate identity.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "agents_agents_update",
+    "name": "ReplaceAgent",
+    "description": "Replace a delegate identity.",
+    "group": "authentik_write",
+    "exposed": false
+  }
+]

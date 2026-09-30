@@ -39,7 +39,7 @@ authentik_flows_write = Group(
     "Call with operation=\"$help\" to list all available operations.\n"
     "Otherwise pass the operation name and a JSON object with parameters.\n\n"
     "Example: authentik_flows_write(operation=\"$CreateFlow\", "
-    "params={\"name\": \"my-flow\", \"slug\": \"my-flow\", \"designation\": \"authorization\"})",
+    "params={\"name\": \"my-flow\", \"slug\": \"my-flow\", \"title\": \"My flow\", \"designation\": \"authorization\"})",
 )
 
 authentik_admin = Group(
@@ -47,5 +47,5 @@ authentik_admin = Group(
     "Admin-only Authentik operations: settings, system, version, files, admin authenticator devices.\n\n"
     "Call with operation=\"$help\" to list all available admin operations.\n"
     "Otherwise pass the operation name and a JSON object with parameters.\n\n"
-    "Example: authentik_admin(operation=\"$GetSystemInfo\")",
+    "Example: authentik_admin(operation=\"$ShowSystemInfo\")",
 )

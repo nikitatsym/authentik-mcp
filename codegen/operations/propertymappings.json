@@ -1,0 +1,779 @@
+[
+  {
+    "operationId": "propertymappings_all_destroy",
+    "name": "DeletePropertyMapping",
+    "description": "Permanently delete a property mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_all_list",
+    "name": "ListPropertyMappings",
+    "description": "List expression-based property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_all_retrieve",
+    "name": "ShowPropertyMapping",
+    "description": "Get property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_all_test_create",
+    "name": "TestPropertyMapping",
+    "description": "Execute a property mapping expression and return its result.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_all_types_list",
+    "name": "ListPropertyMappingTypes",
+    "description": "List property mapping types.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_all_used_by_list",
+    "name": "ShowPropertyMappingUsedBy",
+    "description": "List objects referencing this property mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_notification_create",
+    "name": "CreateNotificationMapping",
+    "description": "Create a notification property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_notification_destroy",
+    "name": "DeleteNotificationMapping",
+    "description": "Permanently delete a notification property mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_notification_list",
+    "name": "ListNotificationMappings",
+    "description": "List notification property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_notification_partial_update",
+    "name": "UpdateNotificationMapping",
+    "description": "Update a notification property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_notification_retrieve",
+    "name": "ShowNotificationMapping",
+    "description": "Get notification property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_notification_update",
+    "name": "ReplaceNotificationMapping",
+    "description": "Replace a notification property mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_notification_used_by_list",
+    "name": "ShowNotificationMappingUsedBy",
+    "description": "List objects referencing this notification mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_google_workspace_create",
+    "name": "CreateGoogleWorkspacePropertyMapping",
+    "description": "Create a Google Workspace property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_google_workspace_destroy",
+    "name": "DeleteGoogleWorkspacePropertyMapping",
+    "description": "Permanently delete a Google Workspace property mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_google_workspace_list",
+    "name": "ListGoogleWorkspacePropertyMappings",
+    "description": "List Google Workspace property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_google_workspace_partial_update",
+    "name": "UpdateGoogleWorkspacePropertyMapping",
+    "description": "Update a Google Workspace property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_google_workspace_retrieve",
+    "name": "ShowGoogleWorkspacePropertyMapping",
+    "description": "Get Google Workspace property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_google_workspace_update",
+    "name": "ReplaceGoogleWorkspacePropertyMapping",
+    "description": "Replace a Google Workspace property mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_provider_google_workspace_used_by_list",
+    "name": "ShowGoogleWorkspacePropertyMappingUsedBy",
+    "description": "List objects referencing this Google Workspace property mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_microsoft_entra_create",
+    "name": "CreateMicrosoftEntraPropertyMapping",
+    "description": "Create a Microsoft Entra property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_microsoft_entra_destroy",
+    "name": "DeleteMicrosoftEntraPropertyMapping",
+    "description": "Permanently delete a Microsoft Entra property mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_microsoft_entra_list",
+    "name": "ListMicrosoftEntraPropertyMappings",
+    "description": "List Microsoft Entra property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_microsoft_entra_partial_update",
+    "name": "UpdateMicrosoftEntraPropertyMapping",
+    "description": "Update a Microsoft Entra property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_microsoft_entra_retrieve",
+    "name": "ShowMicrosoftEntraPropertyMapping",
+    "description": "Get Microsoft Entra property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_microsoft_entra_update",
+    "name": "ReplaceMicrosoftEntraPropertyMapping",
+    "description": "Replace a Microsoft Entra property mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_provider_microsoft_entra_used_by_list",
+    "name": "ShowMicrosoftEntraPropertyMappingUsedBy",
+    "description": "List objects referencing this Microsoft Entra property mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_rac_create",
+    "name": "CreateRacPropertyMapping",
+    "description": "Create a RAC property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_rac_destroy",
+    "name": "DeleteRacPropertyMapping",
+    "description": "Permanently delete a RAC property mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_rac_list",
+    "name": "ListRacPropertyMappings",
+    "description": "List RAC property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_rac_partial_update",
+    "name": "UpdateRacPropertyMapping",
+    "description": "Update a RAC property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_rac_retrieve",
+    "name": "ShowRacPropertyMapping",
+    "description": "Get RAC property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_rac_update",
+    "name": "ReplaceRacPropertyMapping",
+    "description": "Replace a RAC property mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_provider_rac_used_by_list",
+    "name": "ShowRacPropertyMappingUsedBy",
+    "description": "List objects referencing this RAC property mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_radius_create",
+    "name": "CreateRadiusPropertyMapping",
+    "description": "Create a RADIUS property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_radius_destroy",
+    "name": "DeleteRadiusPropertyMapping",
+    "description": "Permanently delete a RADIUS property mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_radius_list",
+    "name": "ListRadiusPropertyMappings",
+    "description": "List RADIUS property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_radius_partial_update",
+    "name": "UpdateRadiusPropertyMapping",
+    "description": "Update a RADIUS property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_radius_retrieve",
+    "name": "ShowRadiusPropertyMapping",
+    "description": "Get RADIUS property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_radius_update",
+    "name": "ReplaceRadiusPropertyMapping",
+    "description": "Replace a RADIUS property mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_provider_radius_used_by_list",
+    "name": "ShowRadiusPropertyMappingUsedBy",
+    "description": "List objects referencing this RADIUS property mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_saml_create",
+    "name": "CreateSamlPropertyMapping",
+    "description": "Create a SAML property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_saml_destroy",
+    "name": "DeleteSamlPropertyMapping",
+    "description": "Permanently delete a SAML property mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_saml_list",
+    "name": "ListSamlPropertyMappings",
+    "description": "List SAML property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_saml_partial_update",
+    "name": "UpdateSamlPropertyMapping",
+    "description": "Update a SAML property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_saml_retrieve",
+    "name": "ShowSamlPropertyMapping",
+    "description": "Get SAML property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_saml_update",
+    "name": "ReplaceSamlPropertyMapping",
+    "description": "Replace a SAML property mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_provider_saml_used_by_list",
+    "name": "ShowSamlPropertyMappingUsedBy",
+    "description": "List objects referencing this SAML property mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scim_create",
+    "name": "CreateScimPropertyMapping",
+    "description": "Create a SCIM property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scim_destroy",
+    "name": "DeleteScimPropertyMapping",
+    "description": "Permanently delete a SCIM property mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scim_list",
+    "name": "ListScimPropertyMappings",
+    "description": "List SCIM property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scim_partial_update",
+    "name": "UpdateScimPropertyMapping",
+    "description": "Update a SCIM property mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scim_retrieve",
+    "name": "ShowScimPropertyMapping",
+    "description": "Get SCIM property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scim_update",
+    "name": "ReplaceScimPropertyMapping",
+    "description": "Replace a SCIM property mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_provider_scim_used_by_list",
+    "name": "ShowScimPropertyMappingUsedBy",
+    "description": "List objects referencing this SCIM property mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scope_create",
+    "name": "CreateScopeMapping",
+    "description": "Create an OAuth2 scope mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scope_destroy",
+    "name": "DeleteScopeMapping",
+    "description": "Permanently delete a scope mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scope_list",
+    "name": "ListScopeMappings",
+    "description": "List OAuth2 scope mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scope_partial_update",
+    "name": "UpdateScopeMapping",
+    "description": "Update an OAuth2 scope mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scope_retrieve",
+    "name": "ShowScopeMapping",
+    "description": "Get scope mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_provider_scope_update",
+    "name": "ReplaceScopeMapping",
+    "description": "Replace an OAuth2 scope mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_provider_scope_used_by_list",
+    "name": "ShowScopeMappingUsedBy",
+    "description": "List objects referencing this scope mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_kerberos_create",
+    "name": "CreateKerberosSourceMapping",
+    "description": "Create a Kerberos source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_kerberos_destroy",
+    "name": "DeleteKerberosSourceMapping",
+    "description": "Permanently delete a Kerberos source mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_kerberos_list",
+    "name": "ListKerberosSourceMappings",
+    "description": "List Kerberos source property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_kerberos_partial_update",
+    "name": "UpdateKerberosSourceMapping",
+    "description": "Update a Kerberos source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_kerberos_retrieve",
+    "name": "ShowKerberosSourceMapping",
+    "description": "Get Kerberos source property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_kerberos_update",
+    "name": "ReplaceKerberosSourceMapping",
+    "description": "Replace a Kerberos source mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_source_kerberos_used_by_list",
+    "name": "ShowKerberosSourceMappingUsedBy",
+    "description": "List objects referencing this Kerberos source mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_ldap_create",
+    "name": "CreateLdapSourceMapping",
+    "description": "Create an LDAP source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_ldap_destroy",
+    "name": "DeleteLdapSourceMapping",
+    "description": "Permanently delete an LDAP source mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_ldap_list",
+    "name": "ListLdapSourceMappings",
+    "description": "List LDAP source property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_ldap_partial_update",
+    "name": "UpdateLdapSourceMapping",
+    "description": "Update an LDAP source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_ldap_retrieve",
+    "name": "ShowLdapSourceMapping",
+    "description": "Get LDAP source property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_ldap_update",
+    "name": "ReplaceLdapSourceMapping",
+    "description": "Replace an LDAP source mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_source_ldap_used_by_list",
+    "name": "ShowLdapSourceMappingUsedBy",
+    "description": "List objects referencing this LDAP source mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_oauth_create",
+    "name": "CreateOauthSourceMapping",
+    "description": "Create an OAuth source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_oauth_destroy",
+    "name": "DeleteOauthSourceMapping",
+    "description": "Permanently delete an OAuth source mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_oauth_list",
+    "name": "ListOauthSourceMappings",
+    "description": "List OAuth source property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_oauth_partial_update",
+    "name": "UpdateOauthSourceMapping",
+    "description": "Update an OAuth source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_oauth_retrieve",
+    "name": "ShowOauthSourceMapping",
+    "description": "Get OAuth source property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_oauth_update",
+    "name": "ReplaceOauthSourceMapping",
+    "description": "Replace an OAuth source mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_source_oauth_used_by_list",
+    "name": "ShowOauthSourceMappingUsedBy",
+    "description": "List objects referencing this OAuth source mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_plex_create",
+    "name": "CreatePlexSourceMapping",
+    "description": "Create a Plex source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_plex_destroy",
+    "name": "DeletePlexSourceMapping",
+    "description": "Permanently delete a Plex source mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_plex_list",
+    "name": "ListPlexSourceMappings",
+    "description": "List Plex source property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_plex_partial_update",
+    "name": "UpdatePlexSourceMapping",
+    "description": "Update a Plex source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_plex_retrieve",
+    "name": "ShowPlexSourceMapping",
+    "description": "Get Plex source property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_plex_update",
+    "name": "ReplacePlexSourceMapping",
+    "description": "Replace a Plex source mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_source_plex_used_by_list",
+    "name": "ShowPlexSourceMappingUsedBy",
+    "description": "List objects referencing this Plex source mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_saml_create",
+    "name": "CreateSamlSourceMapping",
+    "description": "Create a SAML source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_saml_destroy",
+    "name": "DeleteSamlSourceMapping",
+    "description": "Permanently delete a SAML source mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_saml_list",
+    "name": "ListSamlSourceMappings",
+    "description": "List SAML source property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_saml_partial_update",
+    "name": "UpdateSamlSourceMapping",
+    "description": "Update a SAML source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_saml_retrieve",
+    "name": "ShowSamlSourceMapping",
+    "description": "Get SAML source property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_saml_update",
+    "name": "ReplaceSamlSourceMapping",
+    "description": "Replace a SAML source mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_source_saml_used_by_list",
+    "name": "ShowSamlSourceMappingUsedBy",
+    "description": "List objects referencing this SAML source mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_scim_create",
+    "name": "CreateScimSourceMapping",
+    "description": "Create a SCIM source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_scim_destroy",
+    "name": "DeleteScimSourceMapping",
+    "description": "Permanently delete a SCIM source mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_scim_list",
+    "name": "ListScimSourceMappings",
+    "description": "List SCIM source property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_scim_partial_update",
+    "name": "UpdateScimSourceMapping",
+    "description": "Update a SCIM source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_scim_retrieve",
+    "name": "ShowScimSourceMapping",
+    "description": "Get SCIM source property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_scim_update",
+    "name": "ReplaceScimSourceMapping",
+    "description": "Replace a SCIM source mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_source_scim_used_by_list",
+    "name": "ShowScimSourceMappingUsedBy",
+    "description": "List objects referencing this SCIM source mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_telegram_create",
+    "name": "CreateTelegramSourceMapping",
+    "description": "Create a Telegram source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_telegram_destroy",
+    "name": "DeleteTelegramSourceMapping",
+    "description": "Permanently delete a Telegram source mapping.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_telegram_list",
+    "name": "ListTelegramSourceMappings",
+    "description": "List Telegram source property mappings.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_telegram_partial_update",
+    "name": "UpdateTelegramSourceMapping",
+    "description": "Update a Telegram source mapping.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_telegram_retrieve",
+    "name": "ShowTelegramSourceMapping",
+    "description": "Get Telegram source property mapping details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "propertymappings_source_telegram_update",
+    "name": "ReplaceTelegramSourceMapping",
+    "description": "Replace a Telegram source mapping.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "propertymappings_source_telegram_used_by_list",
+    "name": "ShowTelegramSourceMappingUsedBy",
+    "description": "List objects referencing this Telegram source mapping.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

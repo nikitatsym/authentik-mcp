@@ -1,0 +1,156 @@
+[
+  {
+    "operationId": "rbac_initial_permissions_create",
+    "name": "CreateInitialPermission",
+    "description": "Create a set of automatic role grants for newly created objects.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_initial_permissions_destroy",
+    "name": "DeleteInitialPermission",
+    "description": "Irreversibly delete an automatic role-grant configuration.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_initial_permissions_list",
+    "name": "ListInitialPermissions",
+    "description": "List automatic role-grant configurations for new objects.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_initial_permissions_partial_update",
+    "name": "UpdateInitialPermission",
+    "description": "Update automatic role grants for new objects.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_initial_permissions_retrieve",
+    "name": "ShowInitialPermission",
+    "description": "Show automatic role grants for new objects.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_initial_permissions_update",
+    "name": "ReplaceInitialPermission",
+    "description": "Replace automatic role grants for new objects.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "rbac_initial_permissions_used_by_list",
+    "name": "ShowInitialPermissionUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_permissions_assigned_by_roles_assign",
+    "name": "AssignPermissionsToRole",
+    "description": "Grant role permissions globally or for one object.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_permissions_assigned_by_roles_list",
+    "name": "ListPermissionsAssignedByRoles",
+    "description": "List role-granted permissions for an object or model.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_permissions_assigned_by_roles_unassign_partial_update",
+    "name": "UnassignPermissionsFromRole",
+    "description": "Revoke role permissions globally or for one object.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_permissions_list",
+    "name": "ListPermissions",
+    "description": "List permissions.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_permissions_retrieve",
+    "name": "ShowPermission",
+    "description": "Get permission details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_permissions_roles_list",
+    "name": "ListRoleObjectPermissions",
+    "description": "List a role's object-level permission grants.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_roles_add_user_create",
+    "name": "AddUserToRole",
+    "description": "Add a user to a role.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_roles_create",
+    "name": "CreateRole",
+    "description": "Create an RBAC role.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_roles_destroy",
+    "name": "DeleteRole",
+    "description": "Irreversibly delete an RBAC role.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_roles_list",
+    "name": "ListRoles",
+    "description": "List RBAC roles.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_roles_partial_update",
+    "name": "UpdateRole",
+    "description": "Update an RBAC role.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_roles_remove_user_create",
+    "name": "RemoveUserFromRole",
+    "description": "Remove a user from a role.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_roles_retrieve",
+    "name": "ShowRole",
+    "description": "Get RBAC role details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "rbac_roles_update",
+    "name": "ReplaceRole",
+    "description": "Replace role.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "rbac_roles_used_by_list",
+    "name": "ShowRoleUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

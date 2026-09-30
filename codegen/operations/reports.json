@@ -1,0 +1,23 @@
+[
+  {
+    "operationId": "reports_exports_destroy",
+    "name": "DeleteExport",
+    "description": "Irreversibly delete a report export.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "reports_exports_list",
+    "name": "ListExports",
+    "description": "List report exports.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "reports_exports_retrieve",
+    "name": "ShowExport",
+    "description": "Get report export details.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

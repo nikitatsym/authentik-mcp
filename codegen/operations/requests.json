@@ -1,0 +1,205 @@
+[
+  {
+    "operationId": "requests_grant_requests_agent_create",
+    "name": "CreateAgentGrantRequest",
+    "description": "Request time-limited owner-held access for an agent and return its owner approval URL.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_grant_requests_create",
+    "name": "CreateGrantRequest",
+    "description": "Return a flow link to request time-limited access.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_grant_requests_destroy",
+    "name": "DeleteGrantRequest",
+    "description": "Irreversibly delete a grant request.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_grant_requests_fulfill_partial_update",
+    "name": "FulfillGrantRequest",
+    "description": "Record a decision on a grant request.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_grant_requests_list",
+    "name": "ListGrantRequests",
+    "description": "List requests for time-limited access.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_grant_requests_pending_review_list",
+    "name": "ListPendingGrantRequests",
+    "description": "List pending grant requests the current user can review.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_grant_requests_retrieve",
+    "name": "ShowGrantRequest",
+    "description": "Show a request for time-limited access.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_grant_requests_revoke_destroy",
+    "name": "RevokeGrant",
+    "description": "Immediately end an active grant as an eligible reviewer.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_bindings_create",
+    "name": "CreateRequestRuleBinding",
+    "description": "Create a request rule binding.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_bindings_destroy",
+    "name": "DeleteRequestRuleBinding",
+    "description": "Irreversibly delete a request rule binding.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_bindings_list",
+    "name": "ListRequestsRuleBindings",
+    "description": "List grant request rules linked to access targets.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_bindings_partial_update",
+    "name": "UpdateRequestRuleBinding",
+    "description": "Update a request rule binding.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_bindings_retrieve",
+    "name": "ShowRequestRuleBinding",
+    "description": "Show a request rule binding.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_bindings_update",
+    "name": "ReplaceRequestRuleBinding",
+    "description": "Replace a request rule binding.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "requests_rule_bindings_used_by_list",
+    "name": "ShowRequestRuleBindingUsedBy",
+    "description": "Show objects that reference a request rule binding.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_child_bindings_create",
+    "name": "CreateRequestRuleChildBinding",
+    "description": "Create a request rule child binding.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_child_bindings_destroy",
+    "name": "DeleteRequestRuleChildBinding",
+    "description": "Irreversibly delete a request rule child binding.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_child_bindings_list",
+    "name": "ListRequestsRuleChildBindings",
+    "description": "List additional access targets linked to a request rule binding.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_child_bindings_partial_update",
+    "name": "UpdateRequestRuleChildBinding",
+    "description": "Update a request rule child binding.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_child_bindings_retrieve",
+    "name": "ShowRequestRuleChildBinding",
+    "description": "Show a request rule child binding.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rule_child_bindings_update",
+    "name": "ReplaceRequestRuleChildBinding",
+    "description": "Replace a request rule child binding.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "requests_rule_child_bindings_used_by_list",
+    "name": "ShowRequestRuleChildBindingUsedBy",
+    "description": "Show objects that reference a request rule child binding.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rules_create",
+    "name": "CreateRequestRule",
+    "description": "Create a request rule.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rules_destroy",
+    "name": "DeleteRequestRule",
+    "description": "Irreversibly delete a request rule.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rules_list",
+    "name": "ListRequestsRules",
+    "description": "List grant request approval rules.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rules_partial_update",
+    "name": "UpdateRequestRule",
+    "description": "Update a request rule.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rules_retrieve",
+    "name": "ShowRequestRule",
+    "description": "Show a request rule.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "requests_rules_update",
+    "name": "ReplaceRequestRule",
+    "description": "Replace a request rule.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "requests_rules_used_by_list",
+    "name": "ShowRequestRuleUsedBy",
+    "description": "Show objects that reference a request rule.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "operationId": "flows_bindings_create",
+    "name": "CreateFlowBinding",
+    "description": "Create a flow stage binding.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_bindings_destroy",
+    "name": "DeleteFlowBinding",
+    "description": "Irreversibly delete a flow stage binding.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_bindings_list",
+    "name": "ListFlowBindings",
+    "description": "List flow stage bindings.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_bindings_partial_update",
+    "name": "UpdateFlowBinding",
+    "description": "Update a flow stage binding.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_bindings_retrieve",
+    "name": "ShowFlowBinding",
+    "description": "Get flow stage binding details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_bindings_update",
+    "name": "ReplaceFlowBinding",
+    "description": "Replace flow binding.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "flows_bindings_used_by_list",
+    "name": "ShowFlowBindingUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_executor_get",
+    "name": "ShowFlowChallenge",
+    "description": "Start or resume the session flow and return its pending challenge.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_executor_solve",
+    "name": "SolveFlowChallenge",
+    "description": "Submit a challenge response and advance to the next stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_inspector_get",
+    "name": "ShowFlowInspection",
+    "description": "Show the current session flow plan and history.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_cache_clear_create",
+    "name": "ClearFlowCache",
+    "description": "Clear flow cache.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_cache_info_retrieve",
+    "name": "ShowFlowCacheInfo",
+    "description": "Show the cached flow count.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_create",
+    "name": "CreateFlow",
+    "description": "Create a flow.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_destroy",
+    "name": "DeleteFlow",
+    "description": "Irreversibly delete a flow.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_diagram_retrieve",
+    "name": "ShowFlowDiagram",
+    "description": "Show a diagram in flowchart.js format.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_execute_retrieve",
+    "name": "ExecuteFlow",
+    "description": "Replace the session plan for the current user and return its URL.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_export_retrieve",
+    "name": "ExportFlow",
+    "description": "Export flow as YAML.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_list",
+    "name": "ListFlows",
+    "description": "List flows (slim).",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_partial_update",
+    "name": "UpdateFlow",
+    "description": "Update a flow.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_retrieve",
+    "name": "ShowFlow",
+    "description": "Get full flow details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "flows_instances_update",
+    "name": "ReplaceFlow",
+    "description": "Replace flow.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "flows_instances_used_by_list",
+    "name": "ShowFlowUsedBy",
+    "description": "List referencing objects.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  }
+]

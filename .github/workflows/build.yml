@@ -5,7 +5,7 @@ on:
   pull_request:
   push:
     branches: [main]
-    paths: [src/**, tests/**, scripts/**, pyproject.toml, .github/workflows/build.yml, docs/**]
+    paths: [src/**, tests/**, scripts/**, codegen/**, dev.py, pyproject.toml, .github/workflows/build.yml, docs/**]
 
 permissions:
   contents: write

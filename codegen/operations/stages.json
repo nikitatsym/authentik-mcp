@@ -1,0 +1,1472 @@
+[
+  {
+    "operationId": "stages_account_lockdown_create",
+    "name": "CreateAccountLockdownStage",
+    "description": "Create a stage for deactivation and credential revocation.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_account_lockdown_destroy",
+    "name": "DeleteAccountLockdownStage",
+    "description": "Permanently delete an account lockdown stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_account_lockdown_list",
+    "name": "ListAccountLockdownStages",
+    "description": "List account lockdown stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_account_lockdown_partial_update",
+    "name": "UpdateAccountLockdownStage",
+    "description": "Update account lockdown settings.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_account_lockdown_retrieve",
+    "name": "ShowAccountLockdownStage",
+    "description": "Show account lockdown settings.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_account_lockdown_update",
+    "name": "ReplaceAccountLockdownStage",
+    "description": "Replace account lockdown settings.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_account_lockdown_used_by_list",
+    "name": "ShowAccountLockdownStageUsedBy",
+    "description": "Show objects referencing this lockdown stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_all_destroy",
+    "name": "DeleteStage",
+    "description": "Permanently delete a stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_all_list",
+    "name": "ListStages",
+    "description": "List all stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_all_retrieve",
+    "name": "ShowStage",
+    "description": "Get stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_all_types_list",
+    "name": "ListStageTypes",
+    "description": "List creatable stage types.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_all_used_by_list",
+    "name": "ShowStageUsedBy",
+    "description": "Show objects referencing this stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_all_user_settings_list",
+    "name": "ListUserConfigurableStages",
+    "description": "List stages the current user can configure.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_create",
+    "name": "CreateAuthenticatorDuoStage",
+    "description": "Create a Duo authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_destroy",
+    "name": "DeleteAuthenticatorDuoStage",
+    "description": "Permanently delete a Duo authenticator stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_enrollment_status_create",
+    "name": "CheckDuoEnrollmentStatus",
+    "description": "Check enrollment for the user in the current session.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_import_device_manual_create",
+    "name": "ImportDuoDeviceManual",
+    "description": "Import a Duo device into authentik.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_import_devices_automatic_create",
+    "name": "ImportDuoDevicesAutomatic",
+    "description": "Import Duo devices into authentik.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_list",
+    "name": "ListAuthenticatorDuoStages",
+    "description": "List authenticator Duo stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_partial_update",
+    "name": "UpdateAuthenticatorDuoStage",
+    "description": "Update a Duo authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_retrieve",
+    "name": "ShowAuthenticatorDuoStage",
+    "description": "Get authenticator Duo stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_duo_update",
+    "name": "ReplaceAuthenticatorDuoStage",
+    "description": "Replace an authenticator Duo stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_authenticator_duo_used_by_list",
+    "name": "ShowAuthenticatorDuoStageUsedBy",
+    "description": "Show objects referencing this authenticator Duo stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_email_create",
+    "name": "CreateAuthenticatorEmailStage",
+    "description": "Create an email authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_email_destroy",
+    "name": "DeleteAuthenticatorEmailStage",
+    "description": "Permanently delete an email authenticator stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_email_list",
+    "name": "ListAuthenticatorEmailStages",
+    "description": "List authenticator email stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_email_partial_update",
+    "name": "UpdateAuthenticatorEmailStage",
+    "description": "Update an email authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_email_retrieve",
+    "name": "ShowAuthenticatorEmailStage",
+    "description": "Get authenticator email stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_email_update",
+    "name": "ReplaceAuthenticatorEmailStage",
+    "description": "Replace an authenticator email stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_authenticator_email_used_by_list",
+    "name": "ShowAuthenticatorEmailStageUsedBy",
+    "description": "Show objects referencing this authenticator email stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_endpoint_gdtc_create",
+    "name": "CreateAuthenticatorEndpointGdtcStage",
+    "description": "Create a Google Chrome Device Trust stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_endpoint_gdtc_destroy",
+    "name": "DeleteAuthenticatorEndpointGdtcStage",
+    "description": "Permanently delete a Google Chrome Device Trust stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_endpoint_gdtc_list",
+    "name": "ListAuthenticatorEndpointGdtcStages",
+    "description": "List Google Chrome Device Trust stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_endpoint_gdtc_partial_update",
+    "name": "UpdateAuthenticatorEndpointGdtcStage",
+    "description": "Update a Google Chrome Device Trust stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_endpoint_gdtc_retrieve",
+    "name": "ShowAuthenticatorEndpointGdtcStage",
+    "description": "Show Google Chrome Device Trust stage settings.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_endpoint_gdtc_update",
+    "name": "ReplaceAuthenticatorEndpointGdtcStage",
+    "description": "Replace a Google Chrome Device Trust stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_authenticator_endpoint_gdtc_used_by_list",
+    "name": "ShowAuthenticatorEndpointGdtcStageUsedBy",
+    "description": "Show objects referencing this Chrome Device Trust stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_sms_create",
+    "name": "CreateAuthenticatorSmsStage",
+    "description": "Create an SMS authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_sms_destroy",
+    "name": "DeleteAuthenticatorSmsStage",
+    "description": "Permanently delete an SMS authenticator stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_sms_list",
+    "name": "ListAuthenticatorSmsStages",
+    "description": "List authenticator SMS stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_sms_partial_update",
+    "name": "UpdateAuthenticatorSmsStage",
+    "description": "Update an SMS authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_sms_retrieve",
+    "name": "ShowAuthenticatorSmsStage",
+    "description": "Get authenticator SMS stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_sms_update",
+    "name": "ReplaceAuthenticatorSmsStage",
+    "description": "Replace an authenticator SMS stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_authenticator_sms_used_by_list",
+    "name": "ShowAuthenticatorSmsStageUsedBy",
+    "description": "Show objects referencing this authenticator SMS stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_static_create",
+    "name": "CreateAuthenticatorStaticStage",
+    "description": "Create a backup-code enrollment stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_static_destroy",
+    "name": "DeleteAuthenticatorStaticStage",
+    "description": "Permanently delete a backup-code enrollment stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_static_list",
+    "name": "ListAuthenticatorStaticStages",
+    "description": "List backup-code enrollment stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_static_partial_update",
+    "name": "UpdateAuthenticatorStaticStage",
+    "description": "Update a backup-code enrollment stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_static_retrieve",
+    "name": "ShowAuthenticatorStaticStage",
+    "description": "Show backup-code enrollment settings.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_static_update",
+    "name": "ReplaceAuthenticatorStaticStage",
+    "description": "Replace a backup-code enrollment stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_authenticator_static_used_by_list",
+    "name": "ShowAuthenticatorStaticStageUsedBy",
+    "description": "Show objects referencing this backup-code stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_totp_create",
+    "name": "CreateAuthenticatorTotpStage",
+    "description": "Create a TOTP authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_totp_destroy",
+    "name": "DeleteAuthenticatorTotpStage",
+    "description": "Permanently delete a TOTP authenticator stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_totp_list",
+    "name": "ListAuthenticatorTotpStages",
+    "description": "List authenticator TOTP stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_totp_partial_update",
+    "name": "UpdateAuthenticatorTotpStage",
+    "description": "Update a TOTP authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_totp_retrieve",
+    "name": "ShowAuthenticatorTotpStage",
+    "description": "Get authenticator TOTP stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_totp_update",
+    "name": "ReplaceAuthenticatorTotpStage",
+    "description": "Replace an authenticator TOTP stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_authenticator_totp_used_by_list",
+    "name": "ShowAuthenticatorTotpStageUsedBy",
+    "description": "Show objects referencing this authenticator TOTP stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_validate_create",
+    "name": "CreateAuthenticatorValidateStage",
+    "description": "Create a stage that verifies MFA devices.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_validate_destroy",
+    "name": "DeleteAuthenticatorValidateStage",
+    "description": "Permanently delete an MFA verification stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_validate_list",
+    "name": "ListAuthenticatorValidateStages",
+    "description": "List MFA verification stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_validate_partial_update",
+    "name": "UpdateAuthenticatorValidateStage",
+    "description": "Update an MFA verification stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_validate_retrieve",
+    "name": "ShowAuthenticatorValidateStage",
+    "description": "Show MFA verification settings.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_validate_update",
+    "name": "ReplaceAuthenticatorValidateStage",
+    "description": "Replace an MFA verification stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_authenticator_validate_used_by_list",
+    "name": "ShowAuthenticatorValidateStageUsedBy",
+    "description": "Show objects referencing this MFA verification stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_create",
+    "name": "CreateAuthenticatorWebauthnStage",
+    "description": "Create a WebAuthn authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_destroy",
+    "name": "DeleteAuthenticatorWebauthnStage",
+    "description": "Permanently delete a WebAuthn authenticator stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_device_types_list",
+    "name": "ListWebauthnDeviceTypes",
+    "description": "List recognized WebAuthn authenticator models.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_device_types_retrieve",
+    "name": "ShowWebauthnDeviceType",
+    "description": "Show a WebAuthn authenticator model.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_list",
+    "name": "ListAuthenticatorWebauthnStages",
+    "description": "List authenticator WebAuthn stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_partial_update",
+    "name": "UpdateAuthenticatorWebauthnStage",
+    "description": "Update a WebAuthn authenticator stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_retrieve",
+    "name": "ShowAuthenticatorWebauthnStage",
+    "description": "Get authenticator WebAuthn stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_update",
+    "name": "ReplaceAuthenticatorWebauthnStage",
+    "description": "Replace an authenticator WebAuthn stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_authenticator_webauthn_used_by_list",
+    "name": "ShowAuthenticatorWebauthnStageUsedBy",
+    "description": "Show objects referencing this authenticator WebAuthn stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_captcha_create",
+    "name": "CreateCaptchaStage",
+    "description": "Create a captcha stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_captcha_destroy",
+    "name": "DeleteCaptchaStage",
+    "description": "Permanently delete a captcha stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_captcha_list",
+    "name": "ListCaptchaStages",
+    "description": "List captcha stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_captcha_partial_update",
+    "name": "UpdateCaptchaStage",
+    "description": "Update a captcha stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_captcha_retrieve",
+    "name": "ShowCaptchaStage",
+    "description": "Get captcha stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_captcha_update",
+    "name": "ReplaceCaptchaStage",
+    "description": "Replace a captcha stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_captcha_used_by_list",
+    "name": "ShowCaptchaStageUsedBy",
+    "description": "Show objects referencing this captcha stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_consent_create",
+    "name": "CreateConsentStage",
+    "description": "Create a consent stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_consent_destroy",
+    "name": "DeleteConsentStage",
+    "description": "Permanently delete a consent stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_consent_list",
+    "name": "ListConsentStages",
+    "description": "List consent stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_consent_partial_update",
+    "name": "UpdateConsentStage",
+    "description": "Update a consent stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_consent_retrieve",
+    "name": "ShowConsentStage",
+    "description": "Get consent stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_consent_update",
+    "name": "ReplaceConsentStage",
+    "description": "Replace a consent stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_consent_used_by_list",
+    "name": "ShowConsentStageUsedBy",
+    "description": "Show objects referencing this consent stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_deny_create",
+    "name": "CreateDenyStage",
+    "description": "Create a deny stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_deny_destroy",
+    "name": "DeleteDenyStage",
+    "description": "Permanently delete a deny stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_deny_list",
+    "name": "ListDenyStages",
+    "description": "List deny stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_deny_partial_update",
+    "name": "UpdateDenyStage",
+    "description": "Update a deny stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_deny_retrieve",
+    "name": "ShowDenyStage",
+    "description": "Get deny stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_deny_update",
+    "name": "ReplaceDenyStage",
+    "description": "Replace a deny stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_deny_used_by_list",
+    "name": "ShowDenyStageUsedBy",
+    "description": "Show objects referencing this deny stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_dummy_create",
+    "name": "CreateDummyStage",
+    "description": "Create a dummy stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_dummy_destroy",
+    "name": "DeleteDummyStage",
+    "description": "Permanently delete a dummy stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_dummy_list",
+    "name": "ListDummyStages",
+    "description": "List dummy stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_dummy_partial_update",
+    "name": "UpdateDummyStage",
+    "description": "Update a dummy stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_dummy_retrieve",
+    "name": "ShowDummyStage",
+    "description": "Get dummy stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_dummy_update",
+    "name": "ReplaceDummyStage",
+    "description": "Replace a dummy stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_dummy_used_by_list",
+    "name": "ShowDummyStageUsedBy",
+    "description": "Show objects referencing this dummy stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_email_create",
+    "name": "CreateEmailStage",
+    "description": "Create an email stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_email_destroy",
+    "name": "DeleteEmailStage",
+    "description": "Permanently delete an email stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_email_list",
+    "name": "ListEmailStages",
+    "description": "List email stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_email_partial_update",
+    "name": "UpdateEmailStage",
+    "description": "Update an email stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_email_retrieve",
+    "name": "ShowEmailStage",
+    "description": "Get email stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_email_templates_list",
+    "name": "ListEmailStageTemplates",
+    "description": "List email stage templates.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_email_update",
+    "name": "ReplaceEmailStage",
+    "description": "Replace an email stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_email_used_by_list",
+    "name": "ShowEmailStageUsedBy",
+    "description": "Show objects referencing this email stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_endpoints_create",
+    "name": "CreateEndpointStage",
+    "description": "Create a stage for device posture checks.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_endpoints_destroy",
+    "name": "DeleteEndpointStage",
+    "description": "Permanently delete an endpoint stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_endpoints_list",
+    "name": "ListEndpointStages",
+    "description": "List device posture stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_endpoints_partial_update",
+    "name": "UpdateEndpointStage",
+    "description": "Update an endpoint stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_endpoints_retrieve",
+    "name": "ShowEndpointStage",
+    "description": "Show device posture stage settings.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_endpoints_update",
+    "name": "ReplaceEndpointStage",
+    "description": "Replace an endpoint stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_endpoints_used_by_list",
+    "name": "ShowEndpointStageUsedBy",
+    "description": "Show objects referencing this endpoint stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_identification_create",
+    "name": "CreateIdentificationStage",
+    "description": "Create an identification stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_identification_destroy",
+    "name": "DeleteIdentificationStage",
+    "description": "Permanently delete an identification stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_identification_list",
+    "name": "ListIdentificationStages",
+    "description": "List identification stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_identification_partial_update",
+    "name": "UpdateIdentificationStage",
+    "description": "Update an identification stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_identification_retrieve",
+    "name": "ShowIdentificationStage",
+    "description": "Get identification stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_identification_update",
+    "name": "ReplaceIdentificationStage",
+    "description": "Replace an identification stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_identification_used_by_list",
+    "name": "ShowIdentificationStageUsedBy",
+    "description": "Show objects referencing this identification stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_invitations_create",
+    "name": "CreateInvitation",
+    "description": "Create an invitation.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_invitations_destroy",
+    "name": "DeleteInvitation",
+    "description": "Permanently delete an invitation.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_invitations_list",
+    "name": "ListInvitations",
+    "description": "List invitations.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_invitations_partial_update",
+    "name": "UpdateInvitation",
+    "description": "Update an invitation.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_invitations_retrieve",
+    "name": "ShowInvitation",
+    "description": "Get invitation details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_invitations_send_email_create",
+    "name": "SendInvitationEmail",
+    "description": "Email the invitation link to recipients.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_invitations_update",
+    "name": "ReplaceInvitation",
+    "description": "Replace an invitation.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_invitation_invitations_used_by_list",
+    "name": "ShowInvitationUsedBy",
+    "description": "Show objects referencing this invitation.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_stages_create",
+    "name": "CreateInvitationStage",
+    "description": "Create an invitation stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_stages_destroy",
+    "name": "DeleteInvitationStage",
+    "description": "Permanently delete an invitation stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_stages_list",
+    "name": "ListInvitationStages",
+    "description": "List invitation stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_stages_partial_update",
+    "name": "UpdateInvitationStage",
+    "description": "Update an invitation stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_stages_retrieve",
+    "name": "ShowInvitationStage",
+    "description": "Get invitation stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_invitation_stages_update",
+    "name": "ReplaceInvitationStage",
+    "description": "Replace an invitation stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_invitation_stages_used_by_list",
+    "name": "ShowInvitationStageUsedBy",
+    "description": "Show objects referencing this invitation stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_mtls_create",
+    "name": "CreateMtlsStage",
+    "description": "Create a client-certificate authentication stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_mtls_destroy",
+    "name": "DeleteMtlsStage",
+    "description": "Permanently delete an mTLS stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_mtls_list",
+    "name": "ListMtlsStages",
+    "description": "List client-certificate authentication stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_mtls_partial_update",
+    "name": "UpdateMtlsStage",
+    "description": "Update an mTLS stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_mtls_retrieve",
+    "name": "ShowMtlsStage",
+    "description": "Show client-certificate authentication settings.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_mtls_update",
+    "name": "ReplaceMtlsStage",
+    "description": "Replace an mTLS stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_mtls_used_by_list",
+    "name": "ShowMtlsStageUsedBy",
+    "description": "Show objects referencing this mTLS stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_password_create",
+    "name": "CreatePasswordStage",
+    "description": "Create a password stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_password_destroy",
+    "name": "DeletePasswordStage",
+    "description": "Permanently delete a password stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_password_list",
+    "name": "ListPasswordStages",
+    "description": "List password stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_password_partial_update",
+    "name": "UpdatePasswordStage",
+    "description": "Update a password stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_password_retrieve",
+    "name": "ShowPasswordStage",
+    "description": "Get password stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_password_update",
+    "name": "ReplacePasswordStage",
+    "description": "Replace a password stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_password_used_by_list",
+    "name": "ShowPasswordStageUsedBy",
+    "description": "Show objects referencing this password stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_prompts_create",
+    "name": "CreatePrompt",
+    "description": "Create a flow form field.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_prompts_destroy",
+    "name": "DeletePrompt",
+    "description": "Permanently delete a flow form field.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_prompts_list",
+    "name": "ListPrompts",
+    "description": "List flow form fields.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_prompts_partial_update",
+    "name": "UpdatePrompt",
+    "description": "Update a flow form field.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_prompts_preview_create",
+    "name": "PreviewPrompt",
+    "description": "Preview a form field as a flow challenge.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_prompts_retrieve",
+    "name": "ShowPrompt",
+    "description": "Show a flow form field.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_prompts_update",
+    "name": "ReplacePrompt",
+    "description": "Replace a flow form field.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_prompt_prompts_used_by_list",
+    "name": "ShowPromptUsedBy",
+    "description": "Show objects referencing this form field.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_stages_create",
+    "name": "CreatePromptStage",
+    "description": "Create a prompt stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_stages_destroy",
+    "name": "DeletePromptStage",
+    "description": "Permanently delete a prompt stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_stages_list",
+    "name": "ListPromptStages",
+    "description": "List prompt stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_stages_partial_update",
+    "name": "UpdatePromptStage",
+    "description": "Update a prompt stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_stages_retrieve",
+    "name": "ShowPromptStage",
+    "description": "Get prompt stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_prompt_stages_update",
+    "name": "ReplacePromptStage",
+    "description": "Replace a prompt stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_prompt_stages_used_by_list",
+    "name": "ShowPromptStageUsedBy",
+    "description": "Show objects referencing this prompt stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_redirect_create",
+    "name": "CreateRedirectStage",
+    "description": "Create a redirect stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_redirect_destroy",
+    "name": "DeleteRedirectStage",
+    "description": "Permanently delete a redirect stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_redirect_list",
+    "name": "ListRedirectStages",
+    "description": "List redirect stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_redirect_partial_update",
+    "name": "UpdateRedirectStage",
+    "description": "Update a redirect stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_redirect_retrieve",
+    "name": "ShowRedirectStage",
+    "description": "Get redirect stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_redirect_update",
+    "name": "ReplaceRedirectStage",
+    "description": "Replace a redirect stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_redirect_used_by_list",
+    "name": "ShowRedirectStageUsedBy",
+    "description": "Show objects referencing this redirect stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_source_create",
+    "name": "CreateSourceStage",
+    "description": "Create a source stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_source_destroy",
+    "name": "DeleteSourceStage",
+    "description": "Permanently delete a source stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_source_list",
+    "name": "ListSourceStages",
+    "description": "List source stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_source_partial_update",
+    "name": "UpdateSourceStage",
+    "description": "Update a source stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_source_retrieve",
+    "name": "ShowSourceStage",
+    "description": "Get source stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_source_update",
+    "name": "ReplaceSourceStage",
+    "description": "Replace a source stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_source_used_by_list",
+    "name": "ShowSourceStageUsedBy",
+    "description": "Show objects referencing this source stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_delete_create",
+    "name": "CreateUserDeleteStage",
+    "description": "Create a stage that deletes the flow user without confirmation.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_delete_destroy",
+    "name": "DeleteUserDeleteStage",
+    "description": "Permanently delete the stage, not a user.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_delete_list",
+    "name": "ListUserDeleteStages",
+    "description": "List user delete stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_delete_partial_update",
+    "name": "UpdateUserDeleteStage",
+    "description": "Update a user delete stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_delete_retrieve",
+    "name": "ShowUserDeleteStage",
+    "description": "Get user delete stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_delete_update",
+    "name": "ReplaceUserDeleteStage",
+    "description": "Replace a user delete stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_user_delete_used_by_list",
+    "name": "ShowUserDeleteStageUsedBy",
+    "description": "Show objects referencing this user delete stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_login_create",
+    "name": "CreateUserLoginStage",
+    "description": "Create a stage that starts a user session.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_login_destroy",
+    "name": "DeleteUserLoginStage",
+    "description": "Permanently delete a user login stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_login_list",
+    "name": "ListUserLoginStages",
+    "description": "List user login stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_login_partial_update",
+    "name": "UpdateUserLoginStage",
+    "description": "Update a user login stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_login_retrieve",
+    "name": "ShowUserLoginStage",
+    "description": "Get user login stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_login_update",
+    "name": "ReplaceUserLoginStage",
+    "description": "Replace a user login stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_user_login_used_by_list",
+    "name": "ShowUserLoginStageUsedBy",
+    "description": "Show objects referencing this user login stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_logout_create",
+    "name": "CreateUserLogoutStage",
+    "description": "Create a stage that ends a user session.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_logout_destroy",
+    "name": "DeleteUserLogoutStage",
+    "description": "Permanently delete a user logout stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_logout_list",
+    "name": "ListUserLogoutStages",
+    "description": "List user logout stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_logout_partial_update",
+    "name": "UpdateUserLogoutStage",
+    "description": "Update a user logout stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_logout_retrieve",
+    "name": "ShowUserLogoutStage",
+    "description": "Get user logout stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_logout_update",
+    "name": "ReplaceUserLogoutStage",
+    "description": "Replace a user logout stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_user_logout_used_by_list",
+    "name": "ShowUserLogoutStageUsedBy",
+    "description": "Show objects referencing this user logout stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_write_create",
+    "name": "CreateUserWriteStage",
+    "description": "Create a stage that saves flow data to a user.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_write_destroy",
+    "name": "DeleteUserWriteStage",
+    "description": "Permanently delete a user write stage.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_write_list",
+    "name": "ListUserWriteStages",
+    "description": "List user write stages.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_write_partial_update",
+    "name": "UpdateUserWriteStage",
+    "description": "Update a user write stage.",
+    "group": "authentik_flows_write",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_write_retrieve",
+    "name": "ShowUserWriteStage",
+    "description": "Get user write stage details.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  },
+  {
+    "operationId": "stages_user_write_update",
+    "name": "ReplaceUserWriteStage",
+    "description": "Replace a user write stage.",
+    "group": "authentik_flows_write",
+    "exposed": false
+  },
+  {
+    "operationId": "stages_user_write_used_by_list",
+    "name": "ShowUserWriteStageUsedBy",
+    "description": "Show objects referencing this user write stage.",
+    "group": "authentik_flows_read",
+    "exposed": true
+  }
+]

@@ -15,16 +15,10 @@ ROOT = Group("root", "")
 
 
 class _Unset:
-    """Sentinel singleton: caller did not pass this field.
+    """Caller omitted a parameter, distinct from explicit null.
 
-    Distinct from `None`. `None` means "caller explicitly passed null" — the
-    Authentik API treats null as a clearing operation on some nullable fields
-    (e.g. switching a policy binding from a policy to a group by sending
-    `policy=null`). Optional params declared with default `_UNSET` carry the
-    omitted-vs-cleared distinction through Pydantic validation
-    (`model_dump(exclude_unset=True)`) and on to the wire: `helpers._body`
-    drops `_UNSET` but, when a field is listed in `keep_null=`, keeps an
-    explicit `None`.
+    Pydantic excludes omitted fields and generated transport drops `_UNSET`.
+    Explicit None reaches nullable API fields, allowing a caller to clear them.
     """
 
     _instance: "_Unset | None" = None

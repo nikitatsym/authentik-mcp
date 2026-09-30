@@ -1,0 +1,583 @@
+[
+  {
+    "operationId": "authenticators_admin_all_list",
+    "name": "ListAdminAuthenticators",
+    "description": "List a user's authenticator devices as an administrator.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_duo_create",
+    "name": "CreateAdminDuoDevice",
+    "description": "Create admin Duo device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_duo_destroy",
+    "name": "DeleteAdminDuoDevice",
+    "description": "Irreversibly delete an admin Duo device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_duo_list",
+    "name": "ListAdminDuoDevices",
+    "description": "List admin Duo devices.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_duo_partial_update",
+    "name": "UpdateAdminDuoDevice",
+    "description": "Update admin Duo device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_duo_retrieve",
+    "name": "ShowAdminDuoDevice",
+    "description": "Get admin Duo device details.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_duo_update",
+    "name": "ReplaceAdminDuoDevice",
+    "description": "Replace a Duo authenticator device.",
+    "group": "authentik_admin",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_admin_email_create",
+    "name": "CreateAdminEmailDevice",
+    "description": "Create admin email device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_email_destroy",
+    "name": "DeleteAdminEmailDevice",
+    "description": "Irreversibly delete an admin email device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_email_list",
+    "name": "ListAdminEmailDevices",
+    "description": "List admin email devices.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_email_partial_update",
+    "name": "UpdateAdminEmailDevice",
+    "description": "Update admin email device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_email_retrieve",
+    "name": "ShowAdminEmailDevice",
+    "description": "Get admin email device details.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_email_update",
+    "name": "ReplaceAdminEmailDevice",
+    "description": "Replace an email authenticator device.",
+    "group": "authentik_admin",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_admin_endpoint_create",
+    "name": "CreateAdminEndpointDevice",
+    "description": "Create a Google endpoint authenticator device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_endpoint_destroy",
+    "name": "DeleteAdminEndpointDevice",
+    "description": "Irreversibly delete a Google endpoint authenticator device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_endpoint_list",
+    "name": "ListAdminEndpointDevices",
+    "description": "List Google endpoint authenticator devices.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_endpoint_partial_update",
+    "name": "UpdateAdminEndpointDevice",
+    "description": "Update a Google endpoint authenticator device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_endpoint_retrieve",
+    "name": "ShowAdminEndpointDevice",
+    "description": "Get Google endpoint authenticator device details.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_endpoint_update",
+    "name": "ReplaceAdminEndpointDevice",
+    "description": "Replace a Google endpoint authenticator device.",
+    "group": "authentik_admin",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_admin_sms_create",
+    "name": "CreateAdminSmsDevice",
+    "description": "Create admin SMS device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_sms_destroy",
+    "name": "DeleteAdminSmsDevice",
+    "description": "Irreversibly delete an admin SMS device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_sms_list",
+    "name": "ListAdminSmsDevices",
+    "description": "List admin SMS devices.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_sms_partial_update",
+    "name": "UpdateAdminSmsDevice",
+    "description": "Update admin SMS device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_sms_retrieve",
+    "name": "ShowAdminSmsDevice",
+    "description": "Get admin SMS device details.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_sms_update",
+    "name": "ReplaceAdminSmsDevice",
+    "description": "Replace an SMS authenticator device.",
+    "group": "authentik_admin",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_admin_static_create",
+    "name": "CreateAdminStaticDevice",
+    "description": "Create a static-token authenticator device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_static_destroy",
+    "name": "DeleteAdminStaticDevice",
+    "description": "Irreversibly delete a static-token authenticator device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_static_list",
+    "name": "ListAdminStaticDevices",
+    "description": "List static-token authenticator devices.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_static_partial_update",
+    "name": "UpdateAdminStaticDevice",
+    "description": "Update a static-token authenticator device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_static_retrieve",
+    "name": "ShowAdminStaticDevice",
+    "description": "Get a static-token authenticator including its token values.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_static_update",
+    "name": "ReplaceAdminStaticDevice",
+    "description": "Replace a static-token authenticator device.",
+    "group": "authentik_admin",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_admin_totp_create",
+    "name": "CreateAdminTotpDevice",
+    "description": "Create admin TOTP device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_totp_destroy",
+    "name": "DeleteAdminTotpDevice",
+    "description": "Irreversibly delete an admin TOTP device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_totp_list",
+    "name": "ListAdminTotpDevices",
+    "description": "List admin TOTP devices.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_totp_partial_update",
+    "name": "UpdateAdminTotpDevice",
+    "description": "Update admin TOTP device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_totp_retrieve",
+    "name": "ShowAdminTotpDevice",
+    "description": "Get admin TOTP device details.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_totp_update",
+    "name": "ReplaceAdminTotpDevice",
+    "description": "Replace a TOTP authenticator device.",
+    "group": "authentik_admin",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_admin_webauthn_create",
+    "name": "CreateAdminWebauthnDevice",
+    "description": "Create admin WebAuthn device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_webauthn_destroy",
+    "name": "DeleteAdminWebauthnDevice",
+    "description": "Irreversibly delete an admin WebAuthn device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_webauthn_list",
+    "name": "ListAdminWebauthnDevices",
+    "description": "List admin WebAuthn devices.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_webauthn_partial_update",
+    "name": "UpdateAdminWebauthnDevice",
+    "description": "Update admin WebAuthn device.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_webauthn_retrieve",
+    "name": "ShowAdminWebauthnDevice",
+    "description": "Get admin WebAuthn device details.",
+    "group": "authentik_admin",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_admin_webauthn_update",
+    "name": "ReplaceAdminWebauthnDevice",
+    "description": "Replace a WebAuthn authenticator device.",
+    "group": "authentik_admin",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_all_list",
+    "name": "ListAuthenticators",
+    "description": "List the current user's authenticator devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_duo_destroy",
+    "name": "DeleteAuthenticatorDuoDevice",
+    "description": "Irreversibly delete a Duo authenticator device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_duo_list",
+    "name": "ListAuthenticatorDuoDevices",
+    "description": "List Duo authenticator devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_duo_partial_update",
+    "name": "UpdateAuthenticatorDuoDevice",
+    "description": "Update a Duo authenticator device.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_duo_retrieve",
+    "name": "ShowAuthenticatorDuoDevice",
+    "description": "Get Duo device details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_duo_update",
+    "name": "ReplaceAuthenticatorDuoDevice",
+    "description": "Replace a Duo authenticator device.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_duo_used_by_list",
+    "name": "ShowAuthenticatorDuoDeviceUsedBy",
+    "description": "Show objects that reference this device.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_email_destroy",
+    "name": "DeleteAuthenticatorEmailDevice",
+    "description": "Irreversibly delete an email authenticator device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_email_list",
+    "name": "ListAuthenticatorEmailDevices",
+    "description": "List email authenticator devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_email_partial_update",
+    "name": "UpdateAuthenticatorEmailDevice",
+    "description": "Update an email authenticator device.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_email_retrieve",
+    "name": "ShowAuthenticatorEmailDevice",
+    "description": "Get email device details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_email_update",
+    "name": "ReplaceAuthenticatorEmailDevice",
+    "description": "Replace an email authenticator device.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_email_used_by_list",
+    "name": "ShowAuthenticatorEmailDeviceUsedBy",
+    "description": "Show objects that reference this device.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_endpoint_list",
+    "name": "ListAuthenticatorEndpointDevices",
+    "description": "List Google endpoint authenticator devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_endpoint_retrieve",
+    "name": "ShowAuthenticatorEndpointDevice",
+    "description": "Get Google endpoint authenticator details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_endpoint_used_by_list",
+    "name": "ShowAuthenticatorEndpointDeviceUsedBy",
+    "description": "Show objects that reference this device.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_sms_destroy",
+    "name": "DeleteAuthenticatorSmsDevice",
+    "description": "Irreversibly delete an SMS authenticator device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_sms_list",
+    "name": "ListAuthenticatorSmsDevices",
+    "description": "List SMS authenticator devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_sms_partial_update",
+    "name": "UpdateAuthenticatorSmsDevice",
+    "description": "Update an SMS authenticator device.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_sms_retrieve",
+    "name": "ShowAuthenticatorSmsDevice",
+    "description": "Get SMS device details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_sms_update",
+    "name": "ReplaceAuthenticatorSmsDevice",
+    "description": "Replace an SMS authenticator device.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_sms_used_by_list",
+    "name": "ShowAuthenticatorSmsDeviceUsedBy",
+    "description": "Show objects that reference this device.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_static_destroy",
+    "name": "DeleteAuthenticatorStaticDevice",
+    "description": "Irreversibly delete a static-token authenticator device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_static_list",
+    "name": "ListAuthenticatorStaticDevices",
+    "description": "List static-token authenticator devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_static_partial_update",
+    "name": "UpdateAuthenticatorStaticDevice",
+    "description": "Update a static-token authenticator device.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_static_retrieve",
+    "name": "ShowAuthenticatorStaticDevice",
+    "description": "Get a static-token authenticator including its token values.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_static_update",
+    "name": "ReplaceAuthenticatorStaticDevice",
+    "description": "Replace a static-token authenticator device.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_static_used_by_list",
+    "name": "ShowAuthenticatorStaticDeviceUsedBy",
+    "description": "Show objects that reference this device.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_totp_destroy",
+    "name": "DeleteAuthenticatorTotpDevice",
+    "description": "Irreversibly delete a TOTP authenticator device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_totp_list",
+    "name": "ListAuthenticatorTotpDevices",
+    "description": "List TOTP authenticator devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_totp_partial_update",
+    "name": "UpdateAuthenticatorTotpDevice",
+    "description": "Update a TOTP authenticator device.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_totp_retrieve",
+    "name": "ShowAuthenticatorTotpDevice",
+    "description": "Get TOTP device details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_totp_update",
+    "name": "ReplaceAuthenticatorTotpDevice",
+    "description": "Replace a TOTP authenticator device.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_totp_used_by_list",
+    "name": "ShowAuthenticatorTotpDeviceUsedBy",
+    "description": "Show objects that reference this device.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_webauthn_destroy",
+    "name": "DeleteAuthenticatorWebauthnDevice",
+    "description": "Irreversibly delete a WebAuthn authenticator device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_webauthn_list",
+    "name": "ListAuthenticatorWebauthnDevices",
+    "description": "List WebAuthn authenticator devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_webauthn_partial_update",
+    "name": "UpdateAuthenticatorWebauthnDevice",
+    "description": "Update a WebAuthn authenticator device.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_webauthn_retrieve",
+    "name": "ShowAuthenticatorWebauthnDevice",
+    "description": "Get WebAuthn device details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "authenticators_webauthn_update",
+    "name": "ReplaceAuthenticatorWebauthnDevice",
+    "description": "Replace a WebAuthn authenticator device.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "authenticators_webauthn_used_by_list",
+    "name": "ShowAuthenticatorWebauthnDeviceUsedBy",
+    "description": "Show objects that reference this device.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

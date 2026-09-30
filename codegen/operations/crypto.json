@@ -1,0 +1,72 @@
+[
+  {
+    "operationId": "crypto_certificatekeypairs_create",
+    "name": "CreateCertificate",
+    "description": "Create a certificate-key pair.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_destroy",
+    "name": "DeleteCertificate",
+    "description": "Permanently delete a certificate-key pair.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_generate_create",
+    "name": "GenerateCertificate",
+    "description": "Generate a self-signed certificate-key pair.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_list",
+    "name": "ListCertificates",
+    "description": "List certificate-key pairs.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_partial_update",
+    "name": "UpdateCertificate",
+    "description": "Update a certificate-key pair.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_retrieve",
+    "name": "ShowCertificate",
+    "description": "Get certificate-key pair details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_update",
+    "name": "ReplaceCertificate",
+    "description": "Replace a certificate-key pair.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_used_by_list",
+    "name": "ShowCertificateUsedBy",
+    "description": "List objects referencing this certificate-key pair.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_view_certificate_retrieve",
+    "name": "ShowCertificateData",
+    "description": "Return certificate data and log access.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "crypto_certificatekeypairs_view_private_key_retrieve",
+    "name": "ShowPrivateKey",
+    "description": "Return private key data and log access.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

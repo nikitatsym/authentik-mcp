@@ -1,0 +1,919 @@
+[
+  {
+    "operationId": "providers_all_destroy",
+    "name": "DeleteProvider",
+    "description": "Delete a provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_all_list",
+    "name": "ListProviders",
+    "description": "List all providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_all_retrieve",
+    "name": "ShowProvider",
+    "description": "Get full provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_all_types_list",
+    "name": "ListProviderTypes",
+    "description": "List creatable provider types.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_all_used_by_list",
+    "name": "ShowProviderUsedBy",
+    "description": "Show references to this provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_create",
+    "name": "CreateGoogleWorkspaceProvider",
+    "description": "Create a Google Workspace provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_destroy",
+    "name": "DeleteGoogleWorkspaceProvider",
+    "description": "Delete a Google Workspace provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_groups_create",
+    "name": "CreateGoogleWorkspaceGroupLink",
+    "description": "Link an Authentik group to its Google Workspace counterpart through the provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_groups_destroy",
+    "name": "DeleteGoogleWorkspaceGroupLink",
+    "description": "Delete a Google Workspace provider group link irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_groups_list",
+    "name": "ListGoogleWorkspaceGroupLinks",
+    "description": "List Google Workspace provider group links.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_groups_retrieve",
+    "name": "ShowGoogleWorkspaceGroupLink",
+    "description": "Show a Google Workspace provider group link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_groups_used_by_list",
+    "name": "ShowGoogleWorkspaceGroupLinkUsedBy",
+    "description": "Show references to this Google Workspace provider group link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_list",
+    "name": "ListGoogleWorkspaceProviders",
+    "description": "List Google Workspace providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_partial_update",
+    "name": "UpdateGoogleWorkspaceProvider",
+    "description": "Update a Google Workspace provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_retrieve",
+    "name": "ShowGoogleWorkspaceProvider",
+    "description": "Get Google Workspace provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_sync_object_create",
+    "name": "SyncGoogleWorkspaceObject",
+    "description": "Trigger Google Workspace object sync.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_sync_status_retrieve",
+    "name": "ShowGoogleWorkspaceSyncStatus",
+    "description": "Get Google Workspace provider sync status.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_update",
+    "name": "ReplaceGoogleWorkspaceProvider",
+    "description": "Replace a Google Workspace provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_google_workspace_used_by_list",
+    "name": "ShowGoogleWorkspaceProviderUsedBy",
+    "description": "Show references to this Google Workspace provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_users_create",
+    "name": "CreateGoogleWorkspaceUserLink",
+    "description": "Link an Authentik user to its Google Workspace counterpart through the provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_users_destroy",
+    "name": "DeleteGoogleWorkspaceUserLink",
+    "description": "Delete a Google Workspace provider user link irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_users_list",
+    "name": "ListGoogleWorkspaceUserLinks",
+    "description": "List Google Workspace provider user links.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_users_retrieve",
+    "name": "ShowGoogleWorkspaceUserLink",
+    "description": "Show a Google Workspace provider user link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_google_workspace_users_used_by_list",
+    "name": "ShowGoogleWorkspaceUserLinkUsedBy",
+    "description": "Show references to this Google Workspace provider user link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ldap_create",
+    "name": "CreateLdapProvider",
+    "description": "Create an LDAP provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ldap_destroy",
+    "name": "DeleteLdapProvider",
+    "description": "Delete an LDAP provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ldap_list",
+    "name": "ListLdapProviders",
+    "description": "List LDAP providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ldap_partial_update",
+    "name": "UpdateLdapProvider",
+    "description": "Update an LDAP provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ldap_retrieve",
+    "name": "ShowLdapProvider",
+    "description": "Get LDAP provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ldap_update",
+    "name": "ReplaceLdapProvider",
+    "description": "Replace an LDAP provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_ldap_used_by_list",
+    "name": "ShowLdapProviderUsedBy",
+    "description": "Show references to this LDAP provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_create",
+    "name": "CreateMicrosoftEntraProvider",
+    "description": "Create a Microsoft Entra provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_destroy",
+    "name": "DeleteMicrosoftEntraProvider",
+    "description": "Delete a Microsoft Entra provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_groups_create",
+    "name": "CreateMicrosoftEntraGroupLink",
+    "description": "Link an Authentik group to its Microsoft Entra counterpart through the provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_groups_destroy",
+    "name": "DeleteMicrosoftEntraGroupLink",
+    "description": "Delete a Microsoft Entra provider group link irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_groups_list",
+    "name": "ListMicrosoftEntraGroupLinks",
+    "description": "List Microsoft Entra provider group links.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_groups_retrieve",
+    "name": "ShowMicrosoftEntraGroupLink",
+    "description": "Show a Microsoft Entra provider group link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_groups_used_by_list",
+    "name": "ShowMicrosoftEntraGroupLinkUsedBy",
+    "description": "Show references to this Microsoft Entra provider group link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_list",
+    "name": "ListMicrosoftEntraProviders",
+    "description": "List Microsoft Entra providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_partial_update",
+    "name": "UpdateMicrosoftEntraProvider",
+    "description": "Update a Microsoft Entra provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_retrieve",
+    "name": "ShowMicrosoftEntraProvider",
+    "description": "Get Microsoft Entra provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_sync_object_create",
+    "name": "SyncMicrosoftEntraObject",
+    "description": "Trigger Microsoft Entra object sync.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_sync_status_retrieve",
+    "name": "ShowMicrosoftEntraSyncStatus",
+    "description": "Get Microsoft Entra provider sync status.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_update",
+    "name": "ReplaceMicrosoftEntraProvider",
+    "description": "Replace a Microsoft Entra provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_microsoft_entra_used_by_list",
+    "name": "ShowMicrosoftEntraProviderUsedBy",
+    "description": "Show references to this Microsoft Entra provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_users_create",
+    "name": "CreateMicrosoftEntraUserLink",
+    "description": "Link an Authentik user to its Microsoft Entra counterpart through the provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_users_destroy",
+    "name": "DeleteMicrosoftEntraUserLink",
+    "description": "Delete a Microsoft Entra provider user link irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_users_list",
+    "name": "ListMicrosoftEntraUserLinks",
+    "description": "List Microsoft Entra provider user links.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_users_retrieve",
+    "name": "ShowMicrosoftEntraUserLink",
+    "description": "Show a Microsoft Entra provider user link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_microsoft_entra_users_used_by_list",
+    "name": "ShowMicrosoftEntraUserLinkUsedBy",
+    "description": "Show references to this Microsoft Entra provider user link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_create",
+    "name": "CreateOauth2Provider",
+    "description": "Create an OAuth2 provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_dcr_create",
+    "name": "CreateOauth2ClientRegistrationConfig",
+    "description": "Create a dynamic client registration configuration.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_dcr_destroy",
+    "name": "DeleteOauth2ClientRegistrationConfig",
+    "description": "Delete a dynamic client registration configuration irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_dcr_list",
+    "name": "ListOauth2ClientRegistrationConfigs",
+    "description": "List dynamic client registration configurations.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_dcr_partial_update",
+    "name": "UpdateOauth2ClientRegistrationConfig",
+    "description": "Update a dynamic client registration configuration.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_dcr_retrieve",
+    "name": "ShowOauth2ClientRegistrationConfig",
+    "description": "Show a dynamic client registration configuration.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_dcr_update",
+    "name": "ReplaceOauth2ClientRegistrationConfig",
+    "description": "Replace a dynamic client registration configuration.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_oauth2_destroy",
+    "name": "DeleteOauth2Provider",
+    "description": "Delete an OAuth2 provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_list",
+    "name": "ListOauth2Providers",
+    "description": "List OAuth2 providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_partial_update",
+    "name": "UpdateOauth2Provider",
+    "description": "Update an OAuth2 provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_preview_user_retrieve",
+    "name": "PreviewOauth2User",
+    "description": "Preview OAuth2 mappings for the current user.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_retrieve",
+    "name": "ShowOauth2Provider",
+    "description": "Get OAuth2 provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_setup_urls_retrieve",
+    "name": "ShowOauth2SetupUrls",
+    "description": "Get OAuth2 provider setup URLs.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_oauth2_update",
+    "name": "ReplaceOauth2Provider",
+    "description": "Replace an OAuth2 provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_oauth2_used_by_list",
+    "name": "ShowOauth2ProviderUsedBy",
+    "description": "Show references to this OAuth2 provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_proxy_create",
+    "name": "CreateProxyProvider",
+    "description": "Create a proxy provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_proxy_destroy",
+    "name": "DeleteProxyProvider",
+    "description": "Delete a proxy provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_proxy_list",
+    "name": "ListProxyProviders",
+    "description": "List proxy providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_proxy_partial_update",
+    "name": "UpdateProxyProvider",
+    "description": "Update a proxy provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_proxy_retrieve",
+    "name": "ShowProxyProvider",
+    "description": "Get proxy provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_proxy_update",
+    "name": "ReplaceProxyProvider",
+    "description": "Replace a proxy provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_proxy_used_by_list",
+    "name": "ShowProxyProviderUsedBy",
+    "description": "Show references to this proxy provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_rac_create",
+    "name": "CreateRacProvider",
+    "description": "Create a remote access provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_rac_destroy",
+    "name": "DeleteRacProvider",
+    "description": "Delete a remote access provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_rac_list",
+    "name": "ListRacProviders",
+    "description": "List remote access providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_rac_partial_update",
+    "name": "UpdateRacProvider",
+    "description": "Update a remote access provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_rac_retrieve",
+    "name": "ShowRacProvider",
+    "description": "Show a remote access provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_rac_update",
+    "name": "ReplaceRacProvider",
+    "description": "Replace a remote access provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_rac_used_by_list",
+    "name": "ShowRacProviderUsedBy",
+    "description": "Show references to this remote access provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_radius_create",
+    "name": "CreateRadiusProvider",
+    "description": "Create a RADIUS provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_radius_destroy",
+    "name": "DeleteRadiusProvider",
+    "description": "Delete a RADIUS provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_radius_list",
+    "name": "ListRadiusProviders",
+    "description": "List RADIUS providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_radius_partial_update",
+    "name": "UpdateRadiusProvider",
+    "description": "Update a RADIUS provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_radius_retrieve",
+    "name": "ShowRadiusProvider",
+    "description": "Get RADIUS provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_radius_update",
+    "name": "ReplaceRadiusProvider",
+    "description": "Replace a RADIUS provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_radius_used_by_list",
+    "name": "ShowRadiusProviderUsedBy",
+    "description": "Show references to this RADIUS provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_create",
+    "name": "CreateSamlProvider",
+    "description": "Create a SAML provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_destroy",
+    "name": "DeleteSamlProvider",
+    "description": "Delete a SAML provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_import_metadata_create",
+    "name": "ImportSamlMetadata",
+    "description": "Create a SAML provider from a server-local XML metadata file.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_list",
+    "name": "ListSamlProviders",
+    "description": "List SAML providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_metadata_retrieve",
+    "name": "ShowSamlMetadata",
+    "description": "Get SAML provider metadata as XML.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_partial_update",
+    "name": "UpdateSamlProvider",
+    "description": "Update a SAML provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_preview_user_retrieve",
+    "name": "PreviewSamlUser",
+    "description": "Preview SAML mappings for the current user.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_retrieve",
+    "name": "ShowSamlProvider",
+    "description": "Get SAML provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_saml_update",
+    "name": "ReplaceSamlProvider",
+    "description": "Replace a SAML provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_saml_used_by_list",
+    "name": "ShowSamlProviderUsedBy",
+    "description": "Show references to this SAML provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_create",
+    "name": "CreateScimProvider",
+    "description": "Create a SCIM provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_destroy",
+    "name": "DeleteScimProvider",
+    "description": "Delete a SCIM provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_groups_create",
+    "name": "CreateScimGroupLink",
+    "description": "Link an Authentik group to a SCIM ID through the SCIM provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_groups_destroy",
+    "name": "DeleteScimGroupLink",
+    "description": "Delete a SCIM provider group link irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_groups_list",
+    "name": "ListScimGroupLinks",
+    "description": "List SCIM provider group links.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_groups_retrieve",
+    "name": "ShowScimGroupLink",
+    "description": "Show a SCIM provider group link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_groups_used_by_list",
+    "name": "ShowScimGroupLinkUsedBy",
+    "description": "Show references to this SCIM provider group link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_list",
+    "name": "ListScimProviders",
+    "description": "List SCIM providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_partial_update",
+    "name": "UpdateScimProvider",
+    "description": "Update a SCIM provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_retrieve",
+    "name": "ShowScimProvider",
+    "description": "Get SCIM provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_sync_object_create",
+    "name": "SyncScimObject",
+    "description": "Trigger SCIM object sync.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_sync_status_retrieve",
+    "name": "ShowScimSyncStatus",
+    "description": "Get SCIM provider sync status.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_update",
+    "name": "ReplaceScimProvider",
+    "description": "Replace a SCIM provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_scim_used_by_list",
+    "name": "ShowScimProviderUsedBy",
+    "description": "Show references to this SCIM provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_users_create",
+    "name": "CreateScimUserLink",
+    "description": "Link an Authentik user to a SCIM ID through the SCIM provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_users_destroy",
+    "name": "DeleteScimUserLink",
+    "description": "Delete a SCIM provider user link irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_users_list",
+    "name": "ListScimUserLinks",
+    "description": "List SCIM provider user links.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_users_retrieve",
+    "name": "ShowScimUserLink",
+    "description": "Show a SCIM provider user link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_scim_users_used_by_list",
+    "name": "ShowScimUserLinkUsedBy",
+    "description": "Show references to this SCIM provider user link.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ssf_create",
+    "name": "CreateSsfProvider",
+    "description": "Create a Shared Signals Framework provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ssf_destroy",
+    "name": "DeleteSsfProvider",
+    "description": "Delete a Shared Signals Framework provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ssf_list",
+    "name": "ListSsfProviders",
+    "description": "List Shared Signals Framework providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ssf_partial_update",
+    "name": "UpdateSsfProvider",
+    "description": "Update a Shared Signals Framework provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ssf_retrieve",
+    "name": "ShowSsfProvider",
+    "description": "Show a Shared Signals Framework provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_ssf_update",
+    "name": "ReplaceSsfProvider",
+    "description": "Replace a Shared Signals Framework provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_ssf_used_by_list",
+    "name": "ShowSsfProviderUsedBy",
+    "description": "Show references to this Shared Signals Framework provider.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_wsfed_create",
+    "name": "CreateWsfedProvider",
+    "description": "Create a WS-Fed provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_wsfed_destroy",
+    "name": "DeleteWsfedProvider",
+    "description": "Delete a WS-Fed provider irreversibly.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_wsfed_list",
+    "name": "ListWsfedProviders",
+    "description": "List WS-Fed providers.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_wsfed_metadata_retrieve",
+    "name": "ShowWsfedMetadata",
+    "description": "Get WS-Fed provider metadata as XML.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_wsfed_partial_update",
+    "name": "UpdateWsfedProvider",
+    "description": "Update a WS-Fed provider.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_wsfed_preview_user_retrieve",
+    "name": "PreviewWsfedUser",
+    "description": "Preview WS-Fed mappings for the current user.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_wsfed_retrieve",
+    "name": "ShowWsfedProvider",
+    "description": "Get WS-Fed provider details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "providers_wsfed_update",
+    "name": "ReplaceWsfedProvider",
+    "description": "Replace a WS-Fed provider.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "providers_wsfed_used_by_list",
+    "name": "ShowWsfedProviderUsedBy",
+    "description": "Show references to this WS-Fed provider.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

@@ -1,0 +1,492 @@
+[
+  {
+    "operationId": "endpoints_agents_connectors_agent_config_retrieve",
+    "name": "ShowAgentConfig",
+    "description": "Return configuration for the authenticated agent device.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_auth_fed_create",
+    "name": "AuthenticateAgentFederation",
+    "description": "Issue an agent token using device federation credentials.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_auth_ia_create",
+    "name": "StartAgentAuthentication",
+    "description": "Return a user authentication URL for the agent device.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_check_in_create",
+    "name": "CheckInAgentDevice",
+    "description": "Submit device facts to the agent connector.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_create",
+    "name": "CreateAgentConnector",
+    "description": "Create an agent connector.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_destroy",
+    "name": "DeleteAgentConnector",
+    "description": "Irreversibly delete an agent connector.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_enroll_create",
+    "name": "EnrollAgentDevice",
+    "description": "Enroll a device and return its agent token.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_list",
+    "name": "ListAgentConnectors",
+    "description": "List agent connectors.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_mdm_config_create",
+    "name": "GenerateAgentMdmConfig",
+    "description": "Generate MDM configuration to deploy the Authentik agent.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_partial_update",
+    "name": "UpdateAgentConnector",
+    "description": "Update an agent connector.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_retrieve",
+    "name": "ShowAgentConnector",
+    "description": "Get agent connector details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_connectors_update",
+    "name": "ReplaceAgentConnector",
+    "description": "Replace an agent connector.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "endpoints_agents_connectors_used_by_list",
+    "name": "ShowAgentConnectorUsedBy",
+    "description": "Show objects that reference agent connector.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_enrollment_tokens_create",
+    "name": "CreateAgentEnrollmentToken",
+    "description": "Create an agent enrollment token.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_enrollment_tokens_destroy",
+    "name": "DeleteAgentEnrollmentToken",
+    "description": "Irreversibly delete an agent enrollment token.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_enrollment_tokens_list",
+    "name": "ListAgentEnrollmentTokens",
+    "description": "List agent enrollment tokens.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_enrollment_tokens_partial_update",
+    "name": "UpdateAgentEnrollmentToken",
+    "description": "Update an agent enrollment token.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_enrollment_tokens_retrieve",
+    "name": "ShowAgentEnrollmentToken",
+    "description": "Get agent enrollment token details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_enrollment_tokens_update",
+    "name": "ReplaceAgentEnrollmentToken",
+    "description": "Replace an agent enrollment token.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "endpoints_agents_enrollment_tokens_used_by_list",
+    "name": "ShowAgentEnrollmentTokenUsedBy",
+    "description": "Show objects that reference agent enrollment token.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_enrollment_tokens_view_key_retrieve",
+    "name": "ShowEnrollmentTokenKey",
+    "description": "Return the enrollment token key and log access.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_psso_ise_create",
+    "name": "CreateAppleIndependentSecureEnclave",
+    "description": "Create an Apple independent Secure Enclave record.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_psso_ise_destroy",
+    "name": "DeleteAppleIndependentSecureEnclave",
+    "description": "Irreversibly delete an Apple independent Secure Enclave record.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_psso_ise_list",
+    "name": "ListAppleIndependentSecureEnclaves",
+    "description": "List Apple independent Secure Enclave records.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_psso_ise_partial_update",
+    "name": "UpdateAppleIndependentSecureEnclave",
+    "description": "Update an Apple independent Secure Enclave record.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_psso_ise_retrieve",
+    "name": "ShowAppleIndependentSecureEnclave",
+    "description": "Show an Apple independent Secure Enclave record.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_psso_ise_update",
+    "name": "ReplaceAppleIndependentSecureEnclave",
+    "description": "Replace an Apple independent Secure Enclave record.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "endpoints_agents_psso_ise_used_by_list",
+    "name": "ShowAppleIndependentSecureEnclaveUsedBy",
+    "description": "Show objects referencing an Apple independent Secure Enclave record.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_psso_register_device_create",
+    "name": "RegisterPlatformSsoDevice",
+    "description": "Register an Apple device for Platform SSO.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_agents_psso_register_user_create",
+    "name": "RegisterPlatformSsoUser",
+    "description": "Register an Apple device user for Platform SSO.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_connectors_destroy",
+    "name": "DeleteEndpointConnector",
+    "description": "Irreversibly delete an endpoint connector.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_connectors_list",
+    "name": "ListEndpointConnectors",
+    "description": "List endpoint connectors.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_connectors_retrieve",
+    "name": "ShowEndpointConnector",
+    "description": "Get endpoint connector details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_connectors_types_list",
+    "name": "ListEndpointConnectorTypes",
+    "description": "List endpoint connector types.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_connectors_used_by_list",
+    "name": "ShowEndpointConnectorUsedBy",
+    "description": "Show objects that reference endpoint connector.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_access_groups_create",
+    "name": "CreateDeviceAccessGroup",
+    "description": "Create a device access group.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_access_groups_destroy",
+    "name": "DeleteDeviceAccessGroup",
+    "description": "Irreversibly delete a device access group.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_access_groups_list",
+    "name": "ListDeviceAccessGroups",
+    "description": "List device access groups.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_access_groups_partial_update",
+    "name": "UpdateDeviceAccessGroup",
+    "description": "Update a device access group.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_access_groups_retrieve",
+    "name": "ShowDeviceAccessGroup",
+    "description": "Get device access group details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_access_groups_update",
+    "name": "ReplaceDeviceAccessGroup",
+    "description": "Replace a device access group.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "endpoints_device_access_groups_used_by_list",
+    "name": "ShowDeviceAccessGroupUsedBy",
+    "description": "Show objects that reference device access group.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_bindings_create",
+    "name": "CreateDeviceBinding",
+    "description": "Bind a user, group, or policy to device access.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_bindings_destroy",
+    "name": "DeleteDeviceBinding",
+    "description": "Irreversibly delete a device binding.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_bindings_list",
+    "name": "ListDeviceBindings",
+    "description": "List user, group, and policy bindings for device access.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_bindings_partial_update",
+    "name": "UpdateDeviceBinding",
+    "description": "Update a device binding.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_bindings_retrieve",
+    "name": "ShowDeviceBinding",
+    "description": "Show a user, group, or policy binding for device access.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_device_bindings_update",
+    "name": "ReplaceDeviceBinding",
+    "description": "Replace a device binding.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "endpoints_device_bindings_used_by_list",
+    "name": "ShowDeviceBindingUsedBy",
+    "description": "Show objects that reference device binding.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_devices_destroy",
+    "name": "DeleteEndpointDevice",
+    "description": "Irreversibly delete an endpoint device.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_devices_list",
+    "name": "ListEndpointDevices",
+    "description": "List endpoint devices.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_devices_partial_update",
+    "name": "UpdateEndpointDevice",
+    "description": "Update an endpoint device.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_devices_retrieve",
+    "name": "ShowEndpointDevice",
+    "description": "Get endpoint device details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_devices_summary_retrieve",
+    "name": "ShowEndpointDeviceSummary",
+    "description": "Summarize registered, unreachable, and outdated-agent device counts.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_devices_update",
+    "name": "ReplaceEndpointDevice",
+    "description": "Replace an endpoint device.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "endpoints_devices_used_by_list",
+    "name": "ShowEndpointDeviceUsedBy",
+    "description": "Show objects that reference endpoint device.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_fleet_connectors_create",
+    "name": "CreateFleetConnector",
+    "description": "Create a fleet connector.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_fleet_connectors_destroy",
+    "name": "DeleteFleetConnector",
+    "description": "Irreversibly delete a fleet connector.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_fleet_connectors_list",
+    "name": "ListFleetConnectors",
+    "description": "List fleet connectors.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_fleet_connectors_partial_update",
+    "name": "UpdateFleetConnector",
+    "description": "Update a fleet connector.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_fleet_connectors_retrieve",
+    "name": "ShowFleetConnector",
+    "description": "Get fleet connector details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_fleet_connectors_update",
+    "name": "ReplaceFleetConnector",
+    "description": "Replace a fleet connector.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "endpoints_fleet_connectors_used_by_list",
+    "name": "ShowFleetConnectorUsedBy",
+    "description": "Show objects that reference fleet connector.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_google_chrome_connectors_create",
+    "name": "CreateGoogleChromeConnector",
+    "description": "Create a Google Chrome connector.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_google_chrome_connectors_destroy",
+    "name": "DeleteGoogleChromeConnector",
+    "description": "Irreversibly delete a Google Chrome connector.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_google_chrome_connectors_list",
+    "name": "ListGoogleChromeConnectors",
+    "description": "List Google Chrome connectors.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_google_chrome_connectors_partial_update",
+    "name": "UpdateGoogleChromeConnector",
+    "description": "Update a Google Chrome connector.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_google_chrome_connectors_retrieve",
+    "name": "ShowGoogleChromeConnector",
+    "description": "Get Google Chrome connector details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "endpoints_google_chrome_connectors_update",
+    "name": "ReplaceGoogleChromeConnector",
+    "description": "Replace a Google Chrome connector.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "endpoints_google_chrome_connectors_used_by_list",
+    "name": "ShowGoogleChromeConnectorUsedBy",
+    "description": "Show objects that reference google chrome connector.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

@@ -1,0 +1,548 @@
+[
+  {
+    "operationId": "core_application_entitlements_create",
+    "name": "CreateAppEntitlement",
+    "description": "Create an application entitlement.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_application_entitlements_destroy",
+    "name": "DeleteAppEntitlement",
+    "description": "Irreversibly delete an application entitlement.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_application_entitlements_list",
+    "name": "ListAppEntitlements",
+    "description": "List application entitlements.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_application_entitlements_partial_update",
+    "name": "UpdateAppEntitlement",
+    "description": "Update an application entitlement.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_application_entitlements_requestable_list",
+    "name": "ListRequestableAppEntitlements",
+    "description": "List entitlements the current user can request.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_application_entitlements_retrieve",
+    "name": "ShowAppEntitlement",
+    "description": "Get application entitlement details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_application_entitlements_update",
+    "name": "ReplaceAppEntitlement",
+    "description": "Replace an app entitlement.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "core_application_entitlements_used_by_list",
+    "name": "ShowAppEntitlementUsedBy",
+    "description": "Show objects that reference app entitlement.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_applications_check_access_retrieve",
+    "name": "CheckApplicationAccess",
+    "description": "Check a user's policy-based access to an application.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_applications_create",
+    "name": "CreateApplication",
+    "description": "Create an application open to all users unless gated by policy bindings.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_applications_destroy",
+    "name": "DeleteApplication",
+    "description": "Irreversibly delete an application.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_applications_list",
+    "name": "ListApplications",
+    "description": "List applications with slim details and policy-based access checks.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_applications_partial_update",
+    "name": "UpdateApplication",
+    "description": "Update an application, including meta_icon (URL or empty string to clear the icon).",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_applications_requestable_list",
+    "name": "ListRequestableApplications",
+    "description": "List applications the current user can request.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_applications_retrieve",
+    "name": "ShowApplication",
+    "description": "Get full application details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_applications_update",
+    "name": "ReplaceApplication",
+    "description": "Replace an application.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "core_applications_used_by_list",
+    "name": "ShowApplicationUsedBy",
+    "description": "Show objects that reference application.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_authenticated_sessions_bulk_delete_destroy",
+    "name": "BulkDeleteSessions",
+    "description": "Irreversibly revoke all sessions for the selected users.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_authenticated_sessions_destroy",
+    "name": "DeleteSession",
+    "description": "Irreversibly revoke an authenticated session.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_authenticated_sessions_list",
+    "name": "ListSessions",
+    "description": "List authenticated sessions (slim).",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_authenticated_sessions_retrieve",
+    "name": "ShowSession",
+    "description": "Get session details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_authenticated_sessions_used_by_list",
+    "name": "ShowSessionUsedBy",
+    "description": "Show objects that reference session.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_brands_create",
+    "name": "CreateBrand",
+    "description": "Create domain-specific branding and flow configuration.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_brands_current_retrieve",
+    "name": "ShowCurrentBrand",
+    "description": "Get branding and flow configuration for the current domain.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_brands_destroy",
+    "name": "DeleteBrand",
+    "description": "Irreversibly delete a brand.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_brands_list",
+    "name": "ListBrands",
+    "description": "List brands (slim).",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_brands_partial_update",
+    "name": "UpdateBrand",
+    "description": "Update domain-specific branding and flow configuration.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_brands_retrieve",
+    "name": "ShowBrand",
+    "description": "Get brand details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_brands_update",
+    "name": "ReplaceBrand",
+    "description": "Replace a brand.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "core_brands_used_by_list",
+    "name": "ShowBrandUsedBy",
+    "description": "Show objects that reference brand.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_groups_add_user_create",
+    "name": "AddUserToGroup",
+    "description": "Add a user to a group.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_groups_create",
+    "name": "CreateGroup",
+    "description": "Create a group.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_groups_destroy",
+    "name": "DeleteGroup",
+    "description": "Irreversibly delete a group.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_groups_list",
+    "name": "ListGroups",
+    "description": "List groups (slim).",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_groups_partial_update",
+    "name": "UpdateGroup",
+    "description": "Update a group.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_groups_remove_user_create",
+    "name": "RemoveUserFromGroup",
+    "description": "Remove a user from a group.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_groups_retrieve",
+    "name": "ShowGroup",
+    "description": "Get full group details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_groups_update",
+    "name": "ReplaceGroup",
+    "description": "Replace a group.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "core_groups_used_by_list",
+    "name": "ShowGroupUsedBy",
+    "description": "Show objects that reference group.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_object_attributes_create",
+    "name": "CreateObjectAttribute",
+    "description": "Create an object attribute definition.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_object_attributes_destroy",
+    "name": "DeleteObjectAttribute",
+    "description": "Irreversibly delete an object attribute definition.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_object_attributes_list",
+    "name": "ListObjectAttributes",
+    "description": "List object attribute definitions.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_object_attributes_partial_update",
+    "name": "UpdateObjectAttribute",
+    "description": "Update an object attribute definition.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_object_attributes_retrieve",
+    "name": "ShowObjectAttribute",
+    "description": "Get an object attribute definition.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_object_attributes_update",
+    "name": "ReplaceObjectAttribute",
+    "description": "Replace an object attribute definition.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "core_tokens_create",
+    "name": "CreateToken",
+    "description": "Create a token.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_tokens_destroy",
+    "name": "DeleteToken",
+    "description": "Irreversibly delete a token.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_tokens_list",
+    "name": "ListTokens",
+    "description": "List tokens (slim).",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_tokens_partial_update",
+    "name": "UpdateToken",
+    "description": "Update a token.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_tokens_retrieve",
+    "name": "ShowToken",
+    "description": "Get token details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_tokens_set_key_create",
+    "name": "SetTokenKey",
+    "description": "Set the token secret and log the change, requiring authentik_core.set_token_key permission.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_tokens_update",
+    "name": "ReplaceToken",
+    "description": "Replace a token.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "core_tokens_used_by_list",
+    "name": "ShowTokenUsedBy",
+    "description": "Show objects that reference token.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_tokens_view_key_retrieve",
+    "name": "ShowTokenKey",
+    "description": "Reveal the token secret and log access.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_transactional_applications_update",
+    "name": "UpdateTransactionalApplication",
+    "description": "Create or update an application and its provider atomically.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_user_consent_destroy",
+    "name": "DeleteUserConsent",
+    "description": "Irreversibly delete a user consent entry.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_user_consent_list",
+    "name": "ListUserConsent",
+    "description": "List user consent entries.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_user_consent_retrieve",
+    "name": "ShowUserConsent",
+    "description": "Get user consent details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_user_consent_used_by_list",
+    "name": "ShowUserConsentUsedBy",
+    "description": "Show objects that reference user consent.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_account_lockdown_create",
+    "name": "CreateAccountLockdownLink",
+    "description": "Return a link to the configured account-lockdown flow.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_create",
+    "name": "CreateUser",
+    "description": "Create a user.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_destroy",
+    "name": "DeleteUser",
+    "description": "Irreversibly delete a user.",
+    "group": "authentik_delete",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_export_create",
+    "name": "ExportUsers",
+    "description": "Start an asynchronous user export and return its status object.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_impersonate_create",
+    "name": "ImpersonateUser",
+    "description": "Impersonate a user.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_impersonate_end_retrieve",
+    "name": "EndImpersonation",
+    "description": "End user impersonation.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_list",
+    "name": "ListUsers",
+    "description": "List users (slim).",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_me_retrieve",
+    "name": "ShowCurrentUser",
+    "description": "Get current user info.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_partial_update",
+    "name": "UpdateUser",
+    "description": "Update a user.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_paths_retrieve",
+    "name": "ListUserPaths",
+    "description": "List user path prefixes.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_recovery_create",
+    "name": "CreateRecoveryLink",
+    "description": "Create a temporary account-recovery link.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_recovery_email_create",
+    "name": "SendRecoveryEmail",
+    "description": "Email a temporary account-recovery link using an email stage.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_retrieve",
+    "name": "ShowUser",
+    "description": "Get full user details.",
+    "group": "authentik_read",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_service_account_create",
+    "name": "CreateServiceAccount",
+    "description": "Create a service user and return its token.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_set_password_create",
+    "name": "SetPassword",
+    "description": "Set a user's password.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_set_password_hash_create",
+    "name": "SetPasswordHash",
+    "description": "Set a local Django password hash without propagating it to LDAP or Kerberos.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_switch_create",
+    "name": "StartUserSwitch",
+    "description": "Return a redirect to add or switch browser users.",
+    "group": "authentik_write",
+    "exposed": true
+  },
+  {
+    "operationId": "core_users_update",
+    "name": "ReplaceUser",
+    "description": "Replace a user.",
+    "group": "authentik_write",
+    "exposed": false
+  },
+  {
+    "operationId": "core_users_used_by_list",
+    "name": "ShowUserUsedBy",
+    "description": "Show objects that reference user.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

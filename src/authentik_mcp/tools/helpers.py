@@ -2,7 +2,6 @@ from contextvars import ContextVar
 from typing import Any
 
 from ..client import AuthentikClient
-from ..registry import _UNSET
 
 # A host serving several Authentik instances in one process binds the client per request.
 client_var: ContextVar[AuthentikClient | None] = ContextVar("authentik_client", default=None)
@@ -25,48 +24,6 @@ def _ok(data):
     return data
 
 
-def _body(
-    local_vars: dict,
-    exclude=(),
-    rename: dict | None = None,
-    keep_null=(),
-) -> dict:
-    """Build a JSON body from a function's locals(), dropping omitted fields.
-
-    Drops keys whose value is `_UNSET` (caller omitted) or `None` (unless the
-    key is listed in `keep_null`, for nullable fields the API clears on null).
-    `exclude` drops keys outright (e.g. path params); `rename` maps Python
-    parameter names to API field names. A `**kwargs` dict in locals() is
-    merged in (extras passed by the caller), under the same drop rules.
-
-    Usage:
-        return _ok(_get_client().post("/x/", json=_body(locals())))
-        return _ok(_get_client().patch(f"/x/{id}/", json=_body(
-            locals(), exclude=("id",), keep_null=("group",))))
-    """
-    excl = set(exclude)
-    rmap = rename or {}
-    keep = set(keep_null)
-    out: dict = {}
-
-    def _add(k, v):
-        if k in excl:
-            return
-        if v is _UNSET:
-            return
-        if v is None and k not in keep:
-            return
-        out[rmap.get(k, k)] = v
-
-    for k, v in local_vars.items():
-        if k == "kwargs":
-            continue
-        _add(k, v)
-    extra = local_vars.get("kwargs")
-    if isinstance(extra, dict):
-        for k, v in extra.items():
-            _add(k, v)
-    return out
 
 
 def _verify_response(sent: dict, received: dict, drops: dict | None = None) -> None:
@@ -114,27 +71,13 @@ def _slim_list(items, fields: set) -> list:
     return [_slim(i, fields) for i in items if isinstance(i, dict)]
 
 
-def _paginated(
-    path: str,
-    params: dict | None = None,
-    limit: int = 20,
-    slim_fields: set | None = None,
-):
-    """GET a paginated endpoint, return results with optional slimming."""
-    p = dict(params or {})
-    p["page_size"] = limit
-    data = _get_client().get(path, params=p)
-    results = data.get("results", data) if isinstance(data, dict) else data
-    if slim_fields and isinstance(results, list):
-        return _slim_list(results, slim_fields)
-    return results
 
 
 # ── Slim field sets ──────────────────────────────────────────────────
 
 # Core
 SLIM_USER = {"pk", "username", "name", "email", "is_active", "path", "last_login"}
-SLIM_GROUP = {"pk", "name", "parent_name", "num_pk", "is_superuser"}
+SLIM_GROUP = {"pk", "name", "parents", "num_pk", "is_superuser"}
 SLIM_APP = {"pk", "name", "slug", "provider", "provider_obj.name", "meta_launch_url"}
 SLIM_TOKEN = {"pk", "identifier", "intent", "user", "description", "expiring", "expires"}
 SLIM_SESSION = {"uuid", "user", "last_ip", "last_used", "expires", "geo_ip.country", "geo_ip.city"}

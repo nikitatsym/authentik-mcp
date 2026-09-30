@@ -8,6 +8,10 @@ import sys
 from pathlib import Path
 
 CMDS: dict[str, list[list[str]]] = {
+    "codegen": [
+        ["uv", "run", "python", "codegen/generate.py", "--check"],
+        ["uv", "run", "python", "codegen/check_contract.py"],
+    ],
     "lint": [
         ["uv", "run", "ruff", "check", "."],
         ["uv", "run", "mypy", "src/"],
@@ -56,7 +60,7 @@ def run(name: str) -> int:
         return install_hook()
     if name == "check":
         _hook_hint()
-        return run("lint") or run("test")
+        return run("codegen") or run("lint") or run("test")
     if name not in CMDS:
         print(f"unknown: {name}. available: {list(CMDS) + ['check', 'hook']}", file=sys.stderr)
         return 2

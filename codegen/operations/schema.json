@@ -1,0 +1,9 @@
+[
+  {
+    "operationId": "schema_retrieve",
+    "name": "ShowSchema",
+    "description": "Return the OpenAPI schema as JSON or YAML via content negotiation.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]

@@ -29,7 +29,7 @@ class AuthentikClient:
             timeout=30.0,
         )
 
-    def _handle(self, r: httpx.Response):
+    def _handle(self, r: httpx.Response, *, text: bool = False):
         if r.status_code >= 400:
             try:
                 body = r.json()
@@ -38,10 +38,12 @@ class AuthentikClient:
             raise APIError(r.status_code, r.request.method, str(r.url), body)
         if r.status_code == 204 or not r.content:
             return None
+        if text:
+            return r.text
         return r.json()
 
-    def get(self, path: str, **kwargs):
-        return self._handle(self._http.get(path, **kwargs))
+    def get(self, path: str, *, text: bool = False, **kwargs):
+        return self._handle(self._http.get(path, **kwargs), text=text)
 
     def post(self, path: str, **kwargs):
         return self._handle(self._http.post(path, **kwargs))

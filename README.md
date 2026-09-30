@@ -50,3 +50,27 @@ Call any group with `operation="help"` to list available operations.
 ## Application access control
 
 Apps are open to all authenticated users until gated. Restrict an app to a group/user by binding it: `CreatePolicyBinding(target=<app pk>, group=<group pk>)` (or `user=`) in `authentik_flows_write`; inspect gates with `ListPolicyBindings` / `ShowPolicyBinding` in `authentik_flows_read`. Policy bindings live under the `authentik_flows_*` groups, not the core ones.
+
+## Generated API contract
+
+Targets **Authentik 2026.8.3 only**. Operations and typed parameter schemas are
+generated from the vendored OpenAPI document. The hand-maintained tables in
+`codegen/operations/` supply public names, descriptions, and the six existing
+groups. A PUT with a PATCH at the same path is explicitly listed but not exposed.
+
+Call a group with `operation="schema", params={"op": "SendRecoveryEmail"}` for
+its complete required/optional/nullable parameter contract. Recovery email uses
+`id`, `email_stage`, and optional `token_duration` (for example `"minutes=10"`).
+Group parent relationships use `parents`, not `parent`. Application icons are
+updated through `UpdateApplication(meta_icon=...)`; an empty string clears one.
+`ImportBlueprint(file=...)` imports flow-export YAML from a server-local file.
+
+See [SPEC.md](SPEC.md) for generation, review, validation, parameter naming,
+preserved pagination/projections, and endpoint replacements.
+
+```sh
+uv run python codegen/generate.py
+uv run python scripts/bootstrap.py
+./dev.py check
+./dev.py e2e
+```

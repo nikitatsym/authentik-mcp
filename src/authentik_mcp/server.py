@@ -1,12 +1,7 @@
-"""Authentik MCP server — auto-discovery across the tools/ package, Pydantic
-validation, schema introspection, dispatch.
+"""Register generated operations with validation, help, schema, and dispatch.
 
-v2.5 pattern (see mcp-server-v2.md): every @_op function gets a Pydantic params
-model built from its signature at registration time. `params` is routed through
-`model.model_validate()` — unknown keys are rejected (`extra='forbid'`), or
-forwarded into `**kwargs` for ops that declare it (`extra='allow'`). Optional
-params default to the `_UNSET` sentinel so "caller omitted" survives to the
-function; an explicit `null` (for nullable fields the API clears) is preserved.
+The generated signatures are the public contract. Optional `_UNSET` defaults
+preserve omission, while explicit null is allowed only by nullable schema types.
 """
 
 import functools
@@ -30,6 +25,7 @@ from pydantic import (
     field_validator,
 )
 
+from . import _generated
 from . import tools as _tools_module
 from .client import APIError
 from .registry import _UNSET, ROOT, _Unset
@@ -102,7 +98,7 @@ def _error_result(exc: ValueError | APIError | httpx.RequestError) -> dict[str, 
 
 
 def _to_pascal(name: str) -> str:
-    return "".join(w.capitalize() for w in name.split("_"))
+    return name if "_" not in name and name[:1].isupper() else "".join(w.capitalize() for w in name.split("_"))
 
 def _compact(fn):
     """Serialize a data result as one-line JSON.
@@ -243,7 +239,7 @@ def _coerce_call(fn, params: dict, op_name: str):
         validated = model.model_validate(params)
     except ValidationError as e:
         raise ValueError(_format_validation_error(e, op_name)) from None
-    kwargs = validated.model_dump(exclude_unset=True)
+    kwargs = validated.model_dump(exclude_unset=True, by_alias=True)
     if validated.model_extra:
         kwargs.update(validated.model_extra)
     return fn(**kwargs)
@@ -464,18 +460,13 @@ def _render_group_doc(group_name: str, doc: str, ops: dict) -> str:
 
 
 def _collect_ops():
-    """Collect @_op-decorated functions from all submodules of the tools package."""
-    import importlib
-    import pkgutil
-
-    fns = {}
-    for _importer, modname, _ispkg in pkgutil.walk_packages(
-        _tools_module.__path__, _tools_module.__name__ + "."
-    ):
-        mod = importlib.import_module(modname)
-        for name, fn in inspect.getmembers(mod, inspect.isfunction):
-            if hasattr(fn, "_mcp_group"):
-                fns[name] = fn
+    """Register the schema-generated surface and the standalone version tool."""
+    fns = {"authentik_version": _tools_module.authentik_version}
+    for operation in _generated.OPERATIONS.values():
+        name = operation["name"]
+        fn = getattr(_generated, name)
+        fn._mcp_group = getattr(_tools_module, operation["group"])
+        fns[name] = fn
     return fns
 
 

@@ -1,0 +1,9 @@
+[
+  {
+    "operationId": "root_config_retrieve",
+    "name": "ShowConfig",
+    "description": "Show public Authentik configuration.",
+    "group": "authentik_read",
+    "exposed": true
+  }
+]
